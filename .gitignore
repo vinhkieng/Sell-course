@@ -1,0 +1,23 @@
+# Thư viện cài bằng npm install (rất nặng, ai tải về thì tự cài lại)
+node_modules/
+
+# Cấu hình có mật khẩu: KHÔNG BAO GIỜ đưa lên GitHub (chỉ đưa .env.example)
+.env
+.env.*
+!.env.example
+
+# Bản dựng của frontend
+dist/
+
+# File người dùng tải lên và chinh_sach.json đang dùng: chỉ giữ 7 thư mục con (file .gitkeep)
+backend/luu_tru/**
+!backend/luu_tru/*/
+!backend/luu_tru/*/.gitkeep
+
+# Nhật ký và file rác của hệ điều hành, trình soạn thảo
+*.log
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/

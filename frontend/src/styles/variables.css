@@ -1,0 +1,22 @@
+/* Biến dùng chung cho toàn web. Màu và phông lấy từ thiết kế (thư mục thiet_ke/ ở gốc Do_An),
+   ví dụ xanh chủ đạo #2F6B62, chữ #1F3A3D, cam #E9A23B, phông Be Vietnam Pro.
+   Phần 1 chỉnh lại cho khớp thiết kế khi làm khung trang dùng chung.
+   Muốn đổi màu cả web thì sửa ở đây, không ghi mã màu rải rác trong các file khác. */
+:root {
+  --mau-chinh: #2f6b62; /* xanh chủ đạo: nút chính, liên kết */
+  --mau-chinh-nhat: #e3ece9;
+  --mau-nhan: #e9a23b; /* cam: số tròn, điểm nhấn */
+  --mau-chu: #1f3a3d; /* chữ chính */
+  --mau-chu-phu: #3c5558;
+  --mau-chu-mo: #6b8580;
+  --mau-loi: #b3382c; /* chữ báo lỗi */
+  --mau-vien: #d9e4e0;
+  --mau-nen: #f6faf8;
+  --mau-nen-khoi: #eef3f1;
+  --mau-trang: #ffffff;
+
+  --font-chinh: 'Be Vietnam Pro', system-ui, sans-serif;
+  --co-chu: 15px;
+  --bo-goc: 10px;
+  --rong-toi-da: 1200px;
+}

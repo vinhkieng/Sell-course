@@ -1,0 +1,89 @@
+# GitHub Actions (Phần chung C2): chạy mỗi lần đẩy code lên GitHub, trên một máy tạm của GitHub.
+# Kiểm tra cách viết code (oxlint) và dựng thử frontend; bật một MySQL 8.4 tạm, nạp file SQL,
+# chạy lệnh tạo admin, rồi chạy kiểm thử backend; chạy kiểm thử vitest của frontend.
+# Mọi giá trị dưới đây là giá trị giả chỉ dùng trên máy tạm, không phải mật khẩu thật.
+name: Kiem tra du an
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  kiem-tra:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+
+    env:
+      NODE_ENV: development
+      PORT: 8000
+      CLIENT_ORIGIN: http://localhost:5173
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_NAME: ava
+      DB_USER: root
+      DB_PASSWORD: root
+      JWT_SECRET: khoaGiaChoGithubJwt123
+      COOKIE_SECRET: khoaGiaChoGithubCookie123
+      ADMIN_TEN_DANG_NHAP: admin01
+      ADMIN_GMAIL: admin01@gmail.com
+      ADMIN_MAT_KHAU: '123456'
+
+    steps:
+      - name: Lay code
+        uses: actions/checkout@v4
+
+      - name: Cai Node theo file .nvmrc
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: |
+            backend/package-lock.json
+            frontend/package-lock.json
+
+      - name: Cai thu vien backend
+        working-directory: backend
+        run: npm ci
+
+      - name: Kiem tra cach viet code backend (oxlint)
+        working-directory: backend
+        run: npm run lint
+
+      - name: Cai thu vien frontend
+        working-directory: frontend
+        run: npm ci
+
+      - name: Kiem tra cach viet code frontend (oxlint)
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Dung thu frontend
+        working-directory: frontend
+        run: npm run build
+
+      - name: Kiem thu frontend (vitest)
+        working-directory: frontend
+        run: npm test
+
+      - name: Nap file SQL vao database ava
+        run: mysql -h 127.0.0.1 -P 3306 -uroot -proot < database/AVA_CSDL_18-11.sql
+
+      - name: Tao admin (npm run seed)
+        working-directory: backend
+        run: npm run seed
+
+      - name: Kiem thu backend (tu tao lai database ava_test)
+        working-directory: backend
+        run: npm test

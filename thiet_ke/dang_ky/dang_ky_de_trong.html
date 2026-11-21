@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVA - Đăng ký (để trống ô bắt buộc)</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&display=swap">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+input:focus,select:focus{outline:2px solid #2F6B62;border-color:#2F6B62}
+.btn:hover{filter:brightness(1.08)}
+.rl:hover>div:first-child,.rl:focus-within>div:first-child{border-color:#2F6B62;outline:2px solid #2F6B62}.rl:focus{outline:none}
+.rl .t1,.rl .t2{display:none}.rl:has(#r1:checked) .ph,.rl:has(#r2:checked) .ph{display:none}.rl:has(#r1:checked) .t1,.rl:has(#r2:checked) .t2{display:inline}
+.rp{display:none;position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:10;background:#fff;border:1px solid #D9E4E0;border-radius:16px;padding:8px;box-shadow:0 12px 32px rgba(31,58,61,.16)}
+.rl:hover .rp,.rl:focus-within .rp{display:block}.rp::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}.rp input{display:none}.rp label{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:10px;cursor:pointer;font-weight:400}
+.rp label b{font-weight:600;font-size:16px}.rp label span{font-size:13px;color:#3C5558}.rp label:hover,.rp input:checked+label{background:#EEF3F1}
+.bad input,.bad .in,.rbad .rl>div:first-child{border-color:#B3382C!important;background:#FFF8F7!important}.bad input:focus,.bad .in:focus{outline-color:#B3382C!important}
+.hh{font-weight:400;font-size:13px;color:#6B8580;line-height:1.45}.hh.er{color:#B3382C;font-weight:500}
+</style>
+
+</head>
+<body>
+
+<div style="font-family:'Be Vietnam Pro',system-ui,sans-serif;color:#1F3A3D;background:#EEF3F1;width:100%;min-height:980px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
+<div style="position:relative;overflow:hidden;background:#2F6B62;color:#fff;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between;gap:32px">
+<div style="position:absolute;left:-100px;bottom:-140px;width:360px;height:360px;border-radius:50%;background:#3E7D73"></div>
+<div style="position:absolute;right:-70px;top:-90px;width:240px;height:240px;border-radius:50%;background:#E9A23B"></div>
+<a href="#" style="position:relative;font-weight:800;font-size:28px;display:flex;align-items:center;gap:10px"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><circle cx="7" cy="25" r="3" fill="#E9A23B"></circle><path d="M10 25h8a6 6 0 0 0 0-12h-4a5 5 0 0 1 0-10h10"></path></svg>AVA</a>
+<div style="position:relative;max-width:440px"><h2 style="font-size:44px;line-height:1.15;font-weight:800;margin:0 0 16px;letter-spacing:-1px">Bắt đầu hành trình học của bạn.</h2><p style="margin:0;font-size:18px;line-height:1.6;color:#E1EEEA">Tạo tài khoản miễn phí và chọn khóa học đầu tiên của bạn.</p></div>
+<div style="position:relative;font-size:14px;color:#CFE3DD">© [Năm] AVA</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;padding:48px 24px">
+<div style="width:100%;max-width:440px;background:#fff;border:1px solid #D9E4E0;border-radius:28px;padding:44px 40px;display:flex;flex-direction:column;gap:20px;box-sizing:border-box">
+<div><h1 style="font-size:32px;font-weight:800;margin:0 0 8px;letter-spacing:-0.5px">Tạo tài khoản</h1><p style="margin:0;color:#3C5558;line-height:1.5">Điền thông tin bên dưới để bắt đầu học.</p></div>
+<label class="bad" style="display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:14px">Tên đăng nhập<input type="text" maxlength="30" pattern="[A-Za-z0-9]{4,30}" autocapitalize="none" placeholder="Chọn tên đăng nhập" style="height:52px;box-sizing:border-box;border:1px solid #C9D8D3;border-radius:14px;background:#fff;padding:0 16px;font:inherit;font-weight:400;font-size:16px;color:#1F3A3D"><span class="hh er">Vui lòng nhập tên đăng nhập</span></label><label class="bad" style="display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:14px">Gmail<input type="email" placeholder="ten@gmail.com" style="height:52px;box-sizing:border-box;border:1px solid #C9D8D3;border-radius:14px;background:#fff;padding:0 16px;font:inherit;font-weight:400;font-size:16px;color:#1F3A3D"><span class="hh er">Vui lòng nhập Gmail</span></label><label class="bad" style="display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:14px">Mật khẩu<input type="password" inputmode="numeric" maxlength="6" pattern="[0-9]*" placeholder="Tạo mật khẩu" style="height:52px;box-sizing:border-box;border:1px solid #C9D8D3;border-radius:14px;background:#fff;padding:0 16px;font:inherit;font-weight:400;font-size:16px;color:#1F3A3D"><span class="hh er">Vui lòng nhập mật khẩu</span></label><label class="bad" style="display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:14px">Xác nhận mật khẩu<input type="password" inputmode="numeric" maxlength="6" pattern="[0-9]*" placeholder="Nhập lại mật khẩu" style="height:52px;box-sizing:border-box;border:1px solid #C9D8D3;border-radius:14px;background:#fff;padding:0 16px;font:inherit;font-weight:400;font-size:16px;color:#1F3A3D"><span class="hh er">Vui lòng nhập lại mật khẩu</span></label>
+<div class="rbad" style="display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:14px">Vai trò
+<div class="rl" tabindex="0" style="position:relative"><div style="height:52px;box-sizing:border-box;border:1px solid #C9D8D3;border-radius:14px;background:#fff;padding:0 16px;font:inherit;font-weight:400;font-size:16px;color:#1F3A3D;display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none"><span><span class="ph" style="color:#6B8580">Chọn vai trò của bạn</span><span class="t1">Học viên</span><span class="t2">Người cung cấp khóa học</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F3A3D" stroke-width="3" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg></div>
+<div class="rp"><input type="radio" name="role" id="r1"><label for="r1"><b>Học viên</b><span>Tôi muốn mua và học khóa học</span></label><input type="radio" name="role" id="r2"><label for="r2"><b>Người cung cấp khóa học</b><span>Tôi muốn đăng khóa học và nhận doanh thu</span></label></div></div><span class="hh er">Vui lòng chọn vai trò</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:#3C5558;font-weight:400"><input type="checkbox" style="width:20px;height:20px;accent-color:#2F6B62;margin:0;flex:none"><span>Tôi đã đọc và đồng ý với <a href="../chinh_sach_loi/chinh_sach_dieu_khoan.html" style="color:#2F6B62;font-weight:600;text-decoration:underline">Chính sách và điều khoản</a> của AVA</span></label><span class="hh er">Vui lòng đồng ý với Chính sách và điều khoản</span></div><button type="button" class="btn" style="height:54px;border:0;border-radius:999px;background:#2F6B62;color:#fff;font:inherit;font-weight:800;font-size:17px;cursor:pointer;margin-top:4px">Đăng ký</button>
+<div style="text-align:center;color:#3C5558">Đã có tài khoản? <a href="#" style="font-weight:600;color:#2F6B62">Đăng nhập</a></div>
+</div>
+</div>
+</div>
+</body>
+</html>

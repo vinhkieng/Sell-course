@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVA - Quên mật khẩu</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+input:focus{outline:2px solid #2F6B62;border-color:#2F6B62}
+.btn:hover{filter:brightness(1.08)}
+.er{display:none}
+.ms{display:none;font-size:13px;font-weight:500;color:#B3382C;line-height:1.4}
+.hn{font-size:13px;font-weight:400;color:#6B8580;line-height:1.4}
+.er:checked~.cd1 input{border-color:#B3382C !important;background:#FFF8F7 !important}
+.er:checked~.cd1 input:focus{outline-color:#B3382C}
+.er:checked~.cd1 .ms{display:block}
+.er:checked~.cd1 .hn{display:none}
+@property --t{syntax:'<integer>';inherits:false;initial-value:60}
+@keyframes cdn{to{--t:0}}
+@keyframes hid{to{opacity:0;visibility:hidden;position:absolute}}
+@keyframes shw{to{visibility:visible;position:static}}
+.cn{animation:cdn 60s steps(60) forwards;counter-reset:t var(--t)}.cn::after{content:counter(t) "s"}
+.w{color:#6B8580;cursor:not-allowed;animation:hid 0s linear 60s forwards}
+.g{visibility:hidden;position:absolute;font-weight:600;color:#2F6B62;animation:shw 0s linear 60s forwards}
+</style>
+
+</head>
+<body>
+
+<div style="font-family:'Be Vietnam Pro',system-ui,sans-serif;color:#1F3A3D;background:#EEF3F1;width:100%;min-height:760px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
+<div style="position:relative;overflow:hidden;background:#2F6B62;color:#fff;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between;gap:32px">
+<div style="position:absolute;left:-100px;bottom:-140px;width:360px;height:360px;border-radius:50%;background:#3E7D73"></div>
+<div style="position:absolute;right:-70px;top:-90px;width:240px;height:240px;border-radius:50%;background:#E9A23B"></div>
+<a href="#" style="position:relative;font-weight:800;font-size:28px;display:flex;align-items:center;gap:10px"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><circle cx="7" cy="25" r="3" fill="#E9A23B"></circle><path d="M10 25h8a6 6 0 0 0 0-12h-4a5 5 0 0 1 0-10h10"></path></svg>AVA</a>
+<div style="position:relative;max-width:440px"><h2 style="font-size:44px;line-height:1.15;font-weight:800;margin:0 0 16px;letter-spacing:-1px">Quên mật khẩu? Không sao.</h2><p style="margin:0;font-size:18px;line-height:1.6;color:#E1EEEA">Chỉ mất một phút để lấy lại tài khoản của bạn.</p></div>
+<div style="position:relative;font-size:14px;color:#CFE3DD">© [Năm] AVA</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;padding:48px 24px">
+<input type="checkbox" id="er" class="er">
+<div class="cd1" style="width:100%;max-width:440px;background:#fff;border:1px solid #D9E4E0;border-radius:28px;padding:44px 40px;display:flex;flex-direction:column;gap:20px;box-sizing:border-box">
+<div><h1 style="font-size:32px;font-weight:800;margin:0 0 8px;letter-spacing:-0.5px">Quên mật khẩu</h1><p style="margin:0;color:#3C5558;line-height:1.5">Nhập Gmail đã đăng ký, chúng tôi sẽ gửi mã xác nhận</p></div>
+<label style="display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:14px">Gmail<input type="email" placeholder="ten@gmail.com" style="height:52px;box-sizing:border-box;border:1px solid #C9D8D3;border-radius:14px;background:#fff;padding:0 16px;font:inherit;font-weight:400;font-size:16px;color:#1F3A3D"><span class="ms">Gmail không đúng định dạng. Ví dụ: ten@gmail.com</span></label>
+<label for="er" class="btn" style="height:54px;border-radius:999px;background:#2F6B62;color:#fff;font-weight:800;font-size:17px;cursor:pointer;margin-top:4px;display:flex;align-items:center;justify-content:center">Gửi mã</label>
+<div style="text-align:center"><a href="#" style="font-weight:600;color:#2F6B62">← Quay lại đăng nhập</a></div>
+</div>
+</div>
+</div>
+</body>
+</html>

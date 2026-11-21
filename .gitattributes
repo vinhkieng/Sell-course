@@ -1,0 +1,5 @@
+# Thống nhất kiểu xuống dòng giữa máy Windows và máy của GitHub Actions
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary

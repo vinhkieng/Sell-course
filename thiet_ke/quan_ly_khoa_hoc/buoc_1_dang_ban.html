@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVA - Quản lý khóa - Bước 1 (đang bán)</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&amp;display=swap">
+<style>
+
+body{margin:0}
+a{color:inherit;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.box{background:#fff;border:1px solid #D9E4E0;border-radius:24px;padding:32px;scroll-margin-top:16px}
+.in{height:48px;box-sizing:border-box;width:100%;border:1px solid #C9D8D3;border-radius:12px;background:#fff;padding:0 14px;font:inherit;color:#1F3A3D}
+.in:focus{outline:2px solid #2F6B62}
+.lb{display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:14px}
+.bd{display:inline-block;font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.ok{background:#D6EBE4;color:#1F3A3D}.wt{background:#FBE7C2;color:#4A2F05}.rj{background:#F8D9D4;color:#8A2A1F}.hd{background:#E3E6E5;color:#3C4A4C}
+.pri{height:48px;padding:0 28px;border:0;border-radius:999px;background:#2F6B62;color:#fff;font:inherit;font-weight:800;cursor:pointer}
+.sec{border:2px solid #1F3A3D;border-radius:999px;padding:9px 20px;font-weight:600;display:inline-block}
+.side a{display:block;padding:12px 16px;border-radius:12px;font-weight:500}
+.side a:hover{background:#EEF3F1}
+.side a.on{background:#2F6B62;color:#fff;font-weight:600}
+.tb{width:100%;border-collapse:collapse;font-size:15px}
+.tb th{text-align:left;color:#3C5558;font-weight:600;padding:12px 8px;border-bottom:1px solid #E3ECE9}
+.tb td{padding:14px 8px;border-bottom:1px solid #E3ECE9}
+.bk .bt0,.bk .bt1,.bk .bt2,.bk .bt3,.bk .bt4{display:none}.bk:has(#bk0:checked) .bph,.bk:has(#bk1:checked) .bph,.bk:has(#bk2:checked) .bph,.bk:has(#bk3:checked) .bph,.bk:has(#bk4:checked) .bph{display:none}.bk:has(#bk0:checked) .bt0,.bk:has(#bk1:checked) .bt1,.bk:has(#bk2:checked) .bt2,.bk:has(#bk3:checked) .bt3,.bk:has(#bk4:checked) .bt4{display:inline}
+.bk:hover>.in,.bk:focus-within>.in{outline:2px solid #2F6B62}.bk:focus{outline:none}
+.bp{display:none;position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:10;background:#fff;border:1px solid #D9E4E0;border-radius:16px;padding:8px;box-shadow:0 12px 32px rgba(31,58,61,.16)}
+.bp::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+.bk:hover .bp,.bk:focus-within .bp{display:block}
+.bp input{display:none}.bp label{display:block;padding:12px 14px;border-radius:10px;cursor:pointer;font-weight:500;font-size:16px}
+.bp label:hover,.bp input:checked+label{background:#EEF3F1}
+h2.t{font-size:24px;font-weight:800;margin:0 0 24px}
+.dd .ddp{display:none;position:absolute;left:0;top:100%;padding-top:12px;z-index:30}.dd:hover .ddp,.dd:focus-within .ddp{display:block}
+.mm1{width:260px;box-sizing:border-box;background:#fff;border:1px solid #D9E4E0;border-radius:20px;box-shadow:0 16px 40px rgba(31,58,61,.16);color:#1F3A3D;font-weight:500;padding-bottom:8px;overflow:hidden}
+.mh{font-size:12px;font-weight:800;letter-spacing:.8px;color:#6B8580;padding:20px 20px 8px;text-transform:uppercase}
+.cr{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 20px;border-left:3px solid transparent;font-size:15px;font-weight:500;color:#1F3A3D}
+.cr:hover{background:#EEF3F1;color:#2F6B62;border-left-color:#2F6B62}
+
+.so{width:40px;height:40px;border-radius:50%;border:1px solid #4A6E70;display:flex;align-items:center;justify-content:center;color:#fff}.so:hover{background:#E9A23B;border-color:#E9A23B;color:#1F3A3D}
+.fl{color:#B9CFC9}
+.fl:hover{color:#fff;text-decoration:underline}
+.fi{height:52px;box-sizing:border-box;width:100%;border:1px solid #C9D8D3;border-radius:14px;background:#fff;padding:0 16px;font:inherit;font-weight:400;font-size:16px;color:#1F3A3D}
+textarea.fi{height:auto;padding:14px 16px;line-height:1.5;resize:vertical}
+select.fi{appearance:none;-webkit-appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231F3A3D' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 18px center;padding-right:44px}
+.fi:focus{outline:2px solid #2F6B62}
+.fi::placeholder{color:#7A908B}
+.fd{display:flex;flex-direction:column;gap:8px}
+.fd>b{font-size:15px;font-weight:600}.fd>b i{color:#B3382C;font-style:normal;margin-left:2px}.fd>b span{font-weight:400;color:#6B8580;font-size:13px;margin-left:6px}
+.hn{font-size:13px;color:#6B8580;line-height:1.5}
+.ms{display:none;font-size:13px;font-weight:500;color:#B3382C;line-height:1.4}
+.bad .fi{border-color:#B3382C;background:#FFF8F7}.bad .fi:focus{outline-color:#B3382C}.bad .ms{display:block}
+.pro{display:none}
+.frm:has(.cat option:last-child:checked) .pro{display:flex}
+.crumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:#3C5558;margin:0 0 16px}.crumb a:hover{color:#2F6B62}.crumb b{color:#1F3A3D;font-weight:600}
+.drop{border:2px dashed #B9CFC9;border-radius:16px;background:#F6FAF8;padding:20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.dg{height:48px;padding:0 24px;border:0;border-radius:999px;background:#B3382C;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.off{opacity:.45;cursor:not-allowed !important;filter:none !important}
+.mc{display:none}
+.mo{display:none;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(31,58,61,.5);z-index:50;align-items:flex-start;justify-content:center;padding:300px 24px 0}
+.mc:checked~.mo{display:flex}
+.mb{background:#fff;border-radius:24px;padding:32px;max-width:460px;width:100%;box-sizing:border-box;box-shadow:0 24px 60px rgba(31,58,61,.3)}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 0;border-top:1px solid #E3ECE9}
+.rw:first-of-type{border-top:0;padding-top:0}
+.dim input{background:#EEF3F1;color:#6B8580;cursor:not-allowed}
+.pv{width:200px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;position:relative;flex:none}
+
+</style>
+
+</head>
+<body>
+
+<div style="position:relative;font-family:'Be Vietnam Pro',system-ui,sans-serif;color:#1F3A3D;background:#EEF3F1;width:100%;box-sizing:border-box">
+<header style="position:relative;max-width:1200px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;gap:32px;flex-wrap:wrap"><a href="#" style="font-weight:800;font-size:24px;display:flex;align-items:center;gap:10px"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#1F3A3D" stroke-width="3" stroke-linecap="round"><circle cx="7" cy="25" r="3" fill="#E9A23B"></circle><path d="M10 25h8a6 6 0 0 0 0-12h-4a5 5 0 0 1 0-10h10"></path></svg><span>AVA</span></a><nav class="nav" style="display:flex;gap:28px;font-weight:500;flex:1;flex-wrap:wrap;align-items:center"><div class="dd" style="position:relative"><a href="#" style="display:inline-flex;gap:10px;align-items:center;background:#2F6B62;color:#fff;font-weight:600;padding:10px 18px;border-radius:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>Danh mục<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg></a><div class="ddp"><div class="mm1"><div class="mh">Danh mục khóa học</div><a href="#" class="cr">Lập Trình</a><a href="#" class="cr">Thiết Kế</a><a href="#" class="cr">Marketing</a><a href="#" class="cr">Ngoại Ngữ</a><a href="#" class="cr">Kỹ Năng Mềm</a><a href="#" class="cr">Kinh Doanh</a><a href="#" class="cr" style="color:#2F6B62;font-weight:800;border-top:1px solid #E3ECE9;margin-top:6px">Xem tất cả khóa học →</a></div></div></div><a href="#">Khóa học nổi bật</a><a href="#">Tạo khóa học</a><a href="../chinh_sach_loi/chinh_sach_dieu_khoan.html">Chính sách</a></nav><label style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #D9E4E0;border-radius:999px;padding:0 16px;height:44px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F3A3D" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input placeholder="Tìm khóa học…" style="border:0;outline:0;background:transparent;font:inherit;width:150px;color:#1F3A3D"></label><a href="#" aria-label="Thông báo" style="position:relative;display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:#fff;border:1px solid #D9E4E0;border-radius:50%"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F3A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></a><a href="#" style="display:flex;align-items:center;gap:8px" aria-label="Tài khoản"><span style="width:44px;height:44px;border-radius:50%;background:#2F6B62;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;border:3px solid #CFE3DD;box-sizing:border-box">B</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F3A3D" stroke-width="3" stroke-linecap="round"><path d="m6 9 6 6 6-6"></path></svg></a></header>
+<section style="max-width:760px;margin:0 auto;padding:16px 24px 72px"><div class="crumb"><a href="#">Hồ sơ</a><span>/</span><a href="#">Quản lý khóa học</a><span>/</span><b>Khóa học</b></div><div style="margin:0 0 24px"><div style="display:flex;gap:12px"><div aria-current="step" style="display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0;height:52px;box-sizing:border-box;border-radius:16px;font-weight:600;font-size:15px;padding:0 16px;text-align:center;background:#2F6B62;color:#fff;font-weight:800">1. Thông tin khóa học</div><a href="#" style="display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0;height:52px;box-sizing:border-box;border-radius:16px;font-weight:600;font-size:15px;padding:0 16px;text-align:center;background:#fff;border:2px solid #1F3A3D;color:#1F3A3D">2. Bài học (6)</a></div></div><div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 24px"><h1 style="font-size:clamp(30px,5vw,40px);font-weight:800;letter-spacing:-1px;margin:0">Quản lý khóa học</h1><span class="bd ok" style="font-size:15px;padding:6px 16px">Đang bán</span></div><div class="box" style="margin:0;box-sizing:border-box;padding:clamp(20px,4vw,40px)"><div class="frm" style="display:flex;flex-direction:column;gap:24px"><div class="fd"><b>Tên khóa học<i>*</i><span>35/200 ký tự</span></b><input class="fi" type="text" value="Thiết kế giao diện với Figma cơ bản" maxlength="200"><span class="ms">Vui lòng nhập tên khóa học</span></div><div class="fd"><b>Mô tả<i>*</i></b><textarea class="fi" rows="5">Học cách dùng Figma để thiết kế giao diện web và ứng dụng, từ bố cục, màu sắc đến thành phẩm có thể giao cho lập trình viên.</textarea><span class="ms">Vui lòng nhập mô tả khóa học</span></div><div class="fd"><b>Danh mục<i>*</i></b><select class="fi cat"><option value="" disabled>Chọn danh mục</option><option>Lập Trình</option><option selected>Thiết Kế</option><option>Marketing</option><option>Ngoại Ngữ</option><option>Kỹ Năng Mềm</option><option>Kinh Doanh</option><option>Khác</option></select></div><div class="pro" style="flex-direction:column;gap:8px;margin-top:-8px"><div class="fd"><b>Tên danh mục mới<i>*</i></b><input class="fi" type="text" placeholder="Ví dụ: Nấu ăn" value=""><span class="ms">Danh mục này đã có, vui lòng chọn trong danh sách</span><span class="hn">2-50 ký tự; gồm chữ có dấu hoặc không dấu, chữ số, khoảng trắng và các ký tự + # . / -.</span></div></div><div class="fd"><b>Giá bán (VND)<i>*</i></b><input class="fi" type="text" value="499.000" inputmode="numeric"><span class="hn">Từ 10.000đ đến 50.000.000đ.</span></div><p class="hn" style="margin:0">Bạn nhận 60% giá bán, hoặc 90% khi học viên mua qua link giới thiệu của bạn.</p><div class="fd"><b>Bạn sẽ học được gì<span>Mỗi dòng một ý</span></b><textarea class="fi" rows="4">Dựng được một bộ giao diện hoàn chỉnh
+Biết dùng khung lưới, màu sắc và chữ
+Xuất sản phẩm để giao cho lập trình viên</textarea></div><div class="fd"><b>Yêu cầu trước khi học<span>Mỗi dòng một ý</span></b><textarea class="fi" rows="4">Biết dùng máy tính cơ bản
+Có máy tính nối mạng</textarea></div><div class="fd"><b>Dành cho ai<span>Mỗi dòng một ý</span></b><textarea class="fi" rows="4">Người mới bắt đầu học thiết kế
+Sinh viên muốn làm portfolio</textarea></div><div class="fd"><b>Ảnh bìa<span>Không bắt buộc</span></b><div class="drop"><div class="pv" style="background:#CFE3DD"><div style="position:absolute;left:18px;bottom:-30px;width:96px;height:96px;border-radius:50%;background:#2F6B62"></div><div style="position:absolute;right:16px;top:14px;width:44px;height:44px;border-radius:12px;background:#E9A23B"></div></div><div style="display:flex;flex-direction:column;gap:6px"><b style="font-size:15px">anh-bia-khoa-hoc.png</b><span class="hn">1,2 MB</span><a href="#" style="font-size:14px;font-weight:600;color:#B3382C">Xóa ảnh</a></div><div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start"><a href="#" class="sec" style="font-size:15px">Đổi ảnh</a><span class="hn">Định dạng JPG hoặc PNG, tối đa 2 MB.</span></div></div></div><div style="display:flex;gap:16px;flex-wrap:wrap;padding-top:8px"><a href="#" class="pri btn" style="height:54px;box-sizing:border-box;font-size:17px;display:inline-flex;align-items:center;justify-content:center;padding:0 40px;flex:1;min-width:200px;border-radius:999px;color:#fff;background:#2F6B62;font-weight:800;cursor:pointer">Tiếp tục</a><a href="#" class="sec" style="height:54px;box-sizing:border-box;font-size:17px;display:inline-flex;align-items:center;justify-content:center;padding:0 36px;flex:0 1 auto;min-width:120px">Hủy</a></div></div></div><div class="box" style="margin-top:24px;box-sizing:border-box;padding:clamp(20px,4vw,40px)"><h2 class="t">Quản lý khóa học</h2><div class="rw"><div style="flex:1;min-width:220px"><b style="font-size:16px">Ẩn khóa học</b><div class="hn">Khóa sẽ không hiện trên trang bán. Học viên đã mua vẫn học bình thường. Bạn có thể đăng lại bất cứ lúc nào.</div></div><button type="button" class="sec" style="height:48px;box-sizing:border-box;background:#fff;font:inherit;font-weight:600;cursor:pointer">Ẩn khóa học</button></div><div class="rw"><div style="flex:1;min-width:220px"><b style="font-size:16px">Xóa khóa học</b><div class="hn">Xóa vĩnh viễn khóa học và các bài học.</div><div style="font-size:13px;font-weight:500;color:#8A2A1F;line-height:1.5;margin-top:6px">Khóa đã có người mua chỉ được ẩn.</div></div><button type="button" disabled class="dg off">Xóa khóa học</button></div></div></section>
+<footer style="position:relative;overflow:hidden;background:#1F3A3D;color:#B9CFC9;margin-top:0">
+<div style="position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:#274A4D"></div>
+<div style="position: absolute; left: -80px; top: 140px; width: 200px; height: 205px; border-radius: 50%; background: #274A4D"></div>
+<div style="position:relative;max-width:1200px;margin:0 auto;padding:16px 24px 0">
+<div style="display:grid;grid-template-columns:minmax(200px,1fr) repeat(3,minmax(150px,1fr)) minmax(250px,1.4fr);gap:40px;padding:64px 0 48px">
+<div style="grid-column:span 1;min-width:220px"><a href="#" style="display:flex;align-items:center;gap:10px;font-weight:800;font-size:28px;color:#fff"><svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><circle cx="7" cy="25" r="3" fill="#E9A23B"></circle><path d="M10 25h8a6 6 0 0 0 0-12h-4a5 5 0 0 1 0-10h10"></path></svg>AVA</a><p style="line-height:1.6;font-size:15px;max-width:260px;margin:16px 0 20px">Học từng bài, mỗi ngày tiến thêm một bước.</p><div style="display:flex;gap:10px"><a href="#" aria-label="Mạng xã hội" class="so"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="#" aria-label="Mạng xã hội" class="so"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a><a href="#" aria-label="Mạng xã hội" class="so"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 8s-.2-1.6-.8-2.3c-.8-.8-1.7-.8-2.1-.9C16.2 4.6 12 4.6 12 4.6s-4.2 0-7.1.2c-.4.1-1.3.1-2.1.9C2.2 6.4 2 8 2 8s-.2 1.9-.2 3.800v1.800c0 1.900.2 3.800.2 3.800s.2 1.600.8 2.300c.8.800 1.800.8 2.300.9 1.700.2 6.900.2 6.900.2s4.200 0 7.100-.2c.4-.1 1.300-.1 2.100-.9.600-.7.800-2.300.8-2.300s.2-1.900.2-3.800v-1.800C22.200 9.900 22 8 22 8z"></path><path d="m10 9 5 3-5 3z"></path></svg></a></div></div>
+<div><b style="display:block;margin-bottom:18px;color:#fff;font-size:16px">Danh mục</b><div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><a href="#" class="fl">Lập Trình</a><a href="#" class="fl">Thiết Kế</a><a href="#" class="fl">Marketing</a><a href="#" class="fl">Ngoại Ngữ</a><a href="#" class="fl">Kỹ Năng Mềm</a></div></div>
+<div><b style="display:block;margin-bottom:18px;color:#fff;font-size:16px">Về chúng tôi</b><div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><a href="../chinh_sach_loi/chinh_sach_dieu_khoan.html#dieu-1" class="fl">Về AVA</a><a href="../chinh_sach_loi/chinh_sach_dieu_khoan.html" class="fl">Chính sách và điều khoản</a></div></div>
+<div><b style="display:block;margin-bottom:18px;color:#fff;font-size:16px">Hỗ trợ</b><div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><a href="mailto:avahotro@gmail.com" class="fl">avahotro@gmail.com</a></div></div>
+<div><b style="display:block;margin-bottom:18px;color:#fff;font-size:16px">Liên hệ hỗ trợ</b><div style="display:flex;flex-direction:column;gap:12px;font-size:15px;line-height:1.5"><span style="white-space:nowrap">Gmail: avahotro@gmail.com</span><span>Điện thoại: 028 7300 8899</span><span>Giờ làm việc: 8:00 - 17:00, thứ Hai đến thứ Sáu</span></div></div>
+</div>
+<div style="border-top:1px solid #36595B;padding:24px 0 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px"><span>© [Năm] AVA. Bảo lưu mọi quyền.</span><span>Thanh toán an toàn qua VNPay</span></div>
+</div></footer>
+</div>
+</body>
+</html>

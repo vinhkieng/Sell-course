@@ -46,3 +46,13 @@ export async function themNguoiDung(
   );
   return ketQua.insertId;
 }
+
+// Học viên mới chưa có địa chỉ IP đã xác nhận (Phần 2 mục 2.5)
+export async function themHocVien(idNguoiDung, conn = pool) {
+  await conn.query('INSERT INTO hoc_vien (id_nguoi_dung) VALUES (?)', [idNguoiDung]);
+}
+
+// Người cung cấp mới chưa có thông tin ngân hàng (Phần 2 mục 2.5)
+export async function themNguoiCungCap(idNguoiDung, conn = pool) {
+  await conn.query('INSERT INTO nguoi_cung_cap (id_nguoi_dung) VALUES (?)', [idNguoiDung]);
+}

@@ -56,6 +56,12 @@ export function canDangNhap(req, res, next) {
   next();
 }
 
+// Chỉ cho khách (chưa đăng nhập): đăng ký, đăng nhập, quên mật khẩu (Phần chung C5)
+export function canChuaDangNhap(req, res, next) {
+  if (req.nguoiDung) throw loi403();
+  next();
+}
+
 // Chỉ cho các vai trò được liệt kê (sai vai trò trả 403). Ví dụ: canVaiTro(VAI_TRO.ADMIN)
 export function canVaiTro(...danhSachVaiTro) {
   return (req, res, next) => {

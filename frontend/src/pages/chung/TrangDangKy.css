@@ -1,0 +1,126 @@
+/* Trang đăng ký, theo thiet_ke/dang_ky/dang_ky.html */
+.trang-dang-ky {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Ô chọn vai trò: menu xổ mở khi rê chuột hoặc khi được chọn */
+.tdk-vai-tro {
+  position: relative;
+}
+
+.tdk-vai-tro:focus {
+  outline: none;
+}
+
+.tdk-vai-tro-hien {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tdk-vai-tro:hover .tdk-vai-tro-hien,
+.tdk-vai-tro:focus-within .tdk-vai-tro-hien {
+  border-color: var(--mau-chinh);
+  outline: 2px solid var(--mau-chinh);
+}
+
+.tdk-vai-tro-goi-y {
+  color: var(--mau-chu-mo);
+}
+
+.tdk-vai-tro-xo {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 10;
+  background: var(--mau-trang);
+  border: 1px solid var(--mau-vien);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 12px 32px rgba(31, 58, 61, 0.16);
+}
+
+/* Dải trong suốt nối ô với menu để rê chuột xuống không bị đóng */
+.tdk-vai-tro-xo::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  height: 10px;
+}
+
+.tdk-vai-tro:hover .tdk-vai-tro-xo,
+.tdk-vai-tro:focus-within .tdk-vai-tro-xo {
+  display: block;
+}
+
+.tdk-vai-tro-xo input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tdk-vai-tro-xo label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.tdk-vai-tro-xo label b {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.tdk-vai-tro-xo label span {
+  font-size: 13px;
+  color: var(--mau-chu-phu);
+}
+
+.tdk-vai-tro-xo label:hover,
+.tdk-vai-tro-xo label.da-chon {
+  background: var(--mau-nen);
+}
+
+.tk-o.co-loi .tdk-vai-tro-hien {
+  border-color: var(--mau-loi);
+  background: var(--mau-loi-nen-o);
+}
+
+/* Ô tích đồng ý */
+.tdk-dong-y {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tdk-dong-y label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--mau-chu-phu);
+}
+
+.tdk-dong-y input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--mau-chinh);
+  margin: 0;
+  flex: none;
+}
+
+.tdk-dong-y a {
+  color: var(--mau-chinh);
+  font-weight: 600;
+  text-decoration: underline;
+}

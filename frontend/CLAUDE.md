@@ -19,7 +19,7 @@ api/ApiError.js       lỗi: status, message (câu loi), ma, cacO ({ ten_o: câu
 contexts/, hooks/     authContext.js, AuthProvider.jsx (nguoiDung, null là khách), useAuth.js
 components/           ErrorBoundary.jsx, CuonTrang.jsx; thành phần dùng chung từ hai nơi trở lên đặt ở đây
 router/AppRouter.jsx  khai báo đường dẫn (C7); hiện chỉ có trang 404 tạm, Phần 1 thay
-pages/                chung/ (dùng chung nhiều vai trò), student/, provider/, admin/; trang công khai Phần 1 tạo thêm thư mục
+pages/                chung/ (dùng chung nhiều vai trò), student/, provider/, admin/; trang ai cũng vào được (công khai, tài khoản, trang lỗi) đặt trong pages/chung/
 utils/dinhDang.js     hàm định dạng (C10): dinhDangTien, dinhDangNgay; Phần 1 thêm hàm định dạng ngày giờ, mã đơn, chữ trạng thái (Phần 1 mục 1.1); các hàm khác phần nào dùng thì phần đó thêm
 constants/vaiTro.js   VAI_TRO (1 admin, 2 học viên, 3 người cung cấp)
 styles/               variables.css (màu, phông theo thiết kế), base.css (CSS chung)

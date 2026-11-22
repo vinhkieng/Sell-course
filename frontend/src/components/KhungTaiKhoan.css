@@ -1,0 +1,199 @@
+/* Khung các trang tài khoản và kiểu ô nhập dùng chung của các trang này, theo thiet_ke/dang_ky/ */
+.khung-tai-khoan {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+.tk-cot-xanh {
+  position: relative;
+  overflow: hidden;
+  background: var(--mau-chinh);
+  color: var(--mau-trang);
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.tk-tron {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.tk-tron-duoi {
+  left: -100px;
+  bottom: -140px;
+  width: 360px;
+  height: 360px;
+  background: var(--mau-xanh-vua);
+}
+
+.tk-tron-tren {
+  right: -70px;
+  top: -90px;
+  width: 240px;
+  height: 240px;
+  background: var(--mau-nhan);
+}
+
+.tk-logo {
+  position: relative;
+  align-self: flex-start;
+  font-size: 28px;
+}
+
+.tk-loi-chao {
+  position: relative;
+  max-width: 440px;
+}
+
+.tk-loi-chao h2 {
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 0 0 16px;
+  letter-spacing: -1px;
+}
+
+.tk-loi-chao p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--mau-chu-tren-xanh);
+}
+
+.tk-nam {
+  position: relative;
+  font-size: 14px;
+  color: var(--mau-xanh-nhat);
+}
+
+.tk-cot-phai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.tk-the {
+  width: 100%;
+  max-width: 440px;
+  background: var(--mau-trang);
+  border: 1px solid var(--mau-vien);
+  border-radius: 28px;
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tk-the h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+}
+
+.tk-the-mo-ta {
+  margin: 0;
+  color: var(--mau-chu-phu);
+  line-height: 1.5;
+}
+
+/* Một ô nhập: nhãn, ô, rồi chữ gợi ý hoặc chữ lỗi bên dưới */
+.tk-o {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tk-o-nhap {
+  height: 52px;
+  width: 100%;
+  border: 1px solid var(--mau-vien-o);
+  border-radius: 14px;
+  background: var(--mau-trang);
+  padding: 0 16px;
+  font: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--mau-chu);
+}
+
+.tk-o-nhap:focus {
+  outline: 2px solid var(--mau-chinh);
+  border-color: var(--mau-chinh);
+}
+
+.tk-o.co-loi .tk-o-nhap {
+  border-color: var(--mau-loi);
+  background: var(--mau-loi-nen-o);
+}
+
+.tk-o.co-loi .tk-o-nhap:focus {
+  outline-color: var(--mau-loi);
+}
+
+.tk-goi-y {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--mau-chu-mo);
+  line-height: 1.45;
+}
+
+.tk-goi-y.loi {
+  color: var(--mau-loi);
+  font-weight: 500;
+}
+
+.tk-nut {
+  height: 54px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--mau-chinh);
+  color: var(--mau-trang);
+  font-weight: 800;
+  font-size: 17px;
+  margin-top: 4px;
+}
+
+.tk-nut:hover {
+  filter: brightness(1.08);
+}
+
+.tk-nut:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.tk-chuyen {
+  text-align: center;
+  color: var(--mau-chu-phu);
+}
+
+.tk-chuyen a {
+  font-weight: 600;
+  color: var(--mau-chinh);
+}
+
+@media (max-width: 700px) {
+  .tk-cot-xanh {
+    padding: 32px 24px;
+  }
+
+  .tk-loi-chao h2 {
+    font-size: 32px;
+  }
+
+  .tk-cot-phai {
+    padding: 32px 16px;
+  }
+
+  .tk-the {
+    padding: 32px 20px;
+  }
+}

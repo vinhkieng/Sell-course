@@ -41,7 +41,7 @@ Phần "Cách dùng file này" và C1 đến C17 bên dưới chép nguyên văn
 - Gốc: GitHub Actions (.github/workflows/ci.yml) chạy đúng các bước ở mục C2.
 
 ## Phần nào làm phần hạ tầng nào của Phần chung
-- Phần 1: khung trang dùng chung (đầu trang, chân trang, ô thông báo nhỏ, khung khu quản trị), các hàm định dạng còn lại, trang Chính sách, trang 403, 404 (thay trang 404 tạm).
+- Phần 1: khung trang dùng chung (đầu trang, chân trang, ô thông báo nhỏ, khung khu quản trị), hàm định dạng tiền, ngày, ngày giờ, mã đơn, chữ trạng thái (Phần 1 mục 1.1), trang Chính sách, trang 403, 404 (thay trang 404 tạm).
 - Phần 3: bộ đếm trong bộ nhớ (C13), gửi email bằng nodemailer kèm hộp thư giả khi kiểm thử (C14); Phần 4 dùng lại.
 - Phần 5: kiểm loại file bằng byte đầu (C12) và đường GET /api/anh (C12) cho ảnh đại diện; Phần 7 dùng lại cho ảnh bìa, video, tài liệu.
 - Phần 7: việc chạy mỗi giờ xóa file tạm quá 24 giờ (C13), giới hạn 20MB cho đường đăng khóa; Phần 8 dùng lại.

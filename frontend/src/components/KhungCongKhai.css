@@ -1,0 +1,12 @@
+/* Chân trang luôn nằm cuối màn hình, kể cả khi nội dung ngắn */
+.khung-cong-khai {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.khung-cong-khai-giua {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

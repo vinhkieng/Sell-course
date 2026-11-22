@@ -1,0 +1,147 @@
+/* Chân trang theo màn thiet_ke/trang_chu/trang_chu.html */
+.chan-trang {
+  position: relative;
+  overflow: hidden;
+  background: var(--mau-chan-nen);
+  color: var(--mau-chan-chu);
+}
+
+.ct-tron {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--mau-chan-tron);
+}
+
+.ct-tron-phai {
+  right: -120px;
+  bottom: -160px;
+  width: 420px;
+  height: 420px;
+}
+
+.ct-tron-trai {
+  left: -80px;
+  top: 140px;
+  width: 200px;
+  height: 205px;
+}
+
+.ct-ruot {
+  position: relative;
+  max-width: var(--rong-toi-da);
+  margin: 0 auto;
+  padding: 16px 24px 0;
+}
+
+.ct-luoi {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) repeat(3, minmax(150px, 1fr)) minmax(250px, 1.4fr);
+  gap: 40px;
+  padding: 64px 0 48px;
+}
+
+.ct-gioi-thieu {
+  min-width: 220px;
+}
+
+.ct-logo {
+  font-size: 28px;
+  color: var(--mau-trang);
+}
+
+.ct-gioi-thieu p {
+  line-height: 1.6;
+  font-size: 15px;
+  max-width: 260px;
+  margin: 16px 0 20px;
+}
+
+.ct-mxh {
+  display: flex;
+  gap: 10px;
+}
+
+.ct-mxh-o {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--mau-chan-vien-tron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mau-trang);
+}
+
+.ct-mxh-o:hover {
+  background: var(--mau-nhan);
+  border-color: var(--mau-nhan);
+  color: var(--mau-chu);
+}
+
+.ct-tieu-de {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--mau-trang);
+  font-size: 16px;
+}
+
+.ct-cot {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.ct-lien-ket {
+  color: var(--mau-chan-chu);
+}
+
+.ct-lien-ket:hover {
+  color: var(--mau-trang);
+  text-decoration: underline;
+}
+
+.ct-lien-he {
+  line-height: 1.5;
+}
+
+.ct-lien-he span:first-child {
+  white-space: nowrap;
+}
+
+.ct-cuoi {
+  border-top: 1px solid var(--mau-chan-vien);
+  padding: 24px 0 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+@media (max-width: 1023px) {
+  .ct-luoi {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .ct-gioi-thieu,
+  .ct-luoi > div:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .ct-ruot {
+    padding: 0 16px;
+  }
+
+  .ct-luoi {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 48px 0 32px;
+  }
+
+  .ct-gioi-thieu {
+    min-width: 0;
+  }
+}

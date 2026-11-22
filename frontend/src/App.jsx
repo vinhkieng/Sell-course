@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthProvider.jsx'
+import { ThongBaoProvider } from './contexts/ThongBaoProvider.jsx'
 import AppRouter from './router/AppRouter.jsx'
 import CuonTrang from './components/CuonTrang.jsx'
 import ErrorBoundary from './components/ErrorBoundary.jsx'
@@ -9,9 +10,11 @@ function App() {
     <BrowserRouter>
       <CuonTrang />
       <AuthProvider>
-        <ErrorBoundary>
-          <AppRouter />
-        </ErrorBoundary>
+        <ThongBaoProvider>
+          <ErrorBoundary>
+            <AppRouter />
+          </ErrorBoundary>
+        </ThongBaoProvider>
       </AuthProvider>
     </BrowserRouter>
   )

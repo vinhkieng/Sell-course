@@ -2,8 +2,19 @@
 // rồi gắn vào đây, ví dụ: router.use('/tai-khoan', taiKhoanRoutes);
 import { Router } from 'express';
 import { kiemTraKetNoiCsdl } from '../repositories/heThongRepository.js';
+import taiKhoanRoutes from './taiKhoanRoutes.js';
+import danhMucRoutes from './danhMucRoutes.js';
+import congThanhToanRoutes from './congThanhToanRoutes.js';
+import quanTriRoutes from './quanTriRoutes.js';
+import chinhSachRoutes from './chinhSachRoutes.js';
 
 const router = Router();
+
+router.use('/tai-khoan', taiKhoanRoutes);
+router.use('/danh-muc', danhMucRoutes);
+router.use('/cong-thanh-toan', congThanhToanRoutes);
+router.use('/quan-tri', quanTriRoutes);
+router.use('/chinh-sach', chinhSachRoutes);
 
 // Kiểm tra máy chủ chạy và kết nối được MySQL (Phần chung C6). Trả thẳng dữ liệu, không bọc { data }.
 router.get('/kiem-tra-ket-noi', async (req, res) => {

@@ -17,11 +17,17 @@ const tuyChonCookie = {
 };
 
 // nguoiDung: { id, vai_tro }. ipDaXacNhan: chỉ truyền với học viên (địa chỉ đã chuẩn hóa).
-export function datPhien(res, nguoiDung, ipDaXacNhan) {
+export function taoMaPhien(nguoiDung, ipDaXacNhan) {
   const noiDung = { id: nguoiDung.id, vai_tro: nguoiDung.vai_tro };
   if (nguoiDung.vai_tro === VAI_TRO.HOC_VIEN) noiDung.ip = ipDaXacNhan;
-  const ma = jwt.sign(noiDung, config.jwtSecret, { expiresIn: '7d' });
-  res.cookie(TEN_COOKIE_PHIEN, ma, { ...tuyChonCookie, maxAge: HAN_PHIEN_MS });
+  return jwt.sign(noiDung, config.jwtSecret, { expiresIn: '7d' });
+}
+
+export function datPhien(res, nguoiDung, ipDaXacNhan) {
+  res.cookie(TEN_COOKIE_PHIEN, taoMaPhien(nguoiDung, ipDaXacNhan), {
+    ...tuyChonCookie,
+    maxAge: HAN_PHIEN_MS,
+  });
 }
 
 export function xoaPhien(res) {

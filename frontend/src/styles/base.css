@@ -20,12 +20,13 @@ body {
 }
 
 a {
-  color: var(--mau-chinh);
+  color: inherit;
   text-decoration: none;
 }
 
 button {
   font: inherit;
+  color: inherit;
   cursor: pointer;
 }
 
@@ -39,6 +40,43 @@ img {
   max-width: var(--rong-toi-da);
   margin: 0 auto;
   padding: 0 16px;
+}
+
+/* Khối nền trắng bo góc dùng ở nhiều màn (.box trong thiết kế) */
+.hop {
+  background: var(--mau-trang);
+  border: 1px solid var(--mau-vien);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+/* Nhãn nhỏ bo tròn (.bd trong thiết kế) */
+.nhan {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Số tròn đỏ trên chuông và giỏ hàng */
+.so-tron {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--mau-loi);
+  color: var(--mau-trang);
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--mau-nen);
 }
 
 .nut-chinh {
@@ -61,6 +99,38 @@ img {
   font-weight: 600;
 }
 
+.nut-chinh:hover,
+.nut-sang:hover {
+  filter: brightness(1.08);
+}
+
+/* Logo AVA (components/Logo.jsx) */
+.logo {
+  font-weight: 800;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-cham {
+  fill: var(--mau-nhan);
+}
+
+/* Ảnh đại diện (components/AnhDaiDien.jsx) */
+.anh-dai-dien {
+  flex: none;
+  border-radius: 50%;
+  background: var(--mau-chinh);
+  color: var(--mau-trang);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--mau-xanh-nhat);
+  object-fit: cover;
+}
+
 /* Thông báo của bộ bắt lỗi (components/ErrorBoundary.jsx) */
 .trang-bao-loi {
   padding-top: 48px;
@@ -68,21 +138,7 @@ img {
   text-align: center;
 }
 
-/* Khi cuộn tới một phần có id (đường dẫn có #ten-phan), chừa chỗ cho thanh đầu trang đang dính ở trên */
+/* Khi cuộn tới một phần có id (đường dẫn có #ten-phan), chừa chỗ phía trên */
 [id] {
-  scroll-margin-top: 80px;
-}
-
-/* Trang 404 tạm của khung dự án (router/AppRouter.jsx). Phần 1 thay bằng trang 404 theo thiết kế. */
-.trang-tam {
-  padding-top: 72px;
-  padding-bottom: 72px;
-  text-align: center;
-}
-
-.trang-tam-so {
-  margin: 0;
-  font-size: 64px;
-  font-weight: 800;
-  color: var(--mau-chinh);
+  scroll-margin-top: 24px;
 }

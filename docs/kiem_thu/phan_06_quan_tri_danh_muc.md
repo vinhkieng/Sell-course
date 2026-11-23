@@ -97,6 +97,6 @@
 - Mục tiêu: giao diện và thao tác đúng thiết kế.
 - Dữ liệu: như P06-05 và ví dụ 6.5.
 - Các bước: mở /quan-tri/danh-muc; rê chuột vào "Xóa" của danh mục có khóa; bấm "Xóa" ở danh mục không có khóa; bấm "Gộp", tích hai danh mục, nhập tên mới.
-- Kết quả mong đợi: bảng có Tên danh mục, Số khóa, Hành động ("Sửa tên", "Xóa"), nút "+ Thêm danh mục" và "Gộp"; nút "Xóa" mờ, rê chuột hiện "Danh mục đang có N khóa học"; hộp "Xóa danh mục này?" với dòng "Danh mục “Tên” sẽ bị xóa khỏi hệ thống. Hành động này không thể hoàn tác." và hai nút "Hủy", "Xóa danh mục"; chế độ gộp hiện ô tích, nút "Gộp" sáng khi tích từ hai danh mục, hộp "Gộp danh mục" có ô "Tên danh mục mới"; thông báo "Đã thêm danh mục", "Đã đổi tên danh mục", "Đã xóa danh mục", "Đã gộp danh mục"; giống thiet_ke/quan_tri_danh_muc/.
+- Kết quả mong đợi: bảng có Tên danh mục, Số khóa, Hành động ("Sửa tên", "Xóa"), nút "+ Thêm danh mục" và "Gộp"; nút "Xóa" mờ, rê chuột hiện "Danh mục đang có N khóa học"; hộp "Xóa danh mục này?" với dòng "Danh mục "Tên" sẽ bị xóa khỏi hệ thống. Hành động này không thể hoàn tác." và hai nút "Hủy", "Xóa danh mục"; chế độ gộp hiện ô tích, nút "Gộp" sáng khi tích từ hai danh mục, hộp "Gộp danh mục" có ô "Tên danh mục mới"; thông báo "Đã thêm danh mục", "Đã đổi tên danh mục", "Đã xóa danh mục", "Đã gộp danh mục"; giống thiet_ke/quan_tri_danh_muc/.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 6 mục 6.3, 6.8

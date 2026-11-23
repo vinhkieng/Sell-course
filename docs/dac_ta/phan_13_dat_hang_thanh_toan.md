@@ -34,7 +34,7 @@ Làm sau Phần 12. Phần này gồm: trang Thông tin đơn hàng, tạo đơn
 - Có khóa thay đổi thì chưa tạo đơn, trả 409 kèm danh sách mới. Trang ở lại, hiện:
   - Dải vàng đầu khung "Đơn hàng của bạn": "Đơn hàng có thay đổi, vui lòng xem lại trước khi thanh toán."
   - Dưới khóa đổi giá: "Giá đã đổi từ 299.000đ thành 349.000đ." (giá mới thay vào, tổng tiền tính lại).
-  - Khóa bị bỏ: "Khóa “Tên khóa” không còn bán nên đã được bỏ khỏi đơn." hoặc "Bạn đã sở hữu khóa “Tên khóa” nên khóa này đã được bỏ khỏi đơn.".
+  - Khóa bị bỏ: "Khóa "Tên khóa" không còn bán nên đã được bỏ khỏi đơn." hoặc "Bạn đã sở hữu khóa "Tên khóa" nên khóa này đã được bỏ khỏi đơn.".
   - Học viên xem lại rồi bấm "Thanh toán" lần nữa. Không còn khóa nào thì quay về như 13.3.
 - Hợp lệ thì làm trong một giao dịch cơ sở dữ liệu:
   - Đơn 'Chờ thanh toán' cũ của học viên (nếu có) chuyển 'Hết hạn' (mỗi học viên chỉ có một đơn đang chờ, cột hoc_vien_dang_cho_thanh_toan có ràng buộc không trùng sẽ chặn nếu quên bước này).
@@ -100,7 +100,7 @@ Làm sau Phần 12. Phần này gồm: trang Thông tin đơn hàng, tạo đơn
 
 ## 13.8 Kiểm tra lại thanh toán
 - Nút "Kiểm tra lại thanh toán" chỉ có ở đơn 'Chờ thanh toán' còn hạn và đơn 'Hết hạn' trong vòng 24 giờ kể từ ngay_tao. Đơn 'Thất bại' không có nút. Nút nằm ở cột "Hành động" của Lịch sử đơn hàng và ở trang "Đơn hàng đã hết hạn".
-- Bấm thì hiện dải "Đang kiểm tra với VNPay…" ở đầu mục Lịch sử đơn hàng, gọi POST /api/don-hang/:id/kiem-tra-lai. Máy chủ kiểm lại đơn của chính học viên và điều kiện nút, rồi gửi yêu cầu tra cứu giao dịch (vnp_Command querydr) tới VNP_API_URL với vnp_TxnRef = mã đơn và vnp_TransactionDate = ngay_gui_cong_thanh_toan dạng yyyyMMddHHmmss, chữ ký theo đúng thứ tự trường của tài liệu VNPay cho querydr. Chờ tối đa 10 giây.
+- Bấm thì hiện dải "Đang kiểm tra với VNPay" ở đầu mục Lịch sử đơn hàng, gọi POST /api/don-hang/:id/kiem-tra-lai. Máy chủ kiểm lại đơn của chính học viên và điều kiện nút, rồi gửi yêu cầu tra cứu giao dịch (vnp_Command querydr) tới VNP_API_URL với vnp_TxnRef = mã đơn và vnp_TransactionDate = ngay_gui_cong_thanh_toan dạng yyyyMMddHHmmss, chữ ký theo đúng thứ tự trường của tài liệu VNPay cho querydr. Chờ tối đa 10 giây.
 - Kết quả trả về được kiểm chữ ký, ghi một dòng sổ với nguon_den 'Kiểm tra lại' (ma_ket_qua = vnp_ResponseCode của câu trả lời tra cứu, trạng thái giao dịch đọc ở vnp_TransactionStatus trong du_lieu_goc), rồi xét:
 | Câu trả lời của VNPay | Xử lý | Học viên thấy |
 | --- | --- | --- |
@@ -134,16 +134,16 @@ Làm sau Phần 12. Phần này gồm: trang Thông tin đơn hàng, tạo đơn
 
 ## 13.13 Câu thông báo
 - "Hồ sơ của bạn còn thiếu họ tên hoặc số điện thoại. Vui lòng cập nhật hồ sơ để thanh toán."
-- "Đơn hàng có thay đổi, vui lòng xem lại trước khi thanh toán.", "Giá đã đổi từ … thành ….", "Khóa “…” không còn bán nên đã được bỏ khỏi đơn.", "Bạn đã sở hữu khóa “…” nên khóa này đã được bỏ khỏi đơn.", "Các khóa bạn chọn không còn mua được."
+- "Đơn hàng có thay đổi, vui lòng xem lại trước khi thanh toán.", "Giá đã đổi từ [giá cũ] thành [giá mới].", "Khóa "[tên khóa]" không còn bán nên đã được bỏ khỏi đơn.", "Bạn đã sở hữu khóa "[tên khóa]" nên khóa này đã được bỏ khỏi đơn.", "Các khóa bạn chọn không còn mua được."
 - "Không xác nhận được kết quả thanh toán. Nếu bạn đã bị trừ tiền, vui lòng bấm Kiểm tra lại thanh toán ở Lịch sử đơn hàng hoặc liên hệ hỗ trợ."
-- "Đang kiểm tra với VNPay…", "VNPay chưa ghi nhận thanh toán cho đơn này. Nếu bạn đã bị trừ tiền, vui lòng liên hệ hỗ trợ ở cuối trang.", "Không kết nối được với VNPay. Vui lòng thử lại sau ít phút."
+- "Đang kiểm tra với VNPay", "VNPay chưa ghi nhận thanh toán cho đơn này. Nếu bạn đã bị trừ tiền, vui lòng liên hệ hỗ trợ ở cuối trang.", "Không kết nối được với VNPay. Vui lòng thử lại sau ít phút."
 - "Bạn chưa có đơn hàng nào."
 
 ## 13.14 Kiểm tra khi làm xong
 - Thanh toán bằng thẻ thử của sandbox: đơn thành 'Đã thanh toán', id_giao_dich_thanh_toan trỏ đúng dòng sổ, các khóa biến khỏi giỏ, trang chi tiết khóa hiện "Đã sở hữu".
 - Bấm hủy trên trang VNPay: đơn 'Thất bại', giỏ còn nguyên, trang "Thanh toán không thành công".
 - Tạo đơn rồi chờ quá 30 phút: đơn 'Hết hạn'. Tạo đơn mới khi đang có đơn chờ: đơn cũ thành 'Hết hạn'.
-- Sửa tay một tham số trên đường dẫn quay về (ví dụ vnp_Amount): sổ có dòng chu_ky_hop_le = 0, đơn không đổi, trang báo "Không xác nhận được kết quả thanh toán…".
+- Sửa tay một tham số trên đường dẫn quay về (ví dụ vnp_Amount): sổ có dòng chu_ky_hop_le = 0, đơn không đổi, trang báo "Không xác nhận được kết quả thanh toán. Nếu bạn đã bị trừ tiền, vui lòng bấm Kiểm tra lại thanh toán ở Lịch sử đơn hàng hoặc liên hệ hỗ trợ.".
 - Gửi lại đúng đường dẫn quay về thành công lần hai: sổ thêm một dòng, đơn không đổi.
 - Người cung cấp đổi giá khi học viên đang ở trang Thông tin đơn hàng: bấm "Thanh toán" thì thấy dải vàng và giá mới, chưa có đơn nào được tạo.
 - Mua qua link của chủ khóa: chi_tiet_don_hang có 'Giới thiệu' và 90. Mua qua link của chính mình: 'Tự nhiên' và 60.

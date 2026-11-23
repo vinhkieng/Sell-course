@@ -1,0 +1,49 @@
+/* Trang đặt lại mật khẩu, theo thiet_ke/quen_mat_khau/dat_lai_mat_khau.html */
+.trang-dat-lai {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Dòng "Gmail bạn đã nhập: [Gmail] Nhập lại Gmail" sát dưới dòng thông tin (liên kết cách ra bằng khoảng trống, C18) */
+.tdl-gmail {
+  margin-top: -8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--mau-chu-phu);
+  overflow-wrap: anywhere;
+}
+
+.tdl-gmail b {
+  color: var(--mau-chu);
+  font-weight: 600;
+}
+
+.tdl-gmail a {
+  font-weight: 600;
+  color: var(--mau-chinh);
+}
+
+.tdl-gui-lai {
+  text-align: center;
+  color: var(--mau-chu-phu);
+  font-size: 15px;
+}
+
+.tdl-gui-lai button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--mau-chinh);
+}
+
+.tdl-cho {
+  color: var(--mau-chu-mo);
+  cursor: not-allowed;
+}
+
+.tdl-cho b {
+  font-weight: 600;
+}

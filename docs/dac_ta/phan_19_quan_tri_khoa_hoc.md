@@ -20,15 +20,15 @@ Làm sau Phần 18. Khung khu quản trị (menu dọc 8 mục, mục 8 là "Ch�
 ## 19.3 Danh sách khóa học (/quan-tri/khoa-hoc)
 - Bốn lựa chọn lọc kèm số: "Tất cả", "Đang bán", "Bị ẩn", "Bị gỡ vĩnh viễn". Khóa đã bị người cung cấp xóa không hiện.
 - Cột: Khóa học, Người cung cấp (họ tên như thiết kế, trống thì tên đăng nhập), Danh mục, Ngày đăng (dd/mm/yyyy), Trạng thái (chữ theo Phần chung C11), Hành động "Xem" (mở /quan-tri/khoa-hoc/:id).
-- Mới nhất ở trên, 20 dòng mỗi trang, dòng "Hiển thị 1-20 trên N khóa học (20 dòng mỗi trang)" (đổi chữ theo bộ lọc như thiết kế), nút "‹ Trước", số trang, "Sau ›".
+- Mới nhất ở trên, 20 dòng mỗi trang, dòng "Hiển thị 1-20 trên N khóa học (20 dòng mỗi trang)" (đổi chữ theo bộ lọc như thiết kế), nút "Trước", số trang, "Sau".
 
 ## 19.4 Chi tiết khóa học của admin (/quan-tri/khoa-hoc/:id)
 - Đường dẫn trên cùng "Khóa học / Chi tiết khóa học (quản trị)", tên khóa, "Người cung cấp: họ tên", nhãn trạng thái, hai tab "Nội dung" và "Lịch sử thay đổi" (kèm số dòng lịch sử).
 - Tab "Nội dung": khối "Thông tin khóa học" (ảnh bìa lấy qua GET /api/anh/anh_bia/<tên>, Danh mục, Giá bán, Mô tả, Bạn sẽ học được gì, Yêu cầu trước khi học, Dành cho ai); khối "Danh sách bài học" ("N bài học", cột STT, Nội dung bài học, Loại, Hành động "Xem").
 - "Xem" một bài:
-  - Video: hộp "Bài 05 - Tên bài", khung phát video (tua được), dòng "Độ dài 12:00 · 48 MB", nút "Đóng".
+  - Video: hộp "Bài 05 - Tên bài", khung phát video (tua được), dòng "Độ dài 12:00, 48 MB", nút "Đóng".
   - Tài liệu: hộp cùng kiểu, xem PDF trong hộp.
-  - Trắc nghiệm: hộp "Bài 06 - Tên bài", "Trắc nghiệm · N câu · M phút", mọi câu hỏi kèm nhãn "Đáp án đúng", nút "Đóng". Không làm bài, không thấy điểm học viên.
+  - Trắc nghiệm: hộp "Bài 06 - Tên bài", "Trắc nghiệm, N câu, M phút", mọi câu hỏi kèm nhãn "Đáp án đúng", nút "Đóng". Không làm bài, không thấy điểm học viên.
   - Admin xem được bài của khóa ở mọi trạng thái, kể cả khóa bị gỡ vĩnh viễn (file vẫn ở chỗ cũ).
 - Dưới danh sách bài: khối lý do ("Lý do ẩn:" hoặc "Lý do gỡ:" kèm ly_do_an, khi có) và dòng "Học viên đã mua:" kèm "vẫn học được" (đang bán, bị ẩn tự ẩn hoặc admin ẩn) hay "không học được" (bị gỡ vĩnh viễn, hoặc người cung cấp đang bị khóa tài khoản).
 - Nút theo trạng thái khóa:
@@ -69,7 +69,7 @@ Làm sau Phần 18. Khung khu quản trị (menu dọc 8 mục, mục 8 là "Ch�
 ## 19.7 Tab "Lịch sử thay đổi"
 - Dòng "Mọi thay đổi của khóa học đều được ghi lại. Mới nhất ở trên.".
 - Cột: Thời điểm (dd/mm/yyyy HH:mm), Người thực hiện (tên đăng nhập), Hành động (noi_dung_thay_doi nếu có, không thì hanh_dong; ví dụ "Xóa bài - Bài 07 Bảng màu cơ bản", "Đổi giá"), Giá trị cũ, Giá trị mới, Ghi chú, File cũ (liên kết "File cũ" khi duong_dan_file_cu có giá trị). Ô trống hiện "-".
-- Giá trị dài (mô tả) cắt ngắn kèm dấu "…", rê chuột thấy đủ.
+- Giá trị dài (mô tả) cắt ngắn, CSS tự thêm dấu ba chấm, rê chuột thấy đủ.
 - Bấm "File cũ" mở hộp xem file trong kho lưu trữ (video phát được, PDF xem được, ảnh bìa xem được). Mọi file cũ, kể cả ảnh bìa cũ, lấy qua đường file cũ ở 19.8, không lấy qua /api/anh (đường /api/anh chỉ lấy hai thư mục anh_bia và anh_dai_dien).
 - 20 dòng mỗi trang, dòng "Hiển thị N trên M thay đổi".
 - Không có chức năng sửa hay xóa lịch sử. Người cung cấp không xem được tab này.

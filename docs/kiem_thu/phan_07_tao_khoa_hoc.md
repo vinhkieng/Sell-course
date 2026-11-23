@@ -193,7 +193,7 @@
 ## P07-24 Bước 1 trên trang
 - Mục tiêu: giao diện và kiểm tra trước ở bước 1.
 - Dữ liệu: ncc01.
-- Các bước: mở trang tạo khóa; bấm "Tiếp tục" khi trống; gõ tên xem bộ đếm; chọn "Khác" gõ "lập trình"; chọn ảnh bìa rồi "Đổi ảnh", "Xóa ảnh"; điền đúng rồi "Tiếp tục"; ở bước 2 bấm "← Quay lại".
+- Các bước: mở trang tạo khóa; bấm "Tiếp tục" khi trống; gõ tên xem bộ đếm; chọn "Khác" gõ "lập trình"; chọn ảnh bìa rồi "Đổi ảnh", "Xóa ảnh"; điền đúng rồi "Tiếp tục"; ở bước 2 bấm "Quay lại".
 - Kết quả mong đợi: thanh hai bước; lỗi dưới ô như thiet_ke/tao_khoa_hoc/buoc_1_bao_loi.html; bộ đếm "N/200 ký tự"; chọn "Khác" hiện ô "Tên danh mục mới" và báo ngay "Danh mục này đã có, vui lòng chọn trong danh sách"; có dòng "Bạn nhận 60% giá bán, hoặc 90% khi học viên mua qua link giới thiệu của bạn."; quay lại bước 1 không mất dữ liệu.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 7 mục 7.3, 7.7, 7.8
@@ -210,7 +210,7 @@
 - Mục tiêu: phát thử trước khi gửi, có thanh tiến độ.
 - Dữ liệu: một video .mp4 H.264 thật; một video H.265 (iPhone, định dạng hiệu quả cao) hoặc file không có hình; một video trên 300MB.
 - Các bước: chọn từng file ở trang "Thêm bài học"; bấm "Hủy tải lên" giữa chừng.
-- Kết quả mong đợi: file tốt hiện "Đang tải lên… N%" rồi xong, "Lưu bài học" chỉ sáng khi xong; file không phát được báo "Video này không phát được trên trình duyệt. Hãy xuất lại video ở kiểu nén H.264. Với iPhone: Cài đặt → Camera → Định dạng → Tương thích nhất." và không gửi; file quá 300MB báo "File phải là video .mp4 và không quá 300MB" như thiet_ke/tao_khoa_hoc/them_bai_video_qua_300mb.html; hủy tải lên thì file tạm bị xóa.
+- Kết quả mong đợi: file tốt hiện "Đang tải lên N%" rồi xong, "Lưu bài học" chỉ sáng khi xong; file không phát được báo "Video này không phát được trên trình duyệt. Hãy xuất lại video ở kiểu nén H.264. Với iPhone: vào Cài đặt, chọn Camera, chọn Định dạng, chọn Tương thích nhất." và không gửi; file quá 300MB báo "File phải là video .mp4 và không quá 300MB" như thiet_ke/tao_khoa_hoc/them_bai_video_qua_300mb.html; hủy tải lên thì file tạm bị xóa.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 7 mục 7.3, 7.7
 

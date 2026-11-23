@@ -12,3 +12,9 @@ export const dangNhap = (duLieu) =>
 export const xacNhanDangNhap = (ma) => client.post('/tai-khoan/xac-nhan-dang-nhap', { ma })
 export const guiLaiMaDangNhap = () => client.post('/tai-khoan/gui-lai-ma-dang-nhap')
 export const dangXuat = () => client.post('/tai-khoan/dang-xuat', null, { boQuaBiDayRa: true })
+
+// Phần 4 mục 4.5
+export const quenMatKhau = (gmail) => client.post('/tai-khoan/quen-mat-khau', { gmail })
+export const guiLaiMaDatLai = (gmail) => client.post('/tai-khoan/gui-lai-ma-dat-lai', { gmail })
+// duLieu: { gmail, ma, mat_khau_moi, nhap_lai }
+export const datLaiMatKhau = (duLieu) => client.post('/tai-khoan/dat-lai-mat-khau', duLieu)

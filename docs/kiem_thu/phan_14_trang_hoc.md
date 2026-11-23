@@ -120,8 +120,8 @@
 ## P14-15 Trang học video
 - Mục tiêu: giao diện và phát tiếp.
 - Dữ liệu: hvmua, K1.
-- Các bước: bấm "Vào học"; xem video tới 3:45 rồi đóng trang; mở lại; bấm "Ẩn ›" rồi tải lại trang; bấm "Học bài tiếp theo →" và "← Bài trước".
-- Kết quả mong đợi: đầu trang công khai, không có chân trang, "← Quay lại khóa học" và tên khóa; tua được; mở lại phát tiếp từ 3:45 và hiện "Lần trước bạn dừng ở 03:45"; dưới video có "01. <tên bài>", loại bài, "Báo cáo bài học này", khối "Bài tiếp theo"; cột phải có phần trăm, "Đã học x/y bài", dấu đã xong, "Đang xem", "Học đến đây"; "Ẩn ›" thu cột và nhớ sau khi tải lại; giống thiet_ke/trang_hoc/bai_video.html và bai_video_an_danh_sach.html.
+- Các bước: bấm "Vào học"; xem video tới 3:45 rồi đóng trang; mở lại; bấm "Ẩn" rồi tải lại trang; bấm "Học bài tiếp theo" và "Bài trước".
+- Kết quả mong đợi: đầu trang công khai, không có chân trang, "Quay lại khóa học" và tên khóa; tua được; mở lại phát tiếp từ 3:45 và hiện "Lần trước bạn dừng ở 03:45"; dưới video có "01. <tên bài>", loại bài, "Báo cáo bài học này", khối "Bài tiếp theo"; cột phải có phần trăm, "Đã học x/y bài", dấu đã xong, "Đang xem", "Học đến đây"; "Ẩn" thu cột và nhớ sau khi tải lại; giống thiet_ke/trang_hoc/bai_video.html và bai_video_an_danh_sach.html.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 14 mục 14.4, 14.11
 
@@ -129,7 +129,7 @@
 - Mục tiêu: xem PDF và tải về.
 - Dữ liệu: bài 2.
 - Các bước: mở bài 2; thu nhỏ, phóng to, chuyển trang; bấm "Tải về".
-- Kết quả mong đợi: thanh công cụ có tên file, "PDF · N MB", phần trăm, "x / y" như thiet_ke/trang_hoc/bai_tai_lieu.html; tải về đúng tên file gốc; tiến độ tăng ngay.
+- Kết quả mong đợi: thanh công cụ có tên file, "PDF, N MB", phần trăm, "x / y" như thiet_ke/trang_hoc/bai_tai_lieu.html; tải về đúng tên file gốc; tiến độ tăng ngay.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 14 mục 14.4, 14.11
 

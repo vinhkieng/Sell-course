@@ -105,7 +105,7 @@
 - Mục tiêu: giao diện trang giới thiệu, làm bài, hộp kết quả, xem đáp án.
 - Dữ liệu: hvmua, bài T.
 - Các bước: mở bài T; bấm "Bắt đầu làm bài"; chọn 3 câu; bấm "Nộp bài"; bấm "Làm tiếp" rồi "Nộp bài"; bấm "Xem đáp án"; bấm "Làm lại".
-- Kết quả mong đợi: trang giới thiệu có "06. <tên bài>" (theo số thứ tự thật), "5 câu · 10 phút", dòng "Đồng hồ bắt đầu chạy khi bạn bấm nút bên dưới. Tắt trang thì thời gian vẫn chạy."; trang làm bài có "Còn lại mm:ss", "Đã làm x/5 câu", "Câu 1." với 4 nút tròn; hộp "Bạn còn 2 câu chưa làm. Câu chưa làm sẽ tính là sai. Nộp bài?" với "Làm tiếp" và "Nộp bài"; hộp "Hoàn thành bài tập" có "Điểm lần này", "Đúng x/5 câu", "Điểm cao nhất", "Thời gian làm", "Xem đáp án", "Làm lại", nút ✕; trang đáp án tô xanh đáp án đúng kèm "Đáp án đúng", tô đỏ câu chọn sai, câu bỏ trống có "Bạn chưa chọn"; "Làm lại" vào thẳng trang làm bài; giống các màn thiet_ke/trac_nghiem/; không có chân trang.
+- Kết quả mong đợi: trang giới thiệu có "06. <tên bài>" (theo số thứ tự thật), "5 câu, 10 phút", dòng "Đồng hồ bắt đầu chạy khi bạn bấm nút bên dưới. Tắt trang thì thời gian vẫn chạy."; trang làm bài có "Còn lại mm:ss", "Đã làm x/5 câu", "Câu 1." với 4 nút tròn; hộp "Bạn còn 2 câu chưa làm. Câu chưa làm sẽ tính là sai. Nộp bài?" với "Làm tiếp" và "Nộp bài"; hộp "Hoàn thành bài tập" có "Điểm lần này", "Đúng x/5 câu", "Điểm cao nhất", "Thời gian làm", "Xem đáp án", "Làm lại", nút ✕; trang đáp án tô xanh đáp án đúng kèm "Đáp án đúng", tô đỏ câu chọn sai, câu bỏ trống có "Bạn chưa chọn"; "Làm lại" vào thẳng trang làm bài; giống các màn thiet_ke/trac_nghiem/; không có chân trang.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 15 mục 15.3, 15.7
 

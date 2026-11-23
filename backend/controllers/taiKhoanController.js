@@ -43,6 +43,20 @@ export async function guiLaiMaDangNhap(req, res) {
   res.json(kq);
 }
 
+// Quên mật khẩu (Phần 4 mục 4.5)
+export async function quenMatKhau(req, res) {
+  res.json(await taiKhoanService.quenMatKhau(req.validated.body.gmail));
+}
+
+export async function guiLaiMaDatLai(req, res) {
+  res.json(await taiKhoanService.guiLaiMaDatLai(req.validated.body.gmail));
+}
+
+export async function datLaiMatKhau(req, res) {
+  await taiKhoanService.datLaiMatKhau(req.validated.body);
+  res.status(200).end();
+}
+
 // Luôn xóa cookie phiên và trả 200, kể cả khi chưa đăng nhập hoặc phiên đã hết hạn (Phần 3 mục 3.5)
 export async function dangXuat(req, res) {
   xoaPhien(res);

@@ -72,7 +72,7 @@
 ## P09-09 Giao diện trang chủ
 - Mục tiêu: giống thiết kế, đủ khối, liên kết đúng.
 - Dữ liệu: dữ liệu chung.
-- Các bước: mở /; bấm "Khám phá khóa học", một danh mục, hai nút "Xem tất cả →", một thẻ khóa.
-- Kết quả mong đợi: các khối như thiet_ke/trang_chu/trang_chu.html, không có khối "Học ở đây khác ở chỗ nào?" và "Câu hỏi thường gặp"; "Khám phá khóa học" mở /khoa-hoc; danh mục mở /khoa-hoc?danh_muc=<id>; "Xem tất cả →" của nổi bật mở /khoa-hoc, của mới nhất mở /khoa-hoc?sap_xep=moi-nhat; thẻ mở /khoa-hoc/<id>; khóa không có ảnh bìa dùng ảnh mặc định; có chân trang chuẩn; hiển thị tốt ở 1280px, 768px, 375px.
+- Các bước: mở /; bấm "Khám phá khóa học", một danh mục, hai nút "Xem tất cả", một thẻ khóa.
+- Kết quả mong đợi: các khối như thiet_ke/trang_chu/trang_chu.html, không có khối "Học ở đây khác ở chỗ nào?" và "Câu hỏi thường gặp"; "Khám phá khóa học" mở /khoa-hoc; danh mục mở /khoa-hoc?danh_muc=<id>; "Xem tất cả" của nổi bật mở /khoa-hoc, của mới nhất mở /khoa-hoc?sap_xep=moi-nhat; thẻ mở /khoa-hoc/<id>; khóa không có ảnh bìa dùng ảnh mặc định; có chân trang chuẩn; hiển thị tốt ở 1280px, 768px, 375px.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 9 mục 9.3, 9.7; Phần chung C8

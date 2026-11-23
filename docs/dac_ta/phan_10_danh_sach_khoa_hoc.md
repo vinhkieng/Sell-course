@@ -12,7 +12,7 @@ Làm sau Phần 9.
 - thiet_ke/danh_sach_khoa_hoc/khong_co_ket_qua.html (màn "Danh sách khóa học (không có kết quả)"): không có kết quả.
 
 ## 10.3 Giao diện và hành vi
-- Trang /khoa-hoc. Tiêu đề và đường dẫn trên cùng ghi "Khóa học nổi bật" như thiết kế; khi có từ khóa tìm kiếm thì tiêu đề là "Kết quả cho ‘từ khóa’".
+- Trang /khoa-hoc. Tiêu đề và đường dẫn trên cùng ghi "Khóa học nổi bật" như thiết kế; khi có từ khóa tìm kiếm thì tiêu đề là "Kết quả cho "từ khóa"".
 - Dòng "Hiển thị N khóa học" (N là tổng số khóa thỏa điều kiện). Ô "Sắp xếp": Nhiều học viên nhất (mặc định), Mới nhất, Giá thấp đến cao, Giá cao đến thấp, Nhiều bài nhất. Hai khóa bằng nhau theo cách đang sắp thì khóa mới hơn đứng trước.
 - Bảng "Bộ lọc": Danh mục (tích một hoặc nhiều, chỉ liệt kê danh mục đang có khóa đang bán), Giá bán (Dưới 200.000đ, 200.000đ - 500.000đ, Trên 500.000đ, hoặc tự nhập "Từ" "Đến"), nút "Áp dụng bộ lọc", "Xóa tất cả" bỏ mọi bộ lọc. Bộ lọc dùng chung được với nhau và với tìm kiếm.
 - Mọi lựa chọn ghi lên đường dẫn (?tu_khoa=&danh_muc=1,3&gia=duoi-200|200-500|tren-500|<từ>-<đến>&sap_xep=&trang=) để tải lại trang hoặc chia sẻ vẫn giữ nguyên.

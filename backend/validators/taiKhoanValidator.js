@@ -5,6 +5,10 @@ import { VAI_TRO } from '../constants/vaiTro.js';
 // Ô bắt buộc: thiếu hẳn hoặc để trống đều báo cùng một câu
 const oBatBuoc = (cau) => z.string({ error: cau });
 
+// Giống ràng buộc ck_nguoi_dung_gmail trong file SQL (kiểm sau khi đã đổi chữ thường)
+const MAU_GMAIL = /^[a-z0-9]+(\.[a-z0-9]+)*@gmail\.com$/;
+const GMAIL_SAI = 'Gmail không đúng định dạng. Ví dụ: ten@gmail.com';
+
 // Đăng ký (Phần 2 mục 2.4, 2.7)
 export const schemaDangKy = z
   .object({
@@ -21,8 +25,7 @@ export const schemaDangKy = z
       .toLowerCase()
       .min(1, 'Vui lòng nhập Gmail')
       .refine((v) => v.endsWith('@gmail.com'), 'Gmail phải có đuôi @gmail.com')
-      // Giống ràng buộc ck_nguoi_dung_gmail trong file SQL
-      .regex(/^[a-z0-9]+(\.[a-z0-9]+)*@gmail\.com$/, 'Gmail không đúng định dạng. Ví dụ: ten@gmail.com'),
+      .regex(MAU_GMAIL, GMAIL_SAI),
     mat_khau: oBatBuoc('Vui lòng nhập mật khẩu')
       .min(1, 'Vui lòng nhập mật khẩu')
       .regex(/^\d{6}$/, 'Mật khẩu phải gồm đúng 6 chữ số'),
@@ -49,3 +52,27 @@ export const schemaDangNhap = z.object({
 export const schemaXacNhanDangNhap = z.object({
   ma: z.string({ error: 'Mã xác nhận không đúng.' }).regex(/^\d{6}$/, 'Mã xác nhận không đúng.'),
 });
+
+// Quên mật khẩu (Phần 4 mục 4.3, 4.7): để trống, sai định dạng hay sai đuôi đều báo một câu
+const oGmailQuenMatKhau = z.string({ error: GMAIL_SAI }).trim().toLowerCase().regex(MAU_GMAIL, GMAIL_SAI);
+
+export const schemaQuenMatKhau = z.object({ gmail: oGmailQuenMatKhau });
+
+// Đặt lại mật khẩu (Phần 4 mục 4.5): kiểm mật khẩu mới ở đây, trước khi xét mã
+const MA_DAT_LAI_SAI = 'Mã xác nhận không đúng hoặc đã hết hạn';
+const NHAP_LAI_KHONG_KHOP = 'Mật khẩu nhập lại không khớp';
+
+export const schemaDatLaiMatKhau = z
+  .object({
+    gmail: oGmailQuenMatKhau,
+    ma: z.string({ error: MA_DAT_LAI_SAI }).regex(/^\d{6}$/, MA_DAT_LAI_SAI),
+    mat_khau_moi: z
+      .string({ error: 'Mật khẩu phải gồm đúng 6 chữ số' })
+      .regex(/^\d{6}$/, 'Mật khẩu phải gồm đúng 6 chữ số'),
+    nhap_lai: z.string({ error: NHAP_LAI_KHONG_KHOP }),
+  })
+  .refine((d) => d.mat_khau_moi === d.nhap_lai, {
+    path: ['nhap_lai'],
+    message: NHAP_LAI_KHONG_KHOP,
+    when: () => true,
+  });

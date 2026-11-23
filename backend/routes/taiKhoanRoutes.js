@@ -6,6 +6,8 @@ import {
   schemaDangKy,
   schemaDangNhap,
   schemaXacNhanDangNhap,
+  schemaQuenMatKhau,
+  schemaDatLaiMatKhau,
 } from '../validators/taiKhoanValidator.js';
 import * as taiKhoan from '../controllers/taiKhoanController.js';
 
@@ -22,5 +24,18 @@ router.post(
 );
 router.post('/gui-lai-ma-dang-nhap', canChuaDangNhap, taiKhoan.guiLaiMaDangNhap);
 router.post('/dang-xuat', taiKhoan.dangXuat);
+router.post('/quen-mat-khau', canChuaDangNhap, validate({ body: schemaQuenMatKhau }), taiKhoan.quenMatKhau);
+router.post(
+  '/gui-lai-ma-dat-lai',
+  canChuaDangNhap,
+  validate({ body: schemaQuenMatKhau }),
+  taiKhoan.guiLaiMaDatLai,
+);
+router.post(
+  '/dat-lai-mat-khau',
+  canChuaDangNhap,
+  validate({ body: schemaDatLaiMatKhau }),
+  taiKhoan.datLaiMatKhau,
+);
 
 export default router;

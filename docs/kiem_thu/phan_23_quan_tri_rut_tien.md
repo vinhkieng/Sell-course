@@ -57,6 +57,6 @@
 - Mục tiêu: giao diện đúng thiết kế.
 - Dữ liệu: dữ liệu chung.
 - Các bước: mở /quan-tri/rut-tien; đổi bộ lọc; bấm "Đã chuyển"; bấm "Từ chối" gửi trống rồi có lý do.
-- Kết quả mong đợi: dòng "Bản thử nghiệm: chuyển khoản chỉ mô phỏng", bốn lựa chọn kèm số, "Mới nhất ở trên"; cột Thông tin ngân hàng có "STK: …", "Chủ TK: …"; chỉ dòng chờ có hai nút; hộp "Xác nhận đã chuyển tiền" với "Bạn đã chuyển khoản cho người cung cấp này?", ô "Mã giao dịch ngân hàng (không bắt buộc)" gợi ý "Ví dụ: FT26101400123", dòng "Người cung cấp sẽ nhìn thấy mã này trong lịch sử yêu cầu."; hộp "Từ chối yêu cầu rút tiền?" với ô "Lý do từ chối *", hai dòng nhắc; xong có "Đã xác nhận chuyển tiền" hoặc "Đã từ chối yêu cầu", số tròn ở menu cập nhật; giống thiet_ke/quan_tri_rut_tien/yeu_cau_rut_tien.html.
+- Kết quả mong đợi: dòng "Bản thử nghiệm: chuyển khoản chỉ mô phỏng", bốn lựa chọn kèm số, "Mới nhất ở trên"; cột Thông tin ngân hàng có "STK: [số tài khoản]", "Chủ TK: [chủ tài khoản]"; chỉ dòng chờ có hai nút; hộp "Xác nhận đã chuyển tiền" với "Bạn đã chuyển khoản cho người cung cấp này?", ô "Mã giao dịch ngân hàng (không bắt buộc)" gợi ý "Ví dụ: FT26101400123", dòng "Người cung cấp sẽ nhìn thấy mã này trong lịch sử yêu cầu."; hộp "Từ chối yêu cầu rút tiền?" với ô "Lý do từ chối *", hai dòng nhắc; xong có "Đã xác nhận chuyển tiền" hoặc "Đã từ chối yêu cầu", số tròn ở menu cập nhật; giống thiet_ke/quan_tri_rut_tien/yeu_cau_rut_tien.html.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 23 mục 23.3, 23.7

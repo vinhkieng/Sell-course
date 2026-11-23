@@ -36,13 +36,13 @@ function TrangChinhSach() {
           </section>
         ))}
       </div>
+      {/* Chữ thay mũi tên theo Phần chung C18 */}
       <button
         type="button"
         className="tcs-len-dau"
-        aria-label="Lên đầu trang"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        ↑
+        Lên đầu trang
       </button>
     </main>
   )

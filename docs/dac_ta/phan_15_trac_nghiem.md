@@ -15,7 +15,7 @@ Làm sau Phần 14.
 - thiet_ke/trac_nghiem/xem_dap_an.html (màn "Trang học - Bài trắc nghiệm (xem đáp án)"): xem đáp án.
 
 ## 15.3 Giao diện và hành vi
-- Trang giới thiệu: "06. Tên bài", "N câu · M phút", "Điểm cao nhất: 8,00/10" (chỉ khi đã có điểm), dòng "Đồng hồ bắt đầu chạy khi bạn bấm nút bên dưới. Tắt trang thì thời gian vẫn chạy.", nút "Bắt đầu làm bài" (chưa làm lần nào) hoặc "Làm lại" (đã có điểm). Cột danh sách bài, "Báo cáo bài học này", "Bài tiếp theo" như Phần 14.
+- Trang giới thiệu: "06. Tên bài", "N câu, M phút", "Điểm cao nhất: 8,00/10" (chỉ khi đã có điểm), dòng "Đồng hồ bắt đầu chạy khi bạn bấm nút bên dưới. Tắt trang thì thời gian vẫn chạy.", nút "Bắt đầu làm bài" (chưa làm lần nào) hoặc "Làm lại" (đã có điểm). Cột danh sách bài, "Báo cáo bài học này", "Bài tiếp theo" như Phần 14.
 - Bấm "Bắt đầu làm bài" hoặc "Làm lại": tạo lượt làm, đồng hồ bắt đầu chạy, chuyển sang trang làm bài.
 - Trang làm bài: đầu trang có "Còn lại mm:ss" và "Đã làm x/y câu"; cả bài trên một trang, câu theo so_thu_tu, mỗi câu "Câu 1." kèm nội dung và 4 nút tròn A, B, C, D; nút "Nộp bài" cuối trang; vẫn giữ cột danh sách bài.
 - Mỗi lần chọn một lựa chọn, trang gửi ngay lên máy chủ để lưu vào luot_lam_bai.cau_tra_loi (dạng { "1": "A", "3": "C" }, khóa là so_thu_tu của câu). Chọn lại thì ghi đè.
@@ -26,7 +26,7 @@ Làm sau Phần 14.
   - Lượt còn giờ: vào thẳng trang làm bài với các câu đã chọn và đồng hồ chạy tiếp.
   - Lượt đã hết giờ: máy chủ chấm lượt đó theo các câu đã lưu, rồi trang hiện trang giới thiệu kèm hộp "Hoàn thành bài tập" có dòng "Đã hết giờ, bài được tự nộp.".
 - Hộp "Hoàn thành bài tập" (nút ✕ ở góc phải để đóng, về trang giới thiệu): "Điểm lần này: 6,00/10", "Đúng 3/5 câu", "Điểm cao nhất: 8,00/10", "Thời gian làm: mm:ss" (tự nộp do hết giờ thì bằng đúng thời gian làm bài), nút "Xem đáp án" bên trái và "Làm lại" bên phải.
-- "Xem đáp án": trang liệt kê mọi câu, dòng đầu "Điểm lần này: 6,00/10 · Đúng 3/5 câu"; lựa chọn đúng tô xanh kèm nhãn "Đáp án đúng"; lựa chọn học viên chọn sai tô đỏ; câu bỏ trống có chữ "Bạn chưa chọn"; nút "Làm lại" cuối trang. Chỉ xem được ngay sau khi nộp: dữ liệu đáp án đi kèm câu trả lời của lần nộp và chỉ giữ trên trang; rời trang là mất, không có đường nào khác để xem lại.
+- "Xem đáp án": trang liệt kê mọi câu, dòng đầu "Điểm lần này: 6,00/10, đúng 3/5 câu"; lựa chọn đúng tô xanh kèm nhãn "Đáp án đúng"; lựa chọn học viên chọn sai tô đỏ; câu bỏ trống có chữ "Bạn chưa chọn"; nút "Làm lại" cuối trang. Chỉ xem được ngay sau khi nộp: dữ liệu đáp án đi kèm câu trả lời của lần nộp và chỉ giữ trên trang; rời trang là mất, không có đường nào khác để xem lại.
 - Nút "Làm lại" (trong hộp kết quả và ở trang xem đáp án): tạo lượt mới và vào thẳng trang làm bài, đồng hồ chạy ngay.
 
 ## 15.4 Quy tắc

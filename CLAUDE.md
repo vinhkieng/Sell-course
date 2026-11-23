@@ -2,7 +2,7 @@
 
 File này dặn Claude Code cách làm việc trong thư mục Do_An. Đọc hết file này trước khi làm bất cứ việc gì.
 File backend/CLAUDE.md và frontend/CLAUDE.md có quy tắc riêng cho từng bên, được đọc thêm khi làm việc trong thư mục đó.
-Phần "Cách dùng file này" và C1 đến C17 bên dưới chép nguyên văn từ docs/dac_ta/phan_00_chung.md (Phần chung của đặc tả).
+Phần "Cách dùng file này" và C1 đến C18 bên dưới chép nguyên văn từ docs/dac_ta/phan_00_chung.md (Phần chung của đặc tả).
 
 ## Tài liệu trong thư mục này
 - docs/dac_ta/phan_00_chung.md: Phần chung (giống phần dưới của file này) và Phụ lục A (bảng đối chiếu 128 màn thiết kế với tên file). Mỗi phần chức năng đã ghi đủ đường dẫn màn của phần đó, nên chỉ mở Phụ lục A khi cần tra tên màn gốc trên Claude Design.
@@ -175,7 +175,7 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
   - Người cung cấp: thêm mục "Tạo khóa học" trên thanh, chuông thông báo có số chưa đọc, không có giỏ; menu ảnh đại diện có "Hồ sơ cá nhân", "Quản lý khóa học", "Rút tiền", "Đăng xuất".
   - Admin xem trang công khai: không giỏ, không chuông; menu ảnh đại diện có "Trang quản trị", "Hồ sơ", "Đăng xuất".
 - Ảnh đại diện: có ảnh thì hiện ảnh, chưa có thì hiện chữ cái đầu của họ tên (họ tên trống thì chữ cái đầu của tên đăng nhập), in hoa.
-- Menu "Danh mục" chỉ liệt kê danh mục đang có ít nhất một khóa "Đang bán" (chưa xóa), sắp theo tên; cuối menu có "Xem tất cả khóa học →" mở /khoa-hoc. Bấm một danh mục mở /khoa-hoc?danh_muc=<id>.
+- Menu "Danh mục" chỉ liệt kê danh mục đang có ít nhất một khóa "Đang bán" (chưa xóa), sắp theo tên; cuối menu có "Xem tất cả khóa học" mở /khoa-hoc. Bấm một danh mục mở /khoa-hoc?danh_muc=<id>.
 - Ô tìm kiếm: gõ rồi bấm Enter thì mở /khoa-hoc?tu_khoa=<chữ đã gõ>. Ô để trống (hoặc chỉ có dấu cách) mà bấm Enter thì không làm gì, vẫn ở trang đó.
 - Bấm logo AVA ở mọi trang (kể cả khu quản trị) về trang chủ.
 - Chân trang lấy chân trang của màn Trang chủ làm chuẩn, giống hệt nhau ở mọi trang có chân trang:
@@ -247,3 +247,13 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
 - Đổi mật khẩu không đăng xuất các nơi khác.
 - Chuyển tiền khi rút tiền và khi hoàn tiền chỉ là mô phỏng.
 - Trang Chính sách không lưu các bản cũ khi admin sửa (Phần 24).
+
+## C18. Ký hiệu trên giao diện
+- Mọi chữ người dùng thấy (trang, nút, liên kết, câu báo, chữ mờ trong ô, thư gửi qua Gmail) chỉ dùng chữ và dấu câu gõ được từ bàn phím, không dùng ký hiệu trang trí.
+- Không dùng mũi tên ←, →, ‹, ›, ↑, ↓. Liên kết và nút ghi chữ thường, ví dụ "Quay lại đăng nhập", "Quay lại khóa học", "Quay lại", "Bài trước", "Học bài tiếp theo", "Xem tất cả khóa học", "Xem tất cả thông báo", "Trước", "Sau", "Trang trước", "Trang tiếp theo"; nút thu cột ở trang học ghi "Ẩn". Nút đổi thứ tự ghi "Lên", "Xuống"; nút về đầu trang ghi "Lên đầu trang".
+- Không dùng dấu chấm giữa "·" để ngăn thông tin, thay bằng dấu phẩy, ví dụ "Trần Thị Bích, 16 bài, 120 học viên", "24 bài, 299.000đ", "Trắc nghiệm, 5 câu, 10 phút", "8,00/10, Trắc nghiệm, 5 câu, 10 phút". Liên kết đứng sau một thông tin (ví dụ "Nhập lại Gmail" đứng sau Gmail đã nhập) thì cách ra bằng khoảng trống, không có dấu ngăn.
+- Không dùng ký tự ba chấm liền "…". Chữ mờ trong ô không có dấu ba chấm, ví dụ "Tìm khóa học". Chữ quá dài bị cắt thì để CSS tự thêm dấu ba chấm.
+- Ngoặc kép dùng ngoặc thẳng ", không dùng ngoặc cong “ ” ‘ ’.
+- Không dùng biểu tượng cảm xúc (emoji), không dùng gạch dài.
+- Được giữ: nút ✕ để đóng hộp và ô thông báo nhỏ; sao ★ ở đánh giá và hàng sao khi chấm; dấu © ở dòng cuối chân trang; nút − và + phóng to, thu nhỏ khi xem tài liệu.
+- Thiết kế trong thiet_ke/ còn các ký hiệu bị cấm ở trên thì không sửa file thiết kế; khi code thì làm theo quy tắc này.

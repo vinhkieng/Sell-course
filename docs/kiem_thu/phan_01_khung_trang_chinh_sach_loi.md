@@ -128,7 +128,7 @@
 ## P01-16 Menu "Danh mục" và ô tìm kiếm
 - Mục tiêu: menu và ô tìm kiếm chạy đúng.
 - Dữ liệu: như P01-07.
-- Các bước: rê hoặc bấm "Danh mục"; bấm "Lập Trình"; bấm "Xem tất cả khóa học →"; gõ "figma" vào ô tìm kiếm rồi Enter; xóa trắng ô (hoặc chỉ gõ dấu cách) rồi Enter.
+- Các bước: rê hoặc bấm "Danh mục"; bấm "Lập Trình"; bấm "Xem tất cả khóa học"; gõ "figma" vào ô tìm kiếm rồi Enter; xóa trắng ô (hoặc chỉ gõ dấu cách) rồi Enter.
 - Kết quả mong đợi: menu chỉ có "Lập Trình", "Thiết Kế" theo thứ tự tên; mở /khoa-hoc?danh_muc=<id>; mở /khoa-hoc; mở /khoa-hoc?tu_khoa=figma; ô trống thì không làm gì, vẫn ở trang đó.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần chung C9
@@ -228,3 +228,11 @@
 - Kết quả mong đợi: đọc được hết, menu thu gọn ở màn nhỏ, không có thanh cuộn ngang.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 1 mục 1.3; Phần chung C8
+
+## P01-29 Không có ký hiệu bị cấm trong code
+- Mục tiêu: chữ người dùng thấy không dùng ký hiệu bị cấm ở Phần chung C18, kể cả khi các phần sau thêm code mới.
+- Dữ liệu: mọi file .js, .jsx, .css trong frontend/src và backend (trừ node_modules và thư mục tests).
+- Các bước: quét từng dòng của các file đó tìm các ký tự: mũi tên ← → ‹ › ↑ ↓, dấu chấm giữa ·, ba chấm liền …, ngoặc cong “ ” ‘ ’, gạch dài.
+- Kết quả mong đợi: không có dòng nào chứa các ký tự trên; nếu có thì báo lỗi kèm tên file và số dòng.
+- Cách kiểm: Tự động
+- Nguồn: Phần chung C18

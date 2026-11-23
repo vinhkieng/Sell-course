@@ -43,6 +43,18 @@ export async function timDeDangNhap(tenDangNhap) {
   return rows[0] ?? null;
 }
 
+// Tài khoản theo Gmail (Gmail lưu chữ thường) để quên mật khẩu (Phần 4)
+export async function timTheoGmail(gmail) {
+  const [rows] = await pool.query('SELECT id, ten_dang_nhap, gmail, khoa FROM nguoi_dung WHERE gmail = ?', [
+    gmail,
+  ]);
+  return rows[0] ?? null;
+}
+
+export async function capNhatMatKhau(id, matKhauDaBam, conn = pool) {
+  await conn.query('UPDATE nguoi_dung SET mat_khau_da_bam = ? WHERE id = ?', [matKhauDaBam, id]);
+}
+
 // Địa chỉ IP đã xác nhận của học viên (Phần 3 mục 3.4)
 export async function capNhatDiaChiIp(idHocVien, ip, conn = pool) {
   await conn.query('UPDATE hoc_vien SET dia_chi_ip = ? WHERE id = ?', [ip, idHocVien]);

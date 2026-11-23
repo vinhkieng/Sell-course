@@ -10,7 +10,7 @@ Làm sau Phần 22.
 
 ## 23.3 Giao diện và hành vi
 - Dòng "Bản thử nghiệm: chuyển khoản chỉ mô phỏng". Bốn lựa chọn lọc kèm số: "Tất cả", "Chờ duyệt", "Đã chuyển", "Từ chối". Dòng "Mới nhất ở trên".
-- Cột: Người cung cấp (họ tên trong hồ sơ, để admin so với tên chủ tài khoản), Số tiền, Thông tin ngân hàng (bản chép lúc gửi: tên ngân hàng, "STK: …", "Chủ TK: …" in hoa không dấu như đã lưu), Ngày gửi, Trạng thái ("Chờ duyệt"; "Đã chuyển" kèm "Mã giao dịch: …" nếu có; "Từ chối" kèm "Lý do từ chối: …"), Hành động (chỉ dòng "Chờ duyệt" có nút "Đã chuyển" và "Từ chối").
+- Cột: Người cung cấp (họ tên trong hồ sơ, để admin so với tên chủ tài khoản), Số tiền, Thông tin ngân hàng (bản chép lúc gửi: tên ngân hàng, "STK: [số tài khoản]", "Chủ TK: [chủ tài khoản]" in hoa không dấu như đã lưu), Ngày gửi, Trạng thái ("Chờ duyệt"; "Đã chuyển" kèm "Mã giao dịch: [mã giao dịch]" nếu có; "Từ chối" kèm "Lý do từ chối: [lý do từ chối]"), Hành động (chỉ dòng "Chờ duyệt" có nút "Đã chuyển" và "Từ chối").
 - 20 dòng mỗi trang, "Hiển thị 1-10 trên 10 yêu cầu (20 dòng mỗi trang)" (đổi chữ theo bộ lọc như thiết kế).
 - Hộp "Xác nhận đã chuyển tiền": dòng "Bạn đã chuyển khoản cho người cung cấp này?", ô "Mã giao dịch ngân hàng (không bắt buộc)" (gợi ý "Ví dụ: FT26101400123", tối đa 50 ký tự), dòng "Người cung cấp sẽ nhìn thấy mã này trong lịch sử yêu cầu.", nút "Hủy" và "Đã chuyển".
 - Hộp "Từ chối yêu cầu rút tiền?": ô "Lý do từ chối *" (bắt buộc, tối đa 255 ký tự, bỏ trống báo "Vui lòng nhập lý do"), dòng "Người cung cấp sẽ nhìn thấy lý do này." và "Số tiền sẽ quay lại mục có thể rút.", nút "Hủy" và "Từ chối".
@@ -39,7 +39,7 @@ Làm sau Phần 22.
 - "Đã xác nhận chuyển tiền", "Đã từ chối yêu cầu", "Yêu cầu này đã được xử lý."
 
 ## 23.8 Kiểm tra khi làm xong
-- Bấm "Đã chuyển" có mã: người cung cấp nhận thông báo kèm mã, ví chuyển số tiền sang "Đã rút", lịch sử yêu cầu hiện "Mã giao dịch: …".
+- Bấm "Đã chuyển" có mã: người cung cấp nhận thông báo kèm mã, ví chuyển số tiền sang "Đã rút", lịch sử yêu cầu hiện "Mã giao dịch: [mã giao dịch]".
 - Từ chối: người cung cấp nhận thông báo kèm lý do, tiền quay lại "Có thể rút", người cung cấp gửi được yêu cầu mới.
 - Hai admin cùng bấm "Đã chuyển" một yêu cầu: lần sau nhận "Yêu cầu này đã được xử lý.", chỉ có một thông báo.
 - Danh sách kiểm thử đầy đủ: docs/kiem_thu/phan_23_quan_tri_rut_tien.md

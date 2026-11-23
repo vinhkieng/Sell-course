@@ -11,10 +11,10 @@ Làm sau Phần 20.
 
 ## 21.3 Giao diện và hành vi
 - Ô tìm "Tìm theo tên đăng nhập hoặc Gmail" (tìm chứa chữ, không phân biệt hoa thường), bộ lọc "Vai trò:" Tất cả, Học viên, Người cung cấp, Admin.
-- Cột: Tên đăng nhập, Họ tên, Gmail, Vai trò, Trạng thái ("Hoạt động", hoặc "Bị khóa" kèm dòng "Lý do: …"), Hành động ("Khóa" hoặc "Mở khóa"; dòng tài khoản admin hiện "-", không có nút).
+- Cột: Tên đăng nhập, Họ tên, Gmail, Vai trò, Trạng thái ("Hoạt động", hoặc "Bị khóa" kèm dòng "Lý do: [lý do]"), Hành động ("Khóa" hoặc "Mở khóa"; dòng tài khoản admin hiện "-", không có nút).
 - Tài khoản mới tạo ở trên, 20 dòng mỗi trang, "Hiển thị 1-20 trên N người dùng (20 dòng mỗi trang)".
 - Hộp "Khóa tài khoản này?": ô "Lý do *", các nút chọn nhanh "Dùng chung tài khoản", "Vi phạm bản quyền", "Lừa đảo", "Khác". Bấm một nút chọn nhanh thì điền chữ đó vào ô (admin sửa thêm được); bấm "Khác" thì xóa trắng ô để tự gõ. Lý do 5 đến 255 ký tự, sai thì báo "Lý do từ 5 đến 255 ký tự.". Nút "Hủy" và "Khóa tài khoản".
-- Hộp "Mở khóa tài khoản này?": dòng "Lý do đã khóa: …", nút "Hủy" và "Mở khóa".
+- Hộp "Mở khóa tài khoản này?": dòng "Lý do đã khóa: [lý do]", nút "Hủy" và "Mở khóa".
 - Xong thì ô thông báo nhỏ "Đã khóa tài khoản" hoặc "Đã mở khóa tài khoản", bảng tải lại.
 
 ## 21.4 Khóa tài khoản (mọi việc trong một giao dịch)
@@ -51,7 +51,7 @@ Làm sau Phần 20.
 
 ## 21.8 Câu thông báo
 - "Khóa tài khoản này?", "Lý do từ 5 đến 255 ký tự.", "Đã khóa tài khoản"
-- "Mở khóa tài khoản này?", "Lý do đã khóa: …", "Đã mở khóa tài khoản"
+- "Mở khóa tài khoản này?", "Lý do đã khóa: [lý do]", "Đã mở khóa tài khoản"
 - Lý do tự ghi: "Tài khoản bị khóa", "Khóa học bị ẩn lần thứ 2 nên bị gỡ vĩnh viễn"
 
 ## 21.9 Kiểm tra khi làm xong

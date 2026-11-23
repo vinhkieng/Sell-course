@@ -105,7 +105,7 @@
 - Mục tiêu: giao diện đúng thiết kế.
 - Dữ liệu: dữ liệu chung.
 - Các bước: mở /quan-tri/khoa-hoc; đổi bộ lọc; bấm "Xem"; xem tab "Nội dung", bấm "Xem" từng loại bài; xem tab "Lịch sử thay đổi", rê chuột vào giá trị dài, bấm "File cũ".
-- Kết quả mong đợi: dòng "Hiển thị 1-20 trên N khóa học (20 dòng mỗi trang)"; trang chi tiết có đường dẫn "Khóa học / Chi tiết khóa học (quản trị)", hai tab (tab lịch sử có số dòng); hộp video "Bài 05 - <tên>" với "Độ dài mm:ss · N MB"; hộp trắc nghiệm có "Trắc nghiệm · N câu · M phút" và nhãn "Đáp án đúng"; khối "Lý do ẩn:" hoặc "Lý do gỡ:", "Học viên đã mua: vẫn học được" hoặc "không học được"; tab lịch sử có dòng "Mọi thay đổi của khóa học đều được ghi lại. Mới nhất ở trên.", ô trống "-", giá trị dài cắt kèm "…", "Hiển thị N trên M thay đổi"; giống các màn thiet_ke/quan_tri_khoa_hoc/.
+- Kết quả mong đợi: dòng "Hiển thị 1-20 trên N khóa học (20 dòng mỗi trang)"; trang chi tiết có đường dẫn "Khóa học / Chi tiết khóa học (quản trị)", hai tab (tab lịch sử có số dòng); hộp video "Bài 05 - <tên>" với "Độ dài mm:ss, N MB"; hộp trắc nghiệm có "Trắc nghiệm, N câu, M phút" và nhãn "Đáp án đúng"; khối "Lý do ẩn:" hoặc "Lý do gỡ:", "Học viên đã mua: vẫn học được" hoặc "không học được"; tab lịch sử có dòng "Mọi thay đổi của khóa học đều được ghi lại. Mới nhất ở trên.", ô trống "-", giá trị dài cắt ngắn, CSS tự thêm dấu ba chấm, "Hiển thị N trên M thay đổi"; giống các màn thiet_ke/quan_tri_khoa_hoc/.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 19 mục 19.3, 19.4, 19.7, 19.10
 

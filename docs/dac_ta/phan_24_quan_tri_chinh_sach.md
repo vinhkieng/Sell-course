@@ -15,14 +15,14 @@ Chức năng thêm, không có trong luận văn. Làm sau Phần 23. Trang Chí
 
 ## 24.3 Giao diện và hành vi
 - Mục thứ 8 "Chính sách" của menu quản trị (đứng cuối, sau "Yêu cầu rút tiền", không có số tròn) mở /quan-tri/chinh-sach. Trang không có chân trang (khu quản trị).
-- Trang gồm tiêu đề "Chính sách và điều khoản", dòng "Cập nhật lần cuối: dd/mm/yyyy" (chưa sửa lần nào thì không hiện), nút "+ Thêm điều" và danh sách các điều theo thứ tự. Mỗi dòng là "Điều N. <tên điều>" kèm bốn nút "↑", "↓", "Sửa", "Xóa".
+- Trang gồm tiêu đề "Chính sách và điều khoản", dòng "Cập nhật lần cuối: dd/mm/yyyy" (chưa sửa lần nào thì không hiện), nút "+ Thêm điều" và danh sách các điều theo thứ tự. Mỗi dòng là "Điều N. <tên điều>" kèm bốn nút "Lên", "Xuống", "Sửa", "Xóa".
 - Tiêu đề trang "Chính sách và điều khoản" và dòng giới thiệu trên trang công khai là chữ cố định, admin không sửa được.
 - Số "Điều N." do máy tự đánh theo thứ tự hiện tại; admin chỉ gõ phần tên. Ví dụ xóa Điều 3 thì Điều 4 thành Điều 3.
-- Đổi thứ tự: bấm "↑" thì điều đó đổi chỗ với điều ngay trên, bấm "↓" thì đổi chỗ với điều ngay dưới. Bấm là lưu ngay, hiện ô thông báo "Đã đổi thứ tự". Nút "↑" của điều đầu tiên và nút "↓" của điều cuối cùng bị mờ. Không có kéo thả.
+- Đổi thứ tự: bấm "Lên" thì điều đó đổi chỗ với điều ngay trên, bấm "Xuống" thì đổi chỗ với điều ngay dưới. Bấm là lưu ngay, hiện ô thông báo "Đã đổi thứ tự". Nút "Lên" của điều đầu tiên và nút "Xuống" của điều cuối cùng bị mờ. Không có kéo thả.
 - "Sửa" mở hộp soạn tiêu đề "Sửa Điều N", điền sẵn tên và nội dung hiện tại. "+ Thêm điều" mở hộp soạn tiêu đề "Thêm điều", hai ô trống; điều mới được thêm vào cuối danh sách.
 - Hộp soạn gồm:
   - Ô "Tên điều" (bắt buộc), dòng nhắc "Chỉ gõ tên. Chữ "Điều N." do hệ thống tự thêm." (N là số của điều đang sửa, hoặc số kế tiếp khi thêm).
-  - Ô "Nội dung" (bắt buộc), bên dưới là bảng nhắc luật gõ đúng như thiết kế, và dòng nhắc "Đổi thứ tự hoặc xóa điều có thể làm sai các chỗ ghi "Điều …" trong nội dung, hãy kiểm tra lại."
+  - Ô "Nội dung" (bắt buộc), bên dưới là bảng nhắc luật gõ đúng như thiết kế, và dòng nhắc "Đổi thứ tự hoặc xóa điều có thể làm sai các chỗ ghi số điều (ví dụ "Điều 3") trong nội dung, hãy kiểm tra lại."
   - Khung "Xem trước" nằm bên cạnh ô nội dung, hiện nội dung đúng như trên trang công khai, cập nhật ngay khi gõ. Ở độ rộng điện thoại thì khung "Xem trước" xếp dưới ô nội dung (Phần chung C8).
   - Nút "Hủy" (đóng hộp, không lưu) và "Lưu".
 - Bấm "Lưu": trang kiểm tra trước, ô nào sai thì hiện chữ đỏ dưới ô (như màn thiet_ke/quan_tri_chinh_sach/chinh_sach_them_dieu_bao_loi.html) và chưa gửi. Lưu thành công thì đóng hộp, cập nhật danh sách và dòng "Cập nhật lần cuối", hiện ô thông báo "Đã lưu điều" (khi sửa) hoặc "Đã thêm điều" (khi thêm). Mỗi lần lưu chỉ ghi điều đang soạn.
@@ -66,13 +66,13 @@ Mọi đường dưới đây chỉ dành cho admin và đi qua kiểm tra phiê
 - Hộp hỏi lại: "Xóa Điều N. <tên điều>?".
 - Ô thông báo nhỏ: "Đã lưu điều", "Đã thêm điều", "Đã xóa điều", "Đã đổi thứ tự".
 - Hai admin cùng sửa: "Chính sách vừa được quản trị viên khác thay đổi. Vui lòng tải lại trang."
-- Dòng nhắc trong hộp soạn: "Đổi thứ tự hoặc xóa điều có thể làm sai các chỗ ghi "Điều …" trong nội dung, hãy kiểm tra lại."
+- Dòng nhắc trong hộp soạn: "Đổi thứ tự hoặc xóa điều có thể làm sai các chỗ ghi số điều (ví dụ "Điều 3") trong nội dung, hãy kiểm tra lại."
 
 ## 24.8 Kiểm tra khi làm xong
 - Học viên hoặc người cung cấp gọi các đường /api/quan-tri/chinh-sach thì bị 403; khách bị 401.
 - Sửa Điều 2 rồi lưu: trang /chinh-sach hiện nội dung mới và dòng "Cập nhật lần cuối" với ngày hôm nay.
 - Xóa Điều 3: Điều 4 cũ thành Điều 3; mở /chinh-sach#dieu-3 cuộn tới điều đó. Còn 1 điều thì không xóa được.
-- Bấm "↓" ở Điều 1: Điều 1 và Điều 2 đổi chỗ, lưu ngay.
+- Bấm "Xuống" ở Điều 1: Điều 1 và Điều 2 đổi chỗ, lưu ngay.
 - Gõ "1. ", "- ", "  - ", dòng thụt 2 dấu cách, "## " và dòng trống: khung "Xem trước" và trang công khai hiện đúng; gõ "<script>" chỉ hiện thành chữ.
 - Hai thẻ cùng mở trang quản lý, thẻ thứ nhất lưu trước, thẻ thứ hai lưu sau thì nhận câu báo 409 và nội dung của thẻ thứ nhất không bị đè.
 - Danh sách kiểm thử đầy đủ: docs/kiem_thu/phan_24_quan_tri_chinh_sach.md

@@ -25,7 +25,7 @@
 - Mục tiêu: không tạo mã, không gửi.
 - Dữ liệu: "hvkhoa@gmail.com".
 - Các bước: gọi POST /api/tai-khoan/quen-mat-khau.
-- Kết quả mong đợi: 200, cùng câu; không thêm dòng mã; không có thư.
+- Kết quả mong đợi: 200, cùng câu; không thêm dòng mã; không có thư; tài khoản bị khóa sau khi đã nhận mã thì đặt lại báo "Mã xác nhận không đúng hoặc đã hết hạn", mật khẩu giữ nguyên.
 - Cách kiểm: Tự động
 - Nguồn: Phần 4 mục 4.4, 4.8
 
@@ -105,6 +105,6 @@
 - Mục tiêu: giao diện và luồng đúng thiết kế.
 - Dữ liệu: Gmail thật của người kiểm (cần điền GMAIL_USER, GMAIL_APP_PASSWORD trong backend/.env).
 - Các bước: mở /quen-mat-khau; gõ Gmail sai định dạng; gõ Gmail đúng rồi bấm "Gửi mã"; xem đếm ngược "Gửi lại mã"; nhập mã trong thư, mật khẩu mới rồi bấm "Đặt lại mật khẩu".
-- Kết quả mong đợi: Gmail sai báo dưới ô, không gửi; gửi đúng thì sang /dat-lai-mat-khau với dòng "Nếu Gmail này đã đăng ký, mã xác nhận đã được gửi. Vui lòng kiểm tra hộp thư.", dòng "Gmail bạn đã nhập: …" và liên kết "Nhập lại Gmail"; "Gửi lại mã" đếm ngược 60 giây; thành công thì về trang chủ với ô thông báo "Đặt lại mật khẩu thành công, vui lòng đăng nhập", chưa đăng nhập; hai trang không có chân trang.
+- Kết quả mong đợi: Gmail sai báo dưới ô, không gửi; gửi đúng thì sang /dat-lai-mat-khau với dòng "Nếu Gmail này đã đăng ký, mã xác nhận đã được gửi. Vui lòng kiểm tra hộp thư.", dòng "Gmail bạn đã nhập: [Gmail]" và liên kết "Nhập lại Gmail"; "Gửi lại mã" đếm ngược 60 giây; thành công thì về trang chủ với ô thông báo "Đặt lại mật khẩu thành công, vui lòng đăng nhập", chưa đăng nhập; hai trang không có chân trang.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 4 mục 4.3, 4.7

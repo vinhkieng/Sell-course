@@ -17,7 +17,7 @@ Làm sau Phần 15. Các khối này nằm trên trang chi tiết khóa (Phần 
 - thiet_ke/danh_gia_bao_cao/bao_cao_danh_gia.html (màn "Chi tiết khóa học (báo cáo đánh giá)"): hộp "Báo cáo đánh giá này?".
 
 ## 16.3 Khối "Đánh giá khóa học" (mọi người xem)
-- Điểm trung bình (một chữ số thập phân, dấu phẩy, ví dụ 4,7), "N đánh giá", năm dòng "5 sao … 1 sao" kèm thanh và phần trăm (số nguyên). Chưa có đánh giá hợp lệ nào thì hiện "Chưa có đánh giá" và ẩn phân bố sao.
+- Điểm trung bình (một chữ số thập phân, dấu phẩy, ví dụ 4,7), "N đánh giá", năm dòng từ "5 sao" đến "1 sao" kèm thanh và phần trăm (số nguyên). Chưa có đánh giá hợp lệ nào thì hiện "Chưa có đánh giá" và ẩn phân bố sao.
 - "Đánh giá của học viên": mỗi đánh giá có ảnh chữ cái đầu, tên (họ tên, trống thì "Học viên AVA"), số sao, ngày viết (dd/mm/yyyy), nhận xét. Mới nhất ở trên. Hiện 3 cái đầu, dòng "Hiển thị 3 trên N đánh giá", nút "Xem thêm đánh giá" mỗi lần tải thêm 10, hết thì ẩn nút.
 - Nút "Báo cáo" dưới mỗi đánh giá chỉ có với học viên có quyền học, trừ đánh giá của chính mình. Đã báo cáo đánh giá đó rồi (kể cả admin đã xử lý) thì thay bằng chữ mờ "Đã báo cáo".
 

@@ -57,20 +57,21 @@
   line-height: 1.25;
 }
 
+/* Thiết kế vẽ nút tròn có mũi tên; theo C18 nút ghi chữ nên thành viên thuốc, giữ màu, chiều cao và bóng */
 .tcs-len-dau {
   position: fixed;
   right: 24px;
   bottom: 24px;
-  width: 48px;
   height: 48px;
-  border-radius: 50%;
+  padding: 0 20px;
+  border-radius: 999px;
   border: 0;
   background: var(--mau-chinh);
   color: var(--mau-trang);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 15px;
   font-weight: 800;
   box-shadow: 0 8px 24px rgba(31, 58, 61, 0.28);
   z-index: 40;

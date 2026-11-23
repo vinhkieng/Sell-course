@@ -73,6 +73,6 @@
 - Mục tiêu: trang đúng thiết kế, giữ lựa chọn trên đường dẫn.
 - Dữ liệu: dữ liệu chung.
 - Các bước: mở /khoa-hoc; tìm "lap trinh"; tích hai danh mục, chọn khoảng giá, bấm "Áp dụng bộ lọc"; tải lại trang; nhập "Từ" lớn hơn "Đến"; bấm "Xóa tất cả"; tìm từ khóa không có; bấm "Xóa bộ lọc"; sang trang 2.
-- Kết quả mong đợi: tiêu đề "Khóa học nổi bật", khi tìm thì "Kết quả cho ‘lap trinh’"; dòng "Hiển thị N khóa học"; bộ lọc chỉ liệt kê danh mục có khóa đang bán; đường dẫn ghi ?tu_khoa=&danh_muc=&gia=&sap_xep=&trang= và tải lại vẫn giữ; khoảng sai báo "Khoảng giá không hợp lệ"; không có kết quả hiện "Không tìm thấy khóa học phù hợp", "Hãy thử đổi từ khóa hoặc bỏ bớt bộ lọc", nút "Xóa bộ lọc"; giống các màn trong thiet_ke/danh_sach_khoa_hoc/; hiển thị tốt ở ba độ rộng.
+- Kết quả mong đợi: tiêu đề "Khóa học nổi bật", khi tìm thì "Kết quả cho "lap trinh""; dòng "Hiển thị N khóa học"; bộ lọc chỉ liệt kê danh mục có khóa đang bán; đường dẫn ghi ?tu_khoa=&danh_muc=&gia=&sap_xep=&trang= và tải lại vẫn giữ; khoảng sai báo "Khoảng giá không hợp lệ"; không có kết quả hiện "Không tìm thấy khóa học phù hợp", "Hãy thử đổi từ khóa hoặc bỏ bớt bộ lọc", nút "Xóa bộ lọc"; giống các màn trong thiet_ke/danh_sach_khoa_hoc/; hiển thị tốt ở ba độ rộng.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 10 mục 10.3, 10.4, 10.7

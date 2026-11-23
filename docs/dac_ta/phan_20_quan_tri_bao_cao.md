@@ -25,9 +25,9 @@ Làm sau Phần 19.
 - Phiếu về một bài mà người cung cấp đã xóa vẫn xử lý như thường; admin xem file của bài đó qua "File cũ" ở tab lịch sử.
 
 ## 20.5 Trang "Báo cáo đánh giá" (/quan-tri/bao-cao-danh-gia)
-- Cột: Khóa học, Người viết (tên đăng nhập), Nội dung đánh giá (nhận xét lúc bị báo cáo của phiếu mới nhất trong dòng; nhận xét trống thì hiện "N sao"; nội dung hiện tại khác bản lúc báo cáo thì thêm nhãn "Đã sửa sau khi bị báo cáo"), Lý do (lý do "Lý do khác" có ghi chú thì thêm dòng "Ghi chú: …"), Ngày gửi, Trạng thái ("Chưa xử lý", "Không vi phạm", "Đã ẩn đánh giá"), Hành động "Xem chi tiết".
+- Cột: Khóa học, Người viết (tên đăng nhập), Nội dung đánh giá (nhận xét lúc bị báo cáo của phiếu mới nhất trong dòng; nhận xét trống thì hiện "N sao"; nội dung hiện tại khác bản lúc báo cáo thì thêm nhãn "Đã sửa sau khi bị báo cáo"), Lý do (lý do "Lý do khác" có ghi chú thì thêm dòng "Ghi chú: [ghi chú]"), Ngày gửi, Trạng thái ("Chưa xử lý", "Không vi phạm", "Đã ẩn đánh giá"), Hành động "Xem chi tiết".
 - Bấm "Xem chi tiết" mở hộp "Chi tiết đánh giá bị báo cáo". Ngay lúc mở hộp, mọi phiếu đang chờ của đánh giá đó chuyển 'Không vi phạm', id_quan_tri_vien = admin; đánh giá vẫn hiện bình thường.
-- Hộp chi tiết: Khóa học, Người viết, "Đánh giá hiện tại" (số sao, ngày viết, nhãn "Đã sửa sau khi bị báo cáo" nếu khác bản lúc báo cáo, nhận xét hiện tại), "Các báo cáo (N)" là bảng mọi phiếu của đánh giá (Người báo cáo là tên đăng nhập, Lý do, Ghi chú hoặc "-", Ngày gửi; phiếu nào có nội dung lúc báo cáo khác nội dung hiện tại thì thêm dòng "Nội dung lúc báo cáo: 1 sao - …"). Nút "Đóng" và "Ẩn đánh giá". Đánh giá đã bị ẩn thì không có nút "Ẩn đánh giá", thay bằng dòng "Đánh giá này đã bị ẩn.".
+- Hộp chi tiết: Khóa học, Người viết, "Đánh giá hiện tại" (số sao, ngày viết, nhãn "Đã sửa sau khi bị báo cáo" nếu khác bản lúc báo cáo, nhận xét hiện tại), "Các báo cáo (N)" là bảng mọi phiếu của đánh giá (Người báo cáo là tên đăng nhập, Lý do, Ghi chú hoặc "-", Ngày gửi; phiếu nào có nội dung lúc báo cáo khác nội dung hiện tại thì thêm dòng "Nội dung lúc báo cáo: 1 sao - [nhận xét lúc báo cáo]"). Nút "Đóng" và "Ẩn đánh giá". Đánh giá đã bị ẩn thì không có nút "Ẩn đánh giá", thay bằng dòng "Đánh giá này đã bị ẩn.".
 - Bấm "Ẩn đánh giá" mở hộp "Ẩn đánh giá này?": dòng "Đánh giá sẽ bị ẩn khỏi trang khóa học. Các báo cáo của đánh giá này sẽ chuyển sang kết quả Ẩn đánh giá.", ô "Lý do ẩn *" (bắt buộc, tối đa 255 ký tự, bỏ trống báo "Vui lòng nhập lý do"), dòng "Lý do chỉ để quản trị viên tra cứu lại, không hiển thị cho người dùng.", nút "Hủy" và "Ẩn đánh giá".
 - Xác nhận ẩn, trong một giao dịch: danh_gia.bi_an = 1, ly_do_an, id_quan_tri_vien = admin; mọi phiếu của đánh giá đó (dù chờ hay đã 'Không vi phạm') đổi 'Ẩn đánh giá', id_quan_tri_vien = admin. Ô thông báo nhỏ "Đã ẩn đánh giá". Không có cách hiện lại.
 - Đánh giá đã 'Không vi phạm' mà sau đó admin thấy vi phạm: vào lựa chọn "Đã xử lý", bấm "Xem chi tiết" rồi "Ẩn đánh giá".
@@ -45,7 +45,7 @@ Làm sau Phần 19.
 - bao_cao_khoa_hoc, bao_cao_danh_gia, danh_gia, khoa_hoc, bai_hoc, nguoi_dung, hoc_vien.
 
 ## 20.8 Câu thông báo
-- "Mới nhất ở trên", "N báo cáo", "Khóa đã bị xóa", "Đã sửa sau khi bị báo cáo", "Nội dung lúc báo cáo: …"
+- "Mới nhất ở trên", "N báo cáo", "Khóa đã bị xóa", "Đã sửa sau khi bị báo cáo", "Nội dung lúc báo cáo: [nội dung lúc báo cáo]"
 - "Ẩn đánh giá này?", "Đánh giá sẽ bị ẩn khỏi trang khóa học. Các báo cáo của đánh giá này sẽ chuyển sang kết quả Ẩn đánh giá.", "Lý do chỉ để quản trị viên tra cứu lại, không hiển thị cho người dùng.", "Vui lòng nhập lý do"
 - "Đánh giá này đã bị ẩn.", "Đã ẩn đánh giá"
 

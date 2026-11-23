@@ -17,7 +17,7 @@
 - Mục tiêu: câu lưu đúng mẫu; lý do có sẵn dấu chấm thì không thêm.
 - Dữ liệu: ẩn K1 với lý do "Sai bản quyền"; ẩn K2 với lý do "Sai bản quyền." (có dấu chấm); hệ thống ẩn do khóa tài khoản; gỡ vĩnh viễn với lý do "Lừa đảo"; đã chuyển 500.000 có mã "FT123"; đã chuyển không có mã; từ chối 500.000 lý do "Sai tên chủ tài khoản".
 - Các bước: tạo từng thông báo qua các thao tác của Phần 19, 21, 23 (hoặc gọi thẳng hàm dựng câu).
-- Kết quả mong đợi: "Khóa học “<tên>” đã bị quản trị viên ẩn. Lý do: Sai bản quyền. Nếu bị ẩn thêm 1 lần nữa, khóa học sẽ bị gỡ vĩnh viễn." (cả hai lý do cho cùng một câu, không có hai dấu chấm); "Khóa học “<tên>” đã bị ẩn do tài khoản bị khóa. Lý do: Tài khoản bị khóa. Nếu bị ẩn thêm 1 lần nữa, khóa học sẽ bị gỡ vĩnh viễn."; "Khóa học “<tên>” đã bị gỡ vĩnh viễn. Lý do: Lừa đảo."; "Yêu cầu rút tiền 500.000đ đã được chuyển. Mã giao dịch: FT123."; "Yêu cầu rút tiền 500.000đ đã được chuyển."; "Yêu cầu rút tiền 500.000đ bị từ chối. Lý do: Sai tên chủ tài khoản."
+- Kết quả mong đợi: "Khóa học "<tên>" đã bị quản trị viên ẩn. Lý do: Sai bản quyền. Nếu bị ẩn thêm 1 lần nữa, khóa học sẽ bị gỡ vĩnh viễn." (cả hai lý do cho cùng một câu, không có hai dấu chấm); "Khóa học "<tên>" đã bị ẩn do tài khoản bị khóa. Lý do: Tài khoản bị khóa. Nếu bị ẩn thêm 1 lần nữa, khóa học sẽ bị gỡ vĩnh viễn."; "Khóa học "<tên>" đã bị gỡ vĩnh viễn. Lý do: Lừa đảo."; "Yêu cầu rút tiền 500.000đ đã được chuyển. Mã giao dịch: FT123."; "Yêu cầu rút tiền 500.000đ đã được chuyển."; "Yêu cầu rút tiền 500.000đ bị từ chối. Lý do: Sai tên chủ tài khoản."
 - Cách kiểm: Tự động
 - Nguồn: Phần 18 mục 18.4
 
@@ -96,7 +96,7 @@
 ## P18-12 Trang Thông báo
 - Mục tiêu: giao diện đúng thiết kế.
 - Dữ liệu: nccA có 12 thông báo, có thông báo chưa đọc; một người cung cấp chưa có thông báo; một học viên.
-- Các bước: bấm chuông rồi bấm "Xem tất cả thông báo →"; chuyển sang trang 2; bấm một thông báo; quay lại /thong-bao bấm "Đánh dấu tất cả đã đọc"; người chưa có thông báo mở /thong-bao; học viên mở /thong-bao.
+- Các bước: bấm chuông rồi bấm "Xem tất cả thông báo"; chuyển sang trang 2; bấm một thông báo; quay lại /thong-bao bấm "Đánh dấu tất cả đã đọc"; người chưa có thông báo mở /thong-bao; học viên mở /thong-bao.
 - Kết quả mong đợi: trang có tiêu đề "Thông báo", "Mới nhất ở trên", 10 thông báo, "Hiển thị 1-10 trên 12 thông báo", trang 2 có 2 thông báo; bấm thông báo thì mở trang liên quan và số trên chuông giảm; sau khi đánh dấu tất cả thì nút mờ và chuông không còn số; người chưa có thông báo thấy "Chưa có thông báo nào."; học viên thấy trang 403; có chân trang; giống thiet_ke/thong_bao/tat_ca_thong_bao.html.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 18 mục 18.3, 18.7, 18.8

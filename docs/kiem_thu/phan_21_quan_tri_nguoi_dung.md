@@ -73,7 +73,7 @@
 - Mục tiêu: giao diện đúng thiết kế.
 - Dữ liệu: dữ liệu chung.
 - Các bước: mở /quan-tri/nguoi-dung; tìm và lọc; bấm "Khóa", bấm các nút chọn nhanh và "Khác"; gửi lý do 3 ký tự; gửi đúng; bấm "Mở khóa".
-- Kết quả mong đợi: ô tìm "Tìm theo tên đăng nhập hoặc Gmail", bộ lọc "Vai trò:"; trạng thái "Hoạt động" hoặc "Bị khóa" kèm "Lý do: …"; dòng admin hiện "-"; "Hiển thị 1-20 trên N người dùng (20 dòng mỗi trang)"; hộp "Khóa tài khoản này?" với ô "Lý do *", nút chọn nhanh điền chữ vào ô, "Khác" xóa trắng ô; lỗi "Lý do từ 5 đến 255 ký tự."; "Đã khóa tài khoản"; hộp "Mở khóa tài khoản này?" có "Lý do đã khóa: …"; "Đã mở khóa tài khoản"; giống thiet_ke/quan_tri_nguoi_dung/.
+- Kết quả mong đợi: ô tìm "Tìm theo tên đăng nhập hoặc Gmail", bộ lọc "Vai trò:"; trạng thái "Hoạt động" hoặc "Bị khóa" kèm "Lý do: [lý do]"; dòng admin hiện "-"; "Hiển thị 1-20 trên N người dùng (20 dòng mỗi trang)"; hộp "Khóa tài khoản này?" với ô "Lý do *", nút chọn nhanh điền chữ vào ô, "Khác" xóa trắng ô; lỗi "Lý do từ 5 đến 255 ký tự."; "Đã khóa tài khoản"; hộp "Mở khóa tài khoản này?" có "Lý do đã khóa: [lý do]"; "Đã mở khóa tài khoản"; giống thiet_ke/quan_tri_nguoi_dung/.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 21 mục 21.3, 21.8
 

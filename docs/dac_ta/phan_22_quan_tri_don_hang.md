@@ -12,7 +12,7 @@ Làm sau Phần 21.
 
 ## 22.3 Danh sách đơn (/quan-tri/don-hang)
 - Ô tìm "Tìm theo mã đơn, tên đăng nhập hoặc Gmail học viên": gõ đúng dạng AVA-yymmdd-nnnn thì tìm đúng đơn đó; còn lại tìm chứa chữ trong tên đăng nhập hoặc Gmail.
-- Năm lựa chọn lọc kèm số: "Tất cả", "Đã thanh toán", "Chờ thanh toán", "Thất bại", "Hết hạn". Dòng "Mới nhất ở trên · Bấm vào một dòng để xem chi tiết".
+- Năm lựa chọn lọc kèm số: "Tất cả", "Đã thanh toán", "Chờ thanh toán", "Thất bại", "Hết hạn". Dòng "Mới nhất ở trên. Bấm vào một dòng để xem chi tiết".
 - Cột: Mã đơn, Học viên (tên đăng nhập và Gmail), Ngày tạo (ngày và giờ), Các khóa trong đơn (tên khóa đầu tiên kèm "+N khóa khác" nếu có), Tổng tiền, Trạng thái. 20 dòng mỗi trang, "Hiển thị 1-9 trên 9 đơn hàng (20 dòng mỗi trang)".
 - Trước khi trả dữ liệu, chạy câu chuyển hết hạn (Phần 13 mục 13.9).
 

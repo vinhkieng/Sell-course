@@ -113,7 +113,7 @@
 - Mục tiêu: giao diện đúng thiết kế.
 - Dữ liệu: ncc01 có 7 lượt bán, một lượt đã hoàn tiền; một người cung cấp chưa bán được gì.
 - Các bước: mở /ho-so#vi; chuyển trang bảng.
-- Kết quả mong đợi: bốn thẻ "Có thể rút", "Đang tạm giữ", "Đang chờ duyệt rút", "Đã rút"; bảng Ngày, Khóa học, Giá bán, Nguồn, Mức chia ("90%", "60%"), Bạn nhận ("0đ (Đã hoàn tiền)" ở lượt hoàn tiền); "Hiển thị 1-5 trên 7 lượt bán", "‹ Trước", số trang, "Sau ›"; người chưa bán thấy "Chưa có lượt bán nào."
+- Kết quả mong đợi: bốn thẻ "Có thể rút", "Đang tạm giữ", "Đang chờ duyệt rút", "Đã rút"; bảng Ngày, Khóa học, Giá bán, Nguồn, Mức chia ("90%", "60%"), Bạn nhận ("0đ (Đã hoàn tiền)" ở lượt hoàn tiền); "Hiển thị 1-5 trên 7 lượt bán", "Trước", số trang, "Sau"; người chưa bán thấy "Chưa có lượt bán nào."
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 17 mục 17.3, 17.9
 
@@ -121,6 +121,6 @@
 - Mục tiêu: thông tin nhận tiền, gửi yêu cầu, lịch sử.
 - Dữ liệu: ncc01.
 - Các bước: mở /ho-so#rut-tien; gõ tên "Trần Thị Bích"; lưu thiếu ô; lưu đủ; gõ số tiền 1250000; bấm "Rút tối đa"; gửi; xem lịch sử.
-- Kết quả mong đợi: danh sách 15 ngân hàng; tên đổi thành "TRAN THI BICH" khi gõ; lỗi như thiet_ke/vi_rut_tien/thieu_thong_tin_nhan_tien.html; "Đã lưu thông tin nhận tiền"; ô số tiền tự thêm dấu chấm, gợi ý "Tối thiểu 100.000đ"; "Rút tối đa" điền đủ số có thể rút; vượt số có thể rút báo như thiet_ke/vi_rut_tien/rut_qua_so_du.html; gửi xong dòng xanh "Đã gửi yêu cầu rút tiền. Số tiền được giữ lại ở mục Đang chờ duyệt rút."; khi có yêu cầu chờ thì ô và nút mờ như thiet_ke/vi_rut_tien/dang_co_yeu_cau_cho.html; bảng lịch sử có "Mã giao dịch: …", ô trống là "-"; chưa có yêu cầu thì "Chưa có yêu cầu rút tiền nào."
+- Kết quả mong đợi: danh sách 15 ngân hàng; tên đổi thành "TRAN THI BICH" khi gõ; lỗi như thiet_ke/vi_rut_tien/thieu_thong_tin_nhan_tien.html; "Đã lưu thông tin nhận tiền"; ô số tiền tự thêm dấu chấm, gợi ý "Tối thiểu 100.000đ"; "Rút tối đa" điền đủ số có thể rút; vượt số có thể rút báo như thiet_ke/vi_rut_tien/rut_qua_so_du.html; gửi xong dòng xanh "Đã gửi yêu cầu rút tiền. Số tiền được giữ lại ở mục Đang chờ duyệt rút."; khi có yêu cầu chờ thì ô và nút mờ như thiet_ke/vi_rut_tien/dang_co_yeu_cau_cho.html; bảng lịch sử có "Mã giao dịch: [mã giao dịch]", ô trống là "-"; chưa có yêu cầu thì "Chưa có yêu cầu rút tiền nào."
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 17 mục 17.4, 17.5, 17.6, 17.9

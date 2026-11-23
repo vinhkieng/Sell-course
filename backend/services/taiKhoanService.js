@@ -1,4 +1,5 @@
-// Nghiệp vụ tài khoản: thông tin người xem (Phần 1), đăng ký (Phần 2), đăng nhập và xác nhận địa chỉ mạng (Phần 3).
+// Nghiệp vụ tài khoản: thông tin người xem (Phần 1), đăng ký (Phần 2), đăng nhập và xác nhận địa chỉ mạng (Phần 3),
+// quên mật khẩu (Phần 4).
 import { randomInt } from 'node:crypto';
 import bcrypt from 'bcrypt';
 import { VAI_TRO } from '../constants/vaiTro.js';
@@ -19,6 +20,10 @@ import * as gioHangRepo from '../repositories/gioHangRepository.js';
 import * as thongBaoRepo from '../repositories/thongBaoRepository.js';
 import * as nguoiDungRepo from '../repositories/nguoiDungRepository.js';
 import * as xacMinhIpRepo from '../repositories/xacMinhIpRepository.js';
+import * as maDatLaiRepo from '../repositories/maDatLaiMatKhauRepository.js';
+
+// Mã 6 chữ số ngẫu nhiên gửi qua Gmail (Phần 3, 4)
+const taoMa6So = () => String(randomInt(0, 1000000)).padStart(6, '0');
 
 const TEN_DA_DUNG = 'Tên đăng nhập đã được sử dụng';
 const GMAIL_DA_DUNG = 'Gmail này đã được sử dụng';
@@ -109,7 +114,7 @@ function cheGmail(gmail) {
 // Tạo mã, ghi vào xac_minh_ip và gửi email. Ghi và gửi trong một giao dịch: gửi thư lỗi thì không để lại mã.
 async function guiMaXacNhan(idHocVien, gmail, diaChiIpMoi) {
   if (!boDem.conGuiDuocMa(idHocVien)) throw loi429(GUI_MA_QUA_NHIEU);
-  const ma = String(randomInt(0, 1000000)).padStart(6, '0');
+  const ma = taoMa6So();
   const maDaBam = await bcrypt.hash(ma, 10);
   await withTransaction(async (conn) => {
     await xacMinhIpRepo.ghiMa(idHocVien, maDaBam, diaChiIpMoi, conn);
@@ -204,4 +209,80 @@ export async function guiLaiMaDangNhap(cho) {
     });
   }
   return guiMaXacNhan(cho.id_hoc_vien, dong.gmail, cho.ip);
+}
+
+// ===== Quên mật khẩu (Phần 4) =====
+
+// Có tài khoản hay không đều trả đúng câu này, để người lạ không dò được Gmail nào đã đăng ký (mục 4.4)
+const DA_GUI_MA_NEU_CO = 'Nếu Gmail này đã đăng ký, mã xác nhận đã được gửi. Vui lòng kiểm tra hộp thư.';
+const MA_DAT_LAI_SAI = 'Mã xác nhận không đúng hoặc đã hết hạn';
+const DAT_LAI_SAI_QUA_NHIEU = 'Bạn đã nhập sai quá nhiều lần, vui lòng gửi lại mã mới';
+
+// Gửi mã đặt lại nếu Gmail thuộc tài khoản đang hoạt động. Trả số giây còn phải chờ (0 là đã gửi hoặc không có gì để gửi).
+async function guiMaDatLai(gmail) {
+  const taiKhoan = await nguoiDungRepo.timTheoGmail(gmail);
+  if (!taiKhoan || taiKhoan.khoa === 1) return 0;
+  const giayCho = await maDatLaiRepo.giayChoGuiLai(taiKhoan.id);
+  if (giayCho > 0) return giayCho;
+
+  const ma = taoMa6So();
+  const maDaBam = await bcrypt.hash(ma, 10);
+  // Ghi và gửi trong một giao dịch: gửi thư lỗi thì không để lại mã, mã cũ vẫn còn hiệu lực
+  await withTransaction(async (conn) => {
+    await maDatLaiRepo.huyMaChuaDung(taiKhoan.id, conn);
+    await maDatLaiRepo.themMa(taiKhoan.id, maDaBam, conn);
+    await guiEmail({
+      den: taiKhoan.gmail,
+      tieuDe: 'Mã đặt lại mật khẩu AVA',
+      noiDung: `Mã xác nhận để đặt lại mật khẩu tài khoản AVA của bạn là: ${ma}. Mã có hiệu lực trong ${HIEU_LUC_MA_XAC_NHAN_PHUT} phút. Nếu bạn không yêu cầu đặt lại mật khẩu, hãy bỏ qua email này.`,
+    });
+  });
+  return 0;
+}
+
+// POST /api/tai-khoan/quen-mat-khau: chưa đủ 60 giây thì không gửi thêm nhưng vẫn trả như thường
+export async function quenMatKhau(gmail) {
+  await guiMaDatLai(gmail);
+  return { thong_bao: DA_GUI_MA_NEU_CO };
+}
+
+// POST /api/tai-khoan/gui-lai-ma-dat-lai: như quên mật khẩu nhưng báo 429 khi tài khoản có thật và chưa đủ 60 giây
+export async function guiLaiMaDatLai(gmail) {
+  const giayCho = await guiMaDatLai(gmail);
+  if (giayCho > 0) {
+    throw loi429(`Gửi lại mã sau ${giayCho} giây`, { them: { giay_cho_gui_lai: giayCho } });
+  }
+  return { thong_bao: DA_GUI_MA_NEU_CO };
+}
+
+// POST /api/tai-khoan/dat-lai-mat-khau (mật khẩu mới đã được kiểm ở schemaDatLaiMatKhau)
+export async function datLaiMatKhau({ gmail, ma, mat_khau_moi: matKhauMoi }) {
+  const taiKhoan = await nguoiDungRepo.timTheoGmail(gmail);
+  // Tài khoản không có hoặc đang bị khóa thì coi như không có mã hợp lệ, không tăng số lần sai
+  if (!taiKhoan || taiKhoan.khoa === 1) throw loiMaDatLai(MA_DAT_LAI_SAI);
+
+  const matKhauDaBam = await bcrypt.hash(matKhauMoi, 10);
+  // Trả câu lỗi (số lần sai vẫn được lưu vì giao dịch không bị hủy) hoặc null khi đặt lại xong
+  const cauLoi = await withTransaction(async (conn) => {
+    const dong = await maDatLaiRepo.khoaMaMoiNhatChuaDung(taiKhoan.id, conn);
+    if (!dong || dong.da_het_han) return MA_DAT_LAI_SAI;
+    if (!(await bcrypt.compare(ma, dong.ma_6_so_da_bam))) {
+      const soLanSai = dong.so_lan_sai + 1;
+      const huyMa = soLanSai >= NHAP_MA_SAI_TOI_DA;
+      await maDatLaiRepo.ghiLanSai(dong.id, soLanSai, huyMa, conn);
+      return huyMa ? DAT_LAI_SAI_QUA_NHIEU : MA_DAT_LAI_SAI;
+    }
+    await nguoiDungRepo.capNhatMatKhau(taiKhoan.id, matKhauDaBam, conn);
+    await maDatLaiRepo.danhDauDaDung(dong.id, conn);
+    return null;
+  });
+  if (cauLoi) throw loiMaDatLai(cauLoi);
+
+  // Gỡ tạm chặn đăng nhập của tên này (mục 4.4)
+  boDem.xoaSaiTheoTen(taiKhoan.ten_dang_nhap.toLowerCase());
+}
+
+// Lỗi mã hiện chữ đỏ dưới ô mã của trang đặt lại
+function loiMaDatLai(cau) {
+  return loi400(cau, { cacO: { ma: cau } });
 }

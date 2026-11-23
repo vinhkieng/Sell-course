@@ -27,11 +27,13 @@ function KhungTaiKhoan({ cauLon, cauNho, children }) {
 }
 
 // Dòng báo trong thẻ: 'loi' (đỏ, lỗi máy chủ), 'nhac' (vàng, ví dụ "Vui lòng đăng nhập để mua khóa học"),
-// 'xanh' (gửi lại mã thành công). Theo thiet_ke/dang_nhap/.
+// 'xanh' (gửi lại mã thành công), 'thong-tin' (nền xanh nhạt, chữ đậm, ví dụ "Nếu Gmail này đã đăng ký...").
+// Theo thiet_ke/dang_nhap/ và thiet_ke/quen_mat_khau/dat_lai_mat_khau.html.
 const HINH_DONG_BAO = {
   loi: <path d="M12 7.5v5M12 16h.01" />,
   nhac: <path d="M12 11v5M12 8h.01" />,
   xanh: <path d="m8 12 3 3 5-6" />,
+  'thong-tin': <path d="M12 11v5M12 8h.01" />,
 }
 
 export function DongBao({ loai, children }) {

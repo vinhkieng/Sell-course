@@ -185,7 +185,7 @@
 - Mục tiêu: thẻ khóa và nút sao chép link.
 - Dữ liệu: ncc01 có khóa đang bán, khóa tự ẩn, khóa admin ẩn có lý do, khóa bị gỡ.
 - Các bước: mở /ho-so#quan-ly-khoa-hoc; bấm "Sao chép link giới thiệu" ở khóa đang bán; dán vào thanh địa chỉ.
-- Kết quả mong đợi: mỗi thẻ có tên, trạng thái đúng chữ C11, "N bài · giá", "Lý do: …" ở khóa admin ẩn và bị gỡ; nút sao chép đổi thành "Đã sao chép" một lúc, link đúng dạng /khoa-hoc/<id>?ref=<mã>; khóa khác thì nút mờ kèm "Chỉ khóa đang bán mới có link giới thiệu".
+- Kết quả mong đợi: mỗi thẻ có tên, trạng thái đúng chữ C11, "N bài, giá", "Lý do: [lý do]" ở khóa admin ẩn và bị gỡ; nút sao chép đổi thành "Đã sao chép" một lúc, link đúng dạng /khoa-hoc/<id>?ref=<mã>; khóa khác thì nút mờ kèm "Chỉ khóa đang bán mới có link giới thiệu".
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 8 mục 8.3, 8.7
 
@@ -193,7 +193,7 @@
 - Mục tiêu: giao diện đúng thiết kế.
 - Dữ liệu: K1.
 - Các bước: mở /nguoi-cung-cap/khoa-hoc/<id>; xem khối "Ẩn khóa học" và "Xóa khóa học"; sang bước 2; mở "Sửa bài học"; đổi số thứ tự làm thay đổi bài học thử; bấm xóa bài khi còn 3 bài; bấm "Hủy" rồi mở lại.
-- Kết quả mong đợi: bước 1 điền sẵn; khối ẩn có dòng "Khóa sẽ không hiện trên trang bán. Học viên đã mua vẫn học bình thường. Bạn có thể đăng lại bất cứ lúc nào."; ô "Loại bài" mờ; cảnh báo "Đổi số thứ tự này sẽ làm bài học thử đổi từ “…” sang “…”."; nút xóa bài mờ kèm "Khóa học cần ít nhất 3 bài. Hãy thêm bài mới trước khi xóa."; hộp xóa bài có ô "Lý do xóa" khi khóa đã có người mua; "Hủy" thì khóa giữ nguyên; giống các màn trong thiet_ke/quan_ly_khoa_hoc/.
+- Kết quả mong đợi: bước 1 điền sẵn; khối ẩn có dòng "Khóa sẽ không hiện trên trang bán. Học viên đã mua vẫn học bình thường. Bạn có thể đăng lại bất cứ lúc nào."; ô "Loại bài" mờ; cảnh báo "Đổi số thứ tự này sẽ làm bài học thử đổi từ "[tên bài cũ]" sang "[tên bài mới]"."; nút xóa bài mờ kèm "Khóa học cần ít nhất 3 bài. Hãy thêm bài mới trước khi xóa."; hộp xóa bài có ô "Lý do xóa" khi khóa đã có người mua; "Hủy" thì khóa giữ nguyên; giống các màn trong thiet_ke/quan_ly_khoa_hoc/.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 8 mục 8.3, 8.7
 

@@ -201,6 +201,15 @@
   color: var(--mau-xanh-dam);
 }
 
+.tk-dong-bao.thong-tin {
+  background: var(--mau-xanh-nen);
+  color: var(--mau-chu);
+}
+
+.tk-dong-bao.thong-tin svg {
+  color: var(--mau-chinh);
+}
+
 .tk-chuyen {
   text-align: center;
   color: var(--mau-chu-phu);

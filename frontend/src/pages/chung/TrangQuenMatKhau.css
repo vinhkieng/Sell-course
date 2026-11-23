@@ -1,0 +1,15 @@
+/* Trang quên mật khẩu, theo thiet_ke/quen_mat_khau/quen_mat_khau.html */
+.trang-quen-mat-khau {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tqmk-quay-lai {
+  text-align: center;
+}
+
+.tqmk-quay-lai a {
+  font-weight: 600;
+  color: var(--mau-chinh);
+}

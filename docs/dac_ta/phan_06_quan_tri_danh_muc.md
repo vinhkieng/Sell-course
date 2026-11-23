@@ -12,7 +12,7 @@ Làm sau Phần 5. Làm sớm vì người cung cấp cần danh mục khi tạo
 ## 6.3 Giao diện và hành vi
 - Bảng: Tên danh mục, Số khóa, Hành động ("Sửa tên", "Xóa"). Đầu trang có nút "+ Thêm danh mục" và nút "Gộp". Sắp theo tên. 20 dòng mỗi trang.
 - Cột "Số khóa" đếm mọi khóa thuộc danh mục ở cả bốn loại: đang bán, bị ẩn, bị gỡ vĩnh viễn và đã xóa.
-- Nút "Xóa" bị mờ khi số khóa lớn hơn 0; rê chuột hiện "Danh mục đang có N khóa học". Số khóa bằng 0 thì bấm "Xóa" mở hộp "Xóa danh mục này?" với dòng "Danh mục “Tên” sẽ bị xóa khỏi hệ thống. Hành động này không thể hoàn tác." và hai nút "Hủy", "Xóa danh mục".
+- Nút "Xóa" bị mờ khi số khóa lớn hơn 0; rê chuột hiện "Danh mục đang có N khóa học". Số khóa bằng 0 thì bấm "Xóa" mở hộp "Xóa danh mục này?" với dòng "Danh mục "Tên" sẽ bị xóa khỏi hệ thống. Hành động này không thể hoàn tác." và hai nút "Hủy", "Xóa danh mục".
 - Bấm "Gộp": mỗi dòng hiện ô tích; tích ít nhất hai danh mục thì nút "Gộp" sáng; bấm thì mở hộp "Gộp danh mục" có ô "Tên danh mục mới".
 
 ## 6.4 Quy tắc tên danh mục (dùng chung với Phần 7)

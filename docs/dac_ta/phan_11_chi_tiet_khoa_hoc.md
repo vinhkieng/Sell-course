@@ -17,7 +17,7 @@ Làm sau Phần 10. Phần đánh giá và báo cáo trên trang này làm ở P
 
 ## 11.3 Giao diện và hành vi
 - Phần thông tin: đường dẫn "Trang chủ / Danh mục / Tên khóa", tên danh mục, tên khóa, mô tả ngắn (đoạn đầu của mô tả), "N bài học", "Người cung cấp: họ tên", "N học viên", điểm trung bình và số lượt đánh giá; "Bạn sẽ học được gì", "Mô tả khóa học", "Nội dung khóa học" (danh sách mọi bài chưa xóa, đủ cả, không rút gọn), "Yêu cầu trước khi học", "Khóa học dành cho ai" (ba khối này mỗi dòng của ô dữ liệu là một ý; ô trống thì ẩn cả khối).
-- Mỗi dòng bài: số thứ tự hai chữ số, tên bài, loại (Video kèm thời lượng, Tài liệu, hoặc nhãn trắc nghiệm "Trắc nghiệm · N câu · M phút"; học viên đã làm thì thêm điểm cao nhất ở đầu "8,00/10 · Trắc nghiệm · N câu · M phút"). Bài số 1 có nhãn "Học thử miễn phí"; nút "Xem thử" chỉ hiện với người chưa có quyền học. Chủ khóa và admin không có nhãn và nút này. Học viên đã mua thấy nhãn "Đã học" ở bài đã học xong.
+- Mỗi dòng bài: số thứ tự hai chữ số, tên bài, loại (Video kèm thời lượng, Tài liệu, hoặc nhãn trắc nghiệm "Trắc nghiệm, N câu, M phút"; học viên đã làm thì thêm điểm cao nhất ở đầu "8,00/10, trắc nghiệm, N câu, M phút"). Bài số 1 có nhãn "Học thử miễn phí"; nút "Xem thử" chỉ hiện với người chưa có quyền học. Chủ khóa và admin không có nhãn và nút này. Học viên đã mua thấy nhãn "Đã học" ở bài đã học xong.
 - Bấm một bài:
   - Bài học thử: mọi người mở được (trang học, Phần 14), kể cả khách.
   - Học viên có quyền học, chủ khóa, admin: mở đúng bài đó (chủ khóa và admin bấm bài trắc nghiệm thì mở hộp xem câu hỏi kèm nhãn "Đáp án đúng" và nút "Đóng", không làm bài được, không thấy điểm học viên).

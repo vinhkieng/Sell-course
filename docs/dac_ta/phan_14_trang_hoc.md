@@ -9,7 +9,7 @@ Làm sau Phần 13. Bài trắc nghiệm trên trang học làm ở Phần 15; h
 
 ## 14.2 Màn thiết kế
 - thiet_ke/trang_hoc/bai_video.html (màn "Trang học - Bài video (kiểu rạp)"): bài video, danh sách bài bên phải.
-- thiet_ke/trang_hoc/bai_video_an_danh_sach.html (màn "Trang học - Bài video (đã ẩn danh sách)"): bài video khi đã bấm "Ẩn ›" danh sách bài.
+- thiet_ke/trang_hoc/bai_video_an_danh_sach.html (màn "Trang học - Bài video (đã ẩn danh sách)"): bài video khi đã bấm "Ẩn" danh sách bài.
 - thiet_ke/trang_hoc/bai_tai_lieu.html (màn "Trang học - Tài liệu (kết hợp 4 hướng)"): bài tài liệu PDF.
 - thiet_ke/trang_hoc/bai_hoc_thu_chua_mua.html (màn "Trang học - Bài học thử (chưa mua)"): bài học thử khi chưa mua.
 - thiet_ke/trang_hoc/khoa_hoc_khong_kha_dung.html (màn "Trang học - Khóa học không khả dụng"): trang "Khóa học không khả dụng".
@@ -26,13 +26,13 @@ Làm sau Phần 13. Bài trắc nghiệm trên trang học làm ở Phần 15; h
 - Khóa 'Bị ẩn' thì học viên đã mua vẫn học bình thường.
 
 ## 14.4 Giao diện trang học
-- Đầu trang công khai như các trang khác, nhưng không có chân trang (trang học, kể cả bài trắc nghiệm ở Phần 15, nằm trong nhóm trang không có chân trang ở Phần chung C9); liên kết "← Quay lại khóa học" (về /khoa-hoc/:id) và tên khóa.
+- Đầu trang công khai như các trang khác, nhưng không có chân trang (trang học, kể cả bài trắc nghiệm ở Phần 15, nằm trong nhóm trang không có chân trang ở Phần chung C9); liên kết "Quay lại khóa học" (về /khoa-hoc/:id) và tên khóa.
 - Vùng nội dung bài:
   - Video: khung phát video lấy từ GET /api/bai-hoc/:id/video, tua được. Lần trước đã xem dở thì phát tiếp từ vi_tri_xem_cu và hiện dòng "Lần trước bạn dừng ở mm:ss".
-  - Tài liệu: xem PDF ngay trong trang với thanh công cụ như thiết kế (tên file, "PDF · 1,2 MB", thu nhỏ, phóng to, phần trăm, chuyển trang "3 / 8", nút "Tải về"). Dùng thư viện pdfjs-dist để vẽ PDF. Nút "Tải về" lấy file kèm tên file gốc.
+  - Tài liệu: xem PDF ngay trong trang với thanh công cụ như thiết kế (tên file, "PDF, 1,2 MB", thu nhỏ, phóng to, phần trăm, chuyển trang "3 / 8", nút "Tải về"). Dùng thư viện pdfjs-dist để vẽ PDF. Nút "Tải về" lấy file kèm tên file gốc.
   - Trắc nghiệm: Phần 15.
-- Dưới nội dung: số thứ tự và tên bài ("05. CSS: màu sắc và bố cục"), loại bài, liên kết "Báo cáo bài học này" (chỉ học viên có quyền học; bài đang có phiếu chờ xử lý của chính học viên thì thành chữ mờ "Bạn đã báo cáo, đang chờ xử lý"), khối "Bài tiếp theo" (bài kế, không có thì ẩn), nút "← Bài trước" và "Học bài tiếp theo →".
-- Cột "Nội dung khóa học" bên phải: phần trăm và "Đã học x/y bài" (chỉ học viên có quyền học), danh sách mọi bài chưa xóa theo số thứ tự (dấu đã học xong ở bài xong, chữ "Đang xem" ở bài đang mở, chữ "Học đến đây" ở bài mở gần nhất trước đó, nhãn trắc nghiệm theo Phần 11). Nút "Ẩn ›" thu cột lại để nội dung rộng ra, nút "Hiện ›" mở lại; nhớ lựa chọn trong trình duyệt (localStorage, bọc try/catch).
+- Dưới nội dung: số thứ tự và tên bài ("05. CSS: màu sắc và bố cục"), loại bài, liên kết "Báo cáo bài học này" (chỉ học viên có quyền học; bài đang có phiếu chờ xử lý của chính học viên thì thành chữ mờ "Bạn đã báo cáo, đang chờ xử lý"), khối "Bài tiếp theo" (bài kế, không có thì ẩn), nút "Bài trước" và "Học bài tiếp theo".
+- Cột "Nội dung khóa học" bên phải: phần trăm và "Đã học x/y bài" (chỉ học viên có quyền học), danh sách mọi bài chưa xóa theo số thứ tự (dấu đã học xong ở bài xong, chữ "Đang xem" ở bài đang mở, chữ "Học đến đây" ở bài mở gần nhất trước đó, nhãn trắc nghiệm theo Phần 11). Nút "Ẩn" thu cột lại để nội dung rộng ra, nút "Hiện" mở lại; nhớ lựa chọn trong trình duyệt (localStorage, bọc try/catch).
 - Học thử khi chưa mua: dải "Bạn đang xem thử miễn phí bài đầu tiên. Mua khóa học để học toàn bộ N bài." kèm nút "Mua ngay" và "Thêm vào giỏ hàng" (hành vi như Phần 12). Người cung cấp xem thử khóa của người khác thì dải chỉ có câu "Bạn đang xem thử miễn phí bài đầu tiên.", không có hai nút. Bấm bài khác trong danh sách thì hiện dòng nhắc như Phần 11. Không có liên kết báo cáo, không có tiến độ.
 - Chủ khóa và admin: không có tiến độ, không có "Lần trước bạn dừng ở", không có liên kết báo cáo.
 

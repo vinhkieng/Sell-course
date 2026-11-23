@@ -10,14 +10,15 @@ Làm sau Phần 3.
 - thiet_ke/quen_mat_khau/dat_lai_mat_khau.html (màn "Đặt lại mật khẩu"): trang đặt lại mật khẩu sau khi bấm "Gửi mã" (màn vẽ kèm các lỗi).
 
 ## 4.3 Giao diện và hành vi
-- Trang quên mật khẩu: ô Gmail, nút "Gửi mã", liên kết "← Quay lại đăng nhập". Gmail sai định dạng hoặc không có đuôi @gmail.com thì báo dưới ô, không gửi.
-- Bấm "Gửi mã" hợp lệ thì chuyển sang /dat-lai-mat-khau, hiện dòng "Nếu Gmail này đã đăng ký, mã xác nhận đã được gửi. Vui lòng kiểm tra hộp thư.", dòng "Gmail bạn đã nhập: …" kèm liên kết "Nhập lại Gmail" (về trang quên mật khẩu).
+- Trang quên mật khẩu: ô Gmail, nút "Gửi mã", liên kết "Quay lại đăng nhập". Gmail sai định dạng hoặc không có đuôi @gmail.com thì báo dưới ô, không gửi.
+- Bấm "Gửi mã" hợp lệ thì chuyển sang /dat-lai-mat-khau, hiện dòng "Nếu Gmail này đã đăng ký, mã xác nhận đã được gửi. Vui lòng kiểm tra hộp thư.", dòng "Gmail bạn đã nhập: [Gmail]" kèm liên kết "Nhập lại Gmail" (về trang quên mật khẩu).
 - Trang đặt lại: ô "Mã xác nhận", "Mật khẩu mới", "Nhập lại mật khẩu mới", nút "Đặt lại mật khẩu", dòng "Chưa nhận được mã?" và liên kết "Gửi lại mã" có đếm ngược 60 giây như thiết kế.
 - Đặt lại thành công: về trang chủ kèm ô thông báo nhỏ "Đặt lại mật khẩu thành công, vui lòng đăng nhập". Không tự đăng nhập.
 
 ## 4.4 Quy tắc
 - Máy chủ luôn trả cùng một câu dù Gmail có tài khoản hay không, để người lạ không dò được Gmail nào đã đăng ký.
 - Chỉ khi Gmail thuộc một tài khoản đang hoạt động (khoa = 0) mới tạo mã và gửi; tài khoản bị khóa thì không tạo mã, không gửi.
+- Lúc đặt lại mật khẩu cũng kiểm lại tài khoản: tài khoản bị khóa sau khi đã nhận mã thì không đặt lại được, báo "Mã xác nhận không đúng hoặc đã hết hạn".
 - Mã 6 chữ số, hiệu lực 10 phút kể từ lúc gửi, dùng một lần, lưu bản băm. "Gửi lại mã" phải chờ 60 giây; mã mới được gửi thì mọi mã cũ chưa dùng của tài khoản đó hết hiệu lực (đặt da_dung = 1 hoặc xóa). Nhập sai 5 lần thì mã bị hủy.
 - Mật khẩu mới đúng 6 chữ số, hai ô giống nhau.
 - Đặt lại thành công: lưu mật khẩu mới (băm bcrypt), đánh dấu mã đã dùng, xóa số lần sai đăng nhập và gỡ tạm chặn của tên đăng nhập đó trong bộ đếm bộ nhớ.

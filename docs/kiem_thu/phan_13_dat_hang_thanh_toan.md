@@ -81,7 +81,7 @@
 - Mục tiêu: không tin gì, vẫn ghi sổ nguyên văn.
 - Dữ liệu: tham số hợp lệ rồi sửa vnp_Amount mà không ký lại.
 - Các bước: gọi đường trình duyệt quay về.
-- Kết quả mong đợi: dòng sổ chu_ky_hop_le 0, id_don_hang NULL, chép nguyên giá trị nhận được; đơn không đổi; trả trường hợp "Không xác nhận được kết quả thanh toán…".
+- Kết quả mong đợi: dòng sổ chu_ky_hop_le 0, id_don_hang NULL, chép nguyên giá trị nhận được; đơn không đổi; trả trường hợp "Không xác nhận được kết quả thanh toán. Nếu bạn đã bị trừ tiền, vui lòng bấm Kiểm tra lại thanh toán ở Lịch sử đơn hàng hoặc liên hệ hỗ trợ.".
 - Cách kiểm: Tự động
 - Nguồn: Phần 13 mục 13.6, 13.7, 13.14
 
@@ -225,6 +225,6 @@
 - Mục tiêu: giao diện đúng thiết kế.
 - Dữ liệu: hv01 có đơn thành công, thất bại, hết hạn trong 24 giờ, hết hạn quá 24 giờ; một học viên chưa có đơn.
 - Các bước: mở /ho-so#lich-su-don-hang; bấm "Kiểm tra lại thanh toán"; bấm "Xem chi tiết"; mở trang "Đơn hàng đã hết hạn" của đơn trong 24 giờ.
-- Kết quả mong đợi: bảng Mã đơn, Ngày đặt, Khóa học, Số tiền, Trạng thái, Hành động; nút kiểm tra lại chỉ ở đơn hết hạn trong 24 giờ; bấm thì hiện "Đang kiểm tra với VNPay…" rồi câu kết quả như các màn kiem_tra_lai_*.html; chi tiết có "Mã giao dịch VNPay", "Ngày thanh toán", "Chưa thanh toán", "Chưa có", nhãn "Đã hoàn tiền", "Quay lại lịch sử đơn hàng"; trang hết hạn có câu "Bạn chưa hoàn tất thanh toán trong 30 phút nên đơn đã hết hạn. Nếu bạn đã bị trừ tiền, hãy bấm 'Kiểm tra lại thanh toán' hoặc liên hệ hỗ trợ ở cuối trang. Nếu muốn mua, vui lòng đặt lại từ đầu." và nút kiểm tra lại; học viên chưa có đơn thấy "Bạn chưa có đơn hàng nào."; người cung cấp mở các trang này thấy trang 403.
+- Kết quả mong đợi: bảng Mã đơn, Ngày đặt, Khóa học, Số tiền, Trạng thái, Hành động; nút kiểm tra lại chỉ ở đơn hết hạn trong 24 giờ; bấm thì hiện "Đang kiểm tra với VNPay" rồi câu kết quả như các màn kiem_tra_lai_*.html; chi tiết có "Mã giao dịch VNPay", "Ngày thanh toán", "Chưa thanh toán", "Chưa có", nhãn "Đã hoàn tiền", "Quay lại lịch sử đơn hàng"; trang hết hạn có câu "Bạn chưa hoàn tất thanh toán trong 30 phút nên đơn đã hết hạn. Nếu bạn đã bị trừ tiền, hãy bấm 'Kiểm tra lại thanh toán' hoặc liên hệ hỗ trợ ở cuối trang. Nếu muốn mua, vui lòng đặt lại từ đầu." và nút kiểm tra lại; học viên chưa có đơn thấy "Bạn chưa có đơn hàng nào."; người cung cấp mở các trang này thấy trang 403.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 13 mục 13.1, 13.7, 13.8, 13.10, 13.13

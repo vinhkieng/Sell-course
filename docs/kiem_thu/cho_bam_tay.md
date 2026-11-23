@@ -8,6 +8,8 @@ Cách cập nhật (Claude Code làm mỗi khi xong một phần):
 - Chỉ xóa một trường hợp khỏi file sau khi người dùng báo đã kiểm đạt.
 - Nhóm nào hết trường hợp thì xóa luôn tiêu đề nhóm đó.
 
+Đã soát sau: Phần 4 (Phần 4 không có trường hợp phải chờ; không trường hợp nào được mở khóa). P01-19 đã kiểm đạt cho các trang tới hết Phần 4 (hai trang /quen-mat-khau, /dat-lai-mat-khau không có chân trang).
+
 ## Chờ Phần 5 (trang hồ sơ)
 | Mã | Tên ngắn | Việc cần làm khi tới lúc |
 | --- | --- | --- |
@@ -16,7 +18,7 @@ Cách cập nhật (Claude Code làm mỗi khi xong một phần):
 ## Chờ Phần 7 (có khóa học đang bán)
 | Mã | Tên ngắn | Việc cần làm khi tới lúc |
 | --- | --- | --- |
-| P01-16 | Menu "Danh mục" (phần bấm danh mục) | Tạo khóa đang bán ở 2 danh mục, có 1 danh mục chỉ có khóa bị ẩn: menu chỉ hiện 2 danh mục theo thứ tự tên; bấm một danh mục mở /khoa-hoc?danh_muc=<id>. Phần ô tìm kiếm và "Xem tất cả khóa học →" đã kiểm được từ Phần 1. |
+| P01-16 | Menu "Danh mục" (phần bấm danh mục) | Tạo khóa đang bán ở 2 danh mục, có 1 danh mục chỉ có khóa bị ẩn: menu chỉ hiện 2 danh mục theo thứ tự tên; bấm một danh mục mở /khoa-hoc?danh_muc=<id>. Phần ô tìm kiếm và "Xem tất cả khóa học" đã kiểm được từ Phần 1. |
 | P01-18 | Cột "Danh mục" ở chân trang | Có 6 danh mục có khóa đang bán với số khóa khác nhau: cột "Danh mục" hiện đúng 5 danh mục nhiều khóa nhất, bằng nhau thì theo tên. Các mục khác của chân trang đã kiểm được từ Phần 1. |
 
 ## Chờ Phần 11 hoặc 12 (phần đầu tiên có thông báo sau khi chuyển trang)

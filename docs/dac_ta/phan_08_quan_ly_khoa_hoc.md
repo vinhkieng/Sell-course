@@ -20,10 +20,10 @@ Làm sau Phần 7. Trang quản lý dùng lại các thành phần của trang t
 - Trang thêm bài và các lỗi file dùng lại các màn ở thiet_ke/tao_khoa_hoc/.
 
 ## 8.3 Giao diện và hành vi
-- Mục "Quản lý khóa học" ở hồ sơ: mỗi khóa chưa xóa của người cung cấp một thẻ (mới tạo ở trên) gồm tên, trạng thái theo chữ ở Phần chung C11, "N bài · giá", lý do nếu khóa bị admin ẩn, bị hệ thống ẩn hoặc bị gỡ ("Lý do: …"), nút "Quản lý khóa học", nút "Sao chép link giới thiệu". Chỉ khóa "Đang bán" mới sao chép được: bấm thì chép link <địa chỉ website>/khoa-hoc/<id>?ref=<mã giới thiệu của người cung cấp> và nút đổi thành "Đã sao chép" một lúc; khóa khác thì nút mờ kèm dòng "Chỉ khóa đang bán mới có link giới thiệu". Đầu mục có nút "+ Tạo khóa học mới" (Phần 7).
+- Mục "Quản lý khóa học" ở hồ sơ: mỗi khóa chưa xóa của người cung cấp một thẻ (mới tạo ở trên) gồm tên, trạng thái theo chữ ở Phần chung C11, "N bài, giá", lý do nếu khóa bị admin ẩn, bị hệ thống ẩn hoặc bị gỡ ("Lý do: [lý do]"), nút "Quản lý khóa học", nút "Sao chép link giới thiệu". Chỉ khóa "Đang bán" mới sao chép được: bấm thì chép link <địa chỉ website>/khoa-hoc/<id>?ref=<mã giới thiệu của người cung cấp> và nút đổi thành "Đã sao chép" một lúc; khóa khác thì nút mờ kèm dòng "Chỉ khóa đang bán mới có link giới thiệu". Đầu mục có nút "+ Tạo khóa học mới" (Phần 7).
 - Bấm "Quản lý khóa học" mở /nguoi-cung-cap/khoa-hoc/:id: hai bước như lúc tạo khóa, bước 1 điền sẵn thông tin hiện tại; dưới bước 1 có khối "Ẩn khóa học" và khối "Xóa khóa học".
 - Sửa thông tin rồi bấm "Tiếp tục" sang bước 2. Ở bước 2: thêm bài, sửa bài (đổi tên, số thứ tự, thay file, hoặc sửa câu hỏi và thời gian của bài trắc nghiệm), xóa bài. "Lưu bài học" chỉ giữ tạm trong trang. Mọi thay đổi chỉ có hiệu lực khi bấm "Đăng" (kèm hộp cam kết như lúc tạo khóa). Thoát trang hoặc bấm "Hủy" trước khi "Đăng" thì khóa giữ nguyên, file tạm vừa tải bị xóa.
-- Trang "Sửa bài học": như trang thêm bài, tiêu đề "Sửa bài học", điền sẵn nội dung hiện tại. Ô "Loại bài" bị mờ, chỉ hiện đúng phần của loại hiện tại (không đổi được loại bài; muốn đổi loại thì xóa bài rồi thêm bài mới). Bài video, tài liệu có nút thay file. Đổi số thứ tự làm thay đổi bài học thử thì hiện cảnh báo "Đổi số thứ tự này sẽ làm bài học thử đổi từ “…” sang “…”."
+- Trang "Sửa bài học": như trang thêm bài, tiêu đề "Sửa bài học", điền sẵn nội dung hiện tại. Ô "Loại bài" bị mờ, chỉ hiện đúng phần của loại hiện tại (không đổi được loại bài; muốn đổi loại thì xóa bài rồi thêm bài mới). Bài video, tài liệu có nút thay file. Đổi số thứ tự làm thay đổi bài học thử thì hiện cảnh báo "Đổi số thứ tự này sẽ làm bài học thử đổi từ "[tên bài cũ]" sang "[tên bài mới]"."
 - Xóa bài: hộp "Xóa bài học này?"; khóa đã có người mua thì có ô "Lý do xóa" bắt buộc; chưa có thì chỉ có "Xóa" và "Hủy". Còn đúng 3 bài thì nút xóa bài mờ kèm dòng "Khóa học cần ít nhất 3 bài. Hãy thêm bài mới trước khi xóa.".
 - Khối "Ẩn khóa học" (dòng "Khóa sẽ không hiện trên trang bán. Học viên đã mua vẫn học bình thường. Bạn có thể đăng lại bất cứ lúc nào."):
   - Khóa đang bán: nút "Ẩn khóa học", bấm là ẩn ngay, không có hộp xác nhận.
@@ -77,7 +77,7 @@ Làm sau Phần 7. Trang quản lý dùng lại các thành phần của trang t
 - "Bài số 1 phải là bài video hoặc tài liệu."
 - "Vui lòng nhập lý do"
 - "File giống hệt file hiện tại"
-- "Đổi số thứ tự này sẽ làm bài học thử đổi từ “…” sang “…”."
+- "Đổi số thứ tự này sẽ làm bài học thử đổi từ "[tên bài cũ]" sang "[tên bài mới]"."
 - "Khóa đã có người mua chỉ được ẩn.", "Khóa đang có đơn chờ thanh toán, vui lòng thử lại sau.", "Khóa đang có báo cáo vi phạm chưa được xử lý, chưa xóa được."
 - "Khóa học vừa bị quản trị viên ẩn hoặc gỡ nên thay đổi chưa được lưu. Vui lòng xem lý do ở mục Quản lý khóa học."
 - "Chỉ khóa đang bán mới có link giới thiệu", "Đã sao chép"

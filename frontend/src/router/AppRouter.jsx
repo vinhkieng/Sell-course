@@ -10,6 +10,8 @@ import TrangChinhSach from '../pages/chung/TrangChinhSach.jsx'
 import TrangDangKy from '../pages/chung/TrangDangKy.jsx'
 import TrangDangNhap from '../pages/chung/TrangDangNhap.jsx'
 import TrangXacNhanDangNhap from '../pages/chung/TrangXacNhanDangNhap.jsx'
+import TrangQuenMatKhau from '../pages/chung/TrangQuenMatKhau.jsx'
+import TrangDatLaiMatKhau from '../pages/chung/TrangDatLaiMatKhau.jsx'
 
 // tạm: 8 trang khu quản trị mới có tiêu đề như thiết kế; Phần 6, 19-24 thay bằng trang thật
 const TRANG_QUAN_TRI = [
@@ -46,6 +48,8 @@ function AppRouter() {
       <Route path="dang-ky" element={<TrangDangKy />} />
       <Route path="dang-nhap" element={<TrangDangNhap />} />
       <Route path="xac-nhan-dang-nhap" element={<TrangXacNhanDangNhap />} />
+      <Route path="quen-mat-khau" element={<TrangQuenMatKhau />} />
+      <Route path="dat-lai-mat-khau" element={<TrangDatLaiMatKhau />} />
 
       <Route
         path="quan-tri"

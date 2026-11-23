@@ -1,12 +1,13 @@
 // Trang "Xác nhận đăng nhập" /xac-nhan-dang-nhap (Phần 3 mục 3.3), theo thiet_ke/dang_nhap/xac_nhan_dang_nhap.html.
 // Gmail đã che và thời điểm hết đếm ngược lấy từ state của bộ chuyển trang, không có thì từ sessionStorage;
 // cả hai đều không có thì về /dang-nhap. Giữ nguyên ?quay_lai và ?tu=mua để dùng sau khi xác nhận xong.
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth.js'
+import { useDemNguoc } from '../../hooks/useDemNguoc.js'
 import { xacNhanDangNhap, guiLaiMaDangNhap } from '../../api/taiKhoan.js'
 import { trangSauDangNhap } from '../../utils/trangSauDangNhap.js'
-import { docLuotCho, luuLuotCho, xoaLuotCho } from '../../utils/luotChoXacNhan.js'
+import { docLuotCho, luuLuotCho, xoaLuotCho, LUOT_XAC_NHAN_DANG_NHAP as KHOA } from '../../utils/luotChoMa.js'
 import KhungTaiKhoan, { DongBao } from '../../components/KhungTaiKhoan.jsx'
 import './TrangXacNhanDangNhap.css'
 
@@ -15,29 +16,21 @@ function TrangXacNhanDangNhap() {
   const navigate = useNavigate()
   const { state, search } = useLocation()
   const [thamSo] = useSearchParams()
-  const [luot, setLuot] = useState(() => (state?.gmail_che ? state : docLuotCho()))
+  const [luot, setLuot] = useState(() => (state?.gmail ? state : docLuotCho(KHOA)))
   const [ma, setMa] = useState('')
   const [loi, setLoi] = useState('')
   const [daGuiLai, setDaGuiLai] = useState('')
   const [dangGui, setDangGui] = useState(false)
-  const [bayGio, setBayGio] = useState(() => Date.now())
-
-  // Đồng hồ cho dòng "Gửi lại mã sau N giây"
-  useEffect(() => {
-    const hen = setInterval(() => setBayGio(Date.now()), 1000)
-    return () => clearInterval(hen)
-  }, [])
+  const conLai = useDemNguoc(luot?.het_dem_luc ?? 0)
 
   if (dangTai) return null
   if (nguoiDung) return <Navigate to="/" replace />
   // Không có lượt đăng nhập đang chờ xác nhận (Phần 3 mục 3.3)
   if (!luot) return <Navigate to={`/dang-nhap${search}`} replace />
 
-  const conLai = Math.max(0, Math.ceil((luot.het_dem_luc - bayGio) / 1000))
-
   // Cookie tạm không còn hoặc đã hết hạn: bỏ lượt chờ, về trang đăng nhập
   function veDangNhap() {
-    xoaLuotCho()
+    xoaLuotCho(KHOA)
     navigate(`/dang-nhap${search}`, { replace: true })
   }
 
@@ -46,7 +39,7 @@ function TrangXacNhanDangNhap() {
     setDangGui(true)
     try {
       const kq = await xacNhanDangNhap(ma)
-      xoaLuotCho()
+      xoaLuotCho(KHOA)
       navigate(trangSauDangNhap(thamSo.get('quay_lai'), kq.vai_tro), { replace: true })
       setNguoiDung(kq)
     } catch (loiGoi) {
@@ -60,13 +53,13 @@ function TrangXacNhanDangNhap() {
   async function guiLai() {
     try {
       const kq = await guiLaiMaDangNhap()
-      setLuot(luuLuotCho(kq.gmail_che, kq.giay_cho_gui_lai))
+      setLuot(luuLuotCho(KHOA, kq.gmail_che, kq.giay_cho_gui_lai))
       setDaGuiLai(`Đã gửi mã mới tới Gmail ${kq.gmail_che}.`)
       setLoi('')
     } catch (loiGoi) {
       if (loiGoi.ma === 'KHONG_CO_LUOT_CHO_XAC_NHAN') return veDangNhap()
       // Bấm sớm: máy chủ trả số giây còn lại, đếm ngược theo số đó
-      if (loiGoi.them.giay_cho_gui_lai) setLuot(luuLuotCho(luot.gmail_che, loiGoi.them.giay_cho_gui_lai))
+      if (loiGoi.them.giay_cho_gui_lai) setLuot(luuLuotCho(KHOA, luot.gmail, loiGoi.them.giay_cho_gui_lai))
       setLoi(loiGoi.message)
       setDaGuiLai('')
     }
@@ -78,7 +71,7 @@ function TrangXacNhanDangNhap() {
         <div>
           <h1>Xác nhận đăng nhập</h1>
           <p className="tk-the-mo-ta">
-            Bạn đang đăng nhập từ một địa chỉ mạng mới. Chúng tôi đã gửi mã gồm 6 chữ số tới Gmail {luot.gmail_che}.
+            Bạn đang đăng nhập từ một địa chỉ mạng mới. Chúng tôi đã gửi mã gồm 6 chữ số tới Gmail {luot.gmail}.
             Vui lòng nhập mã để tiếp tục.
           </p>
         </div>
@@ -109,7 +102,7 @@ function TrangXacNhanDangNhap() {
           ) : (
             <button type="button" className="txn-gui-lai" onClick={guiLai}>Gửi lại mã</button>
           )}
-          <Link to={`/dang-nhap${search}`} onClick={xoaLuotCho}>Quay lại đăng nhập</Link>
+          <Link to={`/dang-nhap${search}`} onClick={() => xoaLuotCho(KHOA)}>Quay lại đăng nhập</Link>
         </div>
       </form>
     </KhungTaiKhoan>

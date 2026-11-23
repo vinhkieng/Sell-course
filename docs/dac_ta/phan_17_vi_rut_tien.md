@@ -21,7 +21,7 @@ Làm sau Phần 13 (cần có đơn đã thanh toán). Phía admin duyệt rút 
   - "Đã rút" = tổng so_tien các yêu cầu 'Đã chuyển'.
   - "Có thể rút" = tổng tiền nhận của các lượt đã qua 7 ngày, trừ "Đang chờ duyệt rút", trừ "Đã rút".
 - Bốn thẻ: "Có thể rút", "Đang tạm giữ", "Đang chờ duyệt rút", "Đã rút".
-- Bảng "Doanh thu gần đây": cột Ngày (ngày thanh toán), Khóa học (tên đã chụp lúc mua), Giá bán, Nguồn ("Giới thiệu", "Học viên giới thiệu", "Tự nhiên"), Mức chia ("90%" hoặc "60%"), Bạn nhận (lượt đã hoàn tiền ghi "0đ (Đã hoàn tiền)", giá bán giữ nguyên). Mới nhất ở trên, 5 dòng mỗi trang, dòng "Hiển thị 1-5 trên N lượt bán", nút "‹ Trước", số trang, "Sau ›". Không hiện tên học viên. Chưa có lượt bán nào thì hiện "Chưa có lượt bán nào.".
+- Bảng "Doanh thu gần đây": cột Ngày (ngày thanh toán), Khóa học (tên đã chụp lúc mua), Giá bán, Nguồn ("Giới thiệu", "Học viên giới thiệu", "Tự nhiên"), Mức chia ("90%" hoặc "60%"), Bạn nhận (lượt đã hoàn tiền ghi "0đ (Đã hoàn tiền)", giá bán giữ nguyên). Mới nhất ở trên, 5 dòng mỗi trang, dòng "Hiển thị 1-5 trên N lượt bán", nút "Trước", số trang, "Sau". Không hiện tên học viên. Chưa có lượt bán nào thì hiện "Chưa có lượt bán nào.".
 
 ## 17.4 Thông tin nhận tiền (đầu mục Rút tiền, /ho-so#rut-tien)
 - Ba ô: "Ngân hàng" (chọn một trong 15 ngân hàng: Vietcombank, VietinBank, BIDV, Agribank, Techcombank, MB Bank, ACB, VPBank, Sacombank, TPBank, HDBank, VIB, SHB, OCB, MSB), "Số tài khoản" (6 đến 20 chữ số), "Tên chủ tài khoản" (tự đổi sang chữ in hoa không dấu khi gõ, ví dụ "Trần Thị Bích" thành "TRAN THI BICH"; chỉ chữ A-Z và dấu cách, tối đa 100 ký tự). Nút "Lưu thông tin".
@@ -41,7 +41,7 @@ Làm sau Phần 13 (cần có đơn đã thanh toán). Phía admin duyệt rút 
 - Tài khoản bị khóa thì không đăng nhập được; máy chủ vẫn kiểm và từ chối (ví bị đóng băng).
 
 ## 17.6 Lịch sử yêu cầu
-- Bảng "Lịch sử yêu cầu": Ngày gửi (dd/mm/yyyy HH:mm), Số tiền, Trạng thái ("Chờ duyệt", "Đã chuyển", "Từ chối"; dòng "Đã chuyển" có mã giao dịch thì thêm dòng nhỏ "Mã giao dịch: …"), Lý do từ chối (không có thì "-"). Mới nhất ở trên, 10 dòng mỗi trang. Chưa có yêu cầu nào thì hiện "Chưa có yêu cầu rút tiền nào.".
+- Bảng "Lịch sử yêu cầu": Ngày gửi (dd/mm/yyyy HH:mm), Số tiền, Trạng thái ("Chờ duyệt", "Đã chuyển", "Từ chối"; dòng "Đã chuyển" có mã giao dịch thì thêm dòng nhỏ "Mã giao dịch: [mã giao dịch]"), Lý do từ chối (không có thì "-"). Mới nhất ở trên, 10 dòng mỗi trang. Chưa có yêu cầu nào thì hiện "Chưa có yêu cầu rút tiền nào.".
 - Ô trống trong bảng hiện gạch ngắn "-" như thiết kế.
 
 ## 17.7 Đường xử lý ở máy chủ (chỉ người cung cấp)
@@ -57,7 +57,7 @@ Làm sau Phần 13 (cần có đơn đã thanh toán). Phía admin duyệt rút 
 - "Vui lòng nhập thông tin nhận tiền trước khi rút"
 - "Bạn đang có một yêu cầu chờ duyệt. Hãy đợi quản trị viên xử lý trước khi gửi yêu cầu mới."
 - "Cần có ít nhất 100.000đ có thể rút để gửi yêu cầu."
-- "Vui lòng nhập số tiền muốn rút", "Số tiền rút tối thiểu là 100.000đ", "Số tiền rút không được lớn hơn số tiền có thể rút (…)"
+- "Vui lòng nhập số tiền muốn rút", "Số tiền rút tối thiểu là 100.000đ", "Số tiền rút không được lớn hơn số tiền có thể rút ([số tiền có thể rút])"
 - "Đã gửi yêu cầu rút tiền. Số tiền được giữ lại ở mục Đang chờ duyệt rút."
 - "Vui lòng nhập đủ ngân hàng, số tài khoản và tên chủ tài khoản", "Số tài khoản gồm 6 đến 20 chữ số", "Đã lưu thông tin nhận tiền"
 - "Chưa có lượt bán nào.", "Chưa có yêu cầu rút tiền nào."

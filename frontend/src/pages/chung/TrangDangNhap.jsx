@@ -6,7 +6,7 @@ import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react
 import { useAuth } from '../../hooks/useAuth.js'
 import { dangNhap } from '../../api/taiKhoan.js'
 import { trangSauDangNhap } from '../../utils/trangSauDangNhap.js'
-import { luuLuotCho } from '../../utils/luotChoXacNhan.js'
+import { luuLuotCho, LUOT_XAC_NHAN_DANG_NHAP } from '../../utils/luotChoMa.js'
 import KhungTaiKhoan, { DongBao } from '../../components/KhungTaiKhoan.jsx'
 import ONhap from '../../components/ONhap.jsx'
 import './TrangDangNhap.css'
@@ -46,7 +46,9 @@ function TrangDangNhap() {
       const kq = await dangNhap(form)
       if (kq.can_xac_nhan) {
         // Giữ nguyên quay_lai và tu=mua để dùng sau khi xác nhận xong
-        navigate(`/xac-nhan-dang-nhap${search}`, { state: luuLuotCho(kq.gmail_che, kq.giay_cho_gui_lai) })
+        navigate(`/xac-nhan-dang-nhap${search}`, {
+          state: luuLuotCho(LUOT_XAC_NHAN_DANG_NHAP, kq.gmail_che, kq.giay_cho_gui_lai),
+        })
         return
       }
       navigate(trangSauDangNhap(thamSo.get('quay_lai'), kq.vai_tro), { replace: true })

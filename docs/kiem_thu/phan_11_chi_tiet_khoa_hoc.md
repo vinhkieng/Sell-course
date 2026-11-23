@@ -89,7 +89,7 @@
 - Mục tiêu: khung mua, khối chia sẻ, danh sách bài đúng 11.3.
 - Dữ liệu: K1.
 - Các bước: mở /khoa-hoc/<K1> bằng sáu người xem.
-- Kết quả mong đợi: khách và hvchua thấy giá, "Mua ngay", "Thêm vào giỏ hàng", các dòng "Học thử miễn phí bài đầu tiên", "Học mãi mãi sau khi mua", "N bài học", "Tiến độ học tự động cập nhật"; hvmua thấy "Đã sở hữu", "Đã học x/y bài", thanh tiến độ, "Vào học", nhãn "Đã học" ở bài 1 và "8,00/10 · Trắc nghiệm · 5 câu · 15 phút" ở bài 4; ncc02 và admin thấy dòng "Tài khoản người cung cấp và quản trị viên không thể mua khóa học."; bài 1 có nhãn "Học thử miễn phí" và nút "Xem thử" với người chưa có quyền học, không có với chủ khóa và admin; khối "Chia sẻ khóa học" có nút "Sao chép link" đổi thành "Đã sao chép"; tên trang trình duyệt là tên khóa; giống các màn thiet_ke/chi_tiet_khoa_hoc/.
+- Kết quả mong đợi: khách và hvchua thấy giá, "Mua ngay", "Thêm vào giỏ hàng", các dòng "Học thử miễn phí bài đầu tiên", "Học mãi mãi sau khi mua", "N bài học", "Tiến độ học tự động cập nhật"; hvmua thấy "Đã sở hữu", "Đã học x/y bài", thanh tiến độ, "Vào học", nhãn "Đã học" ở bài 1 và "8,00/10, trắc nghiệm, 5 câu, 15 phút" ở bài 4; ncc02 và admin thấy dòng "Tài khoản người cung cấp và quản trị viên không thể mua khóa học."; bài 1 có nhãn "Học thử miễn phí" và nút "Xem thử" với người chưa có quyền học, không có với chủ khóa và admin; khối "Chia sẻ khóa học" có nút "Sao chép link" đổi thành "Đã sao chép"; tên trang trình duyệt là tên khóa; giống các màn thiet_ke/chi_tiet_khoa_hoc/.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 11 mục 11.3, 11.8, 11.9
 

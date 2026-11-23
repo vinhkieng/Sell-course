@@ -2,6 +2,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import path from 'node:path';
 import request from 'supertest';
 import app from '../app.js';
 import pool from '../database/db.js';
@@ -163,4 +164,37 @@ test('P01-11 Máy chủ chép file chính sách mặc định khi chưa có', as
   // Trả lại file mặc định cho các file kiểm thử sau
   await fs.rm(config.duongDanChinhSach);
   await chepChinhSachMacDinh();
+});
+
+// Ký hiệu bị cấm theo Phần chung C18: mũi tên, dấu chấm giữa, ba chấm liền, ngoặc cong, gạch dài.
+// Viết bằng mã \u để chính file này không chứa các ký hiệu đó.
+const KY_HIEU_CAM = /[\u2190\u2192\u2039\u203A\u2191\u2193\u00B7\u2026\u201C\u201D\u2018\u2019\u2013\u2014]/u;
+
+// Mọi file .js, .jsx, .css trong một thư mục, bỏ qua node_modules và thư mục tests
+async function fileCanQuet(thuMuc) {
+  const ketQua = [];
+  for (const muc of await fs.readdir(thuMuc, { withFileTypes: true })) {
+    const duongDan = path.join(thuMuc, muc.name);
+    if (muc.isDirectory()) {
+      if (!['node_modules', 'tests'].includes(muc.name)) ketQua.push(...(await fileCanQuet(duongDan)));
+    } else if (/\.(js|jsx|css)$/.test(muc.name)) {
+      ketQua.push(duongDan);
+    }
+  }
+  return ketQua;
+}
+
+test('P01-29 Không có ký hiệu bị cấm trong code', async () => {
+  const thuMucFrontend = path.resolve(config.thuMucBackend, '..', 'frontend', 'src');
+  const cacFile = [...(await fileCanQuet(config.thuMucBackend)), ...(await fileCanQuet(thuMucFrontend))];
+  assert.ok(cacFile.length > 20, 'phải quét được cả backend lẫn frontend/src');
+
+  const viPham = [];
+  for (const file of cacFile) {
+    (await fs.readFile(file, 'utf8')).split('\n').forEach((dong, i) => {
+      const kyHieu = dong.match(KY_HIEU_CAM);
+      if (kyHieu) viPham.push(`${path.relative(path.resolve(config.thuMucBackend, '..'), file)}:${i + 1} có "${kyHieu[0]}"`);
+    });
+  }
+  assert.deepEqual(viPham, [], `Có ký hiệu bị cấm (Phần chung C18):\n${viPham.join('\n')}`);
 });

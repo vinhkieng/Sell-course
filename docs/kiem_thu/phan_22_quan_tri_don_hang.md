@@ -89,6 +89,6 @@
 - Mục tiêu: giao diện đúng thiết kế.
 - Dữ liệu: dữ liệu chung, có một đơn thanh toán 8 ngày trước.
 - Các bước: mở /quan-tri/don-hang; tìm mã đơn; đổi bộ lọc; bấm một dòng; bấm "Hoàn tiền" rồi xác nhận; mở đơn 8 ngày trước.
-- Kết quả mong đợi: ô tìm "Tìm theo mã đơn, tên đăng nhập hoặc Gmail học viên", năm lựa chọn kèm số, dòng "Mới nhất ở trên · Bấm vào một dòng để xem chi tiết", "Hiển thị 1-N trên M đơn hàng (20 dòng mỗi trang)"; hộp chi tiết có "Ghi chú của học viên" hoặc "Không có ghi chú", "Các khóa trong đơn (N khóa)", bảng "Lịch sử giao dịch VNPay"; hộp "Hoàn tiền khóa học này?"; xong có "Đã ghi nhận hoàn tiền" và nhãn "Đã hoàn tiền"; đơn 8 ngày nút mờ kèm "Đã quá 7 ngày"; giống các màn thiet_ke/quan_tri_don_hang/.
+- Kết quả mong đợi: ô tìm "Tìm theo mã đơn, tên đăng nhập hoặc Gmail học viên", năm lựa chọn kèm số, dòng "Mới nhất ở trên. Bấm vào một dòng để xem chi tiết", "Hiển thị 1-N trên M đơn hàng (20 dòng mỗi trang)"; hộp chi tiết có "Ghi chú của học viên" hoặc "Không có ghi chú", "Các khóa trong đơn (N khóa)", bảng "Lịch sử giao dịch VNPay"; hộp "Hoàn tiền khóa học này?"; xong có "Đã ghi nhận hoàn tiền" và nhãn "Đã hoàn tiền"; đơn 8 ngày nút mờ kèm "Đã quá 7 ngày"; giống các màn thiet_ke/quan_tri_don_hang/.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 22 mục 22.3, 22.4, 22.5, 22.8

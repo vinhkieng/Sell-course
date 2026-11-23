@@ -1,0 +1,40 @@
+/* Trang xác nhận đăng nhập, theo thiet_ke/dang_nhap/xac_nhan_dang_nhap.html */
+.trang-xac-nhan {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.txn-bat-buoc {
+  color: var(--mau-loi);
+  font-style: normal;
+  margin-left: 2px;
+}
+
+.txn-lien-ket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.txn-lien-ket a,
+.txn-gui-lai {
+  color: var(--mau-chinh);
+}
+
+.txn-gui-lai {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.txn-cho {
+  color: var(--mau-chu-nhat);
+  cursor: not-allowed;
+}

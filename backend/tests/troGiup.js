@@ -1,4 +1,5 @@
 // Hàm tạo dữ liệu nhanh cho kiểm thử, các phần sau dùng lại.
+import bcrypt from 'bcrypt';
 import pool from '../database/db.js';
 import { TEN_COOKIE_PHIEN, taoMaPhien } from '../lib/token.js';
 import { sinhMaGioiThieu } from '../lib/maGioiThieu.js';
@@ -8,21 +9,26 @@ import { TRANG_THAI_KHOA_HOC } from '../constants/trangThai.js';
 let dem = 0;
 
 // Tạo nguoi_dung kèm dòng bảng con. Trả { id, vai_tro, id_hoc_vien | id_nguoi_cung_cap, cookie }.
-// Học viên có địa chỉ IP đã xác nhận 127.0.0.1, phiên mang cùng địa chỉ đó.
-export async function taoNguoiDung(vaiTro, { hoTen = null, tenDangNhap } = {}) {
+// matKhau: mật khẩu thật (băm bcrypt) khi cần đăng nhập bằng API; Gmail mặc định là <tên viết thường>@gmail.com.
+// Học viên có địa chỉ IP đã xác nhận diaChiIp (mặc định 127.0.0.1, null là chưa đăng nhập lần nào); phiên mang 127.0.0.1.
+export async function taoNguoiDung(
+  vaiTro,
+  { hoTen = null, tenDangNhap, matKhau, diaChiIp = '127.0.0.1' } = {},
+) {
   dem += 1;
   const ten = tenDangNhap ?? `kiemthu${Date.now() % 1e6}${dem}`;
+  const matKhauDaBam = matKhau ? await bcrypt.hash(matKhau, 4) : 'khongdung';
   const [kq] = await pool.query(
     `INSERT INTO nguoi_dung (ten_dang_nhap, ho_ten, gmail, mat_khau_da_bam, vai_tro, ma_gioi_thieu)
-     VALUES (?, ?, ?, 'khongdung', ?, ?)`,
-    [ten, hoTen, `${ten.toLowerCase()}@gmail.com`, vaiTro, sinhMaGioiThieu()],
+     VALUES (?, ?, ?, ?, ?, ?)`,
+    [ten, hoTen, `${ten.toLowerCase()}@gmail.com`, matKhauDaBam, vaiTro, sinhMaGioiThieu()],
   );
   const nguoiDung = { id: kq.insertId, vai_tro: vaiTro };
   if (vaiTro === VAI_TRO.HOC_VIEN) {
-    const [hv] = await pool.query(
-      "INSERT INTO hoc_vien (id_nguoi_dung, dia_chi_ip) VALUES (?, '127.0.0.1')",
-      [nguoiDung.id],
-    );
+    const [hv] = await pool.query('INSERT INTO hoc_vien (id_nguoi_dung, dia_chi_ip) VALUES (?, ?)', [
+      nguoiDung.id,
+      diaChiIp,
+    ]);
     nguoiDung.id_hoc_vien = hv.insertId;
   } else if (vaiTro === VAI_TRO.NGUOI_CUNG_CAP) {
     const [ncc] = await pool.query('INSERT INTO nguoi_cung_cap (id_nguoi_dung) VALUES (?)', [

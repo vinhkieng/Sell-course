@@ -5,6 +5,7 @@
 import jwt from 'jsonwebtoken';
 import config from '../config.js';
 import { VAI_TRO } from '../constants/vaiTro.js';
+import { HIEU_LUC_MA_XAC_NHAN_PHUT } from '../constants/nghiepVu.js';
 
 export const TEN_COOKIE_PHIEN = 'ava_phien';
 const HAN_PHIEN_MS = 7 * 24 * 60 * 60 * 1000;
@@ -42,4 +43,26 @@ export function docMaPhien(ma) {
   } catch {
     return null;
   }
+}
+
+// Lượt đăng nhập đang chờ xác nhận địa chỉ mạng (Phần 3 mục 3.4): cookie tạm có chữ ký bằng COOKIE_SECRET,
+// chỉ nằm trong trình duyệt, ghi id học viên và địa chỉ IP mới.
+export const TEN_COOKIE_CHO_XAC_NHAN = 'ava_cho_xac_nhan';
+
+export function datCookieChoXacNhan(res, idHocVien, ip) {
+  res.cookie(
+    TEN_COOKIE_CHO_XAC_NHAN,
+    { id_hoc_vien: idHocVien, ip },
+    { ...tuyChonCookie, signed: true, maxAge: HIEU_LUC_MA_XAC_NHAN_PHUT * 60 * 1000 },
+  );
+}
+
+// { id_hoc_vien, ip } hoặc null khi không có, đã hết hạn hoặc bị sửa chữ ký
+export function docCookieChoXacNhan(req) {
+  const giaTri = req.signedCookies?.[TEN_COOKIE_CHO_XAC_NHAN];
+  return Number.isInteger(giaTri?.id_hoc_vien) && typeof giaTri.ip === 'string' ? giaTri : null;
+}
+
+export function xoaCookieChoXacNhan(res) {
+  res.clearCookie(TEN_COOKIE_CHO_XAC_NHAN, tuyChonCookie);
 }

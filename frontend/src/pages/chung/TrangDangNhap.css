@@ -1,0 +1,18 @@
+/* Trang đăng nhập, theo thiet_ke/dang_nhap/dang_nhap.html */
+.trang-dang-nhap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Liên kết "Quên mật khẩu?" sát dưới ô mật khẩu, canh phải */
+.tdn-quen {
+  text-align: right;
+  margin-top: -8px;
+}
+
+.tdn-quen a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mau-chinh);
+}

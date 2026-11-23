@@ -76,3 +76,27 @@
 - Kết quả mong đợi: số tròn là số chưa đọc, bằng 0 thì không hiện; bảng "Thông báo" có 5 thông báo, chưa đọc có nền khác, thời điểm tương đối, "Hiển thị 5 thông báo gần nhất"; bấm thông báo thì mở trang liên quan và số giảm; nút đánh dấu tất cả mờ khi không còn chưa đọc; người chưa có thông báo thấy "Chưa có thông báo nào."; giống các màn thiet_ke/thong_bao/; học viên và admin không có chuông.
 - Cách kiểm: Bấm tay
 - Nguồn: Phần 18 mục 18.3, 18.7, 18.8
+
+## P18-10 Xem tất cả thông báo
+- Mục tiêu: lấy đủ mọi thông báo của chính người cung cấp, 10 thông báo mỗi trang.
+- Dữ liệu: nccA có 12 thông báo, 3 chưa đọc; nccB có 2 thông báo.
+- Các bước: nccA gọi GET /api/thong-bao/tat-ca?trang=1 rồi ?trang=2.
+- Kết quả mong đợi: trang 1 có 10 thông báo mới nhất, trang 2 có 2 thông báo cũ nhất, mới nhất ở trên; tổng số 12, số chưa đọc 3; không có thông báo nào của nccB.
+- Cách kiểm: Tự động
+- Nguồn: Phần 18 mục 18.3, 18.5
+
+## P18-11 Phân quyền trang xem tất cả
+- Mục tiêu: chỉ người cung cấp xem được.
+- Dữ liệu: học viên, admin, khách.
+- Các bước: gọi GET /api/thong-bao/tat-ca.
+- Kết quả mong đợi: học viên và admin 403; khách 401.
+- Cách kiểm: Tự động
+- Nguồn: Phần 18 mục 18.3, 18.5; Phần chung C5
+
+## P18-12 Trang Thông báo
+- Mục tiêu: giao diện đúng thiết kế.
+- Dữ liệu: nccA có 12 thông báo, có thông báo chưa đọc; một người cung cấp chưa có thông báo; một học viên.
+- Các bước: bấm chuông rồi bấm "Xem tất cả thông báo →"; chuyển sang trang 2; bấm một thông báo; quay lại /thong-bao bấm "Đánh dấu tất cả đã đọc"; người chưa có thông báo mở /thong-bao; học viên mở /thong-bao.
+- Kết quả mong đợi: trang có tiêu đề "Thông báo", "Mới nhất ở trên", 10 thông báo, "Hiển thị 1-10 trên 12 thông báo", trang 2 có 2 thông báo; bấm thông báo thì mở trang liên quan và số trên chuông giảm; sau khi đánh dấu tất cả thì nút mờ và chuông không còn số; người chưa có thông báo thấy "Chưa có thông báo nào."; học viên thấy trang 403; có chân trang; giống thiet_ke/thong_bao/tat_ca_thong_bao.html.
+- Cách kiểm: Bấm tay
+- Nguồn: Phần 18 mục 18.3, 18.7, 18.8

@@ -23,7 +23,10 @@ client.interceptors.response.use(
     const noiDung = error.response?.data
     if (noiDung && typeof noiDung.loi === 'string') {
       const loi = new ApiError({ status: error.response.status, ...noiDung })
-      if (loi.status === 401 && MA_BI_DAY_RA.includes(loi.ma)) xuLyBiDayRa?.(loi)
+      // boQuaBiDayRa: lời gọi tự hiện lỗi tại chỗ (ví dụ trang đăng nhập hiện câu bị khóa phía trên nút)
+      if (loi.status === 401 && MA_BI_DAY_RA.includes(loi.ma) && !error.config?.boQuaBiDayRa) {
+        xuLyBiDayRa?.(loi)
+      }
       return Promise.reject(loi)
     }
     return Promise.reject(

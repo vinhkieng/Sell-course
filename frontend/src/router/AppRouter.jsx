@@ -8,6 +8,8 @@ import CanVaiTro from '../components/CanVaiTro.jsx'
 import TrangLoi from '../pages/chung/TrangLoi.jsx'
 import TrangChinhSach from '../pages/chung/TrangChinhSach.jsx'
 import TrangDangKy from '../pages/chung/TrangDangKy.jsx'
+import TrangDangNhap from '../pages/chung/TrangDangNhap.jsx'
+import TrangXacNhanDangNhap from '../pages/chung/TrangXacNhanDangNhap.jsx'
 
 // tạm: 8 trang khu quản trị mới có tiêu đề như thiết kế; Phần 6, 19-24 thay bằng trang thật
 const TRANG_QUAN_TRI = [
@@ -42,6 +44,8 @@ function AppRouter() {
 
       {/* Trang tài khoản: không có đầu trang công khai, không có chân trang (Phần chung C9) */}
       <Route path="dang-ky" element={<TrangDangKy />} />
+      <Route path="dang-nhap" element={<TrangDangNhap />} />
+      <Route path="xac-nhan-dang-nhap" element={<TrangXacNhanDangNhap />} />
 
       <Route
         path="quan-tri"

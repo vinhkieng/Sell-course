@@ -5,23 +5,29 @@ File backend/CLAUDE.md và frontend/CLAUDE.md có quy tắc riêng cho từng b�
 Phần "Cách dùng file này" và C1 đến C17 bên dưới chép nguyên văn từ docs/dac_ta/phan_00_chung.md (Phần chung của đặc tả).
 
 ## Tài liệu trong thư mục này
-- docs/dac_ta/phan_00_chung.md: Phần chung (giống phần dưới của file này) và Phụ lục A (bảng đối chiếu 127 màn thiết kế với tên file). Mỗi phần chức năng đã ghi đủ đường dẫn màn của phần đó, nên chỉ mở Phụ lục A khi cần tra tên màn gốc trên Claude Design.
+- docs/dac_ta/phan_00_chung.md: Phần chung (giống phần dưới của file này) và Phụ lục A (bảng đối chiếu 128 màn thiết kế với tên file). Mỗi phần chức năng đã ghi đủ đường dẫn màn của phần đó, nên chỉ mở Phụ lục A khi cần tra tên màn gốc trên Claude Design.
 - docs/dac_ta/phan_01_... đến phan_24_...: đặc tả từng phần chức năng. Đây là nguồn chuẩn về nghiệp vụ.
 - docs/kiem_thu/phan_01_... đến phan_24_...: danh sách trường hợp kiểm thử của từng phần (cùng tên với file đặc tả).
 - database/AVA_CSDL_18-11.sql: cấu trúc 23 bảng. Tên bảng, tên cột, giá trị ENUM lấy đúng từ file này.
-- thiet_ke/: 127 màn thiết kế, bản mở xem được (bấm đúp là mở trong trình duyệt). Đây là nguồn chuẩn về giao diện và chữ trên giao diện. Bản này giống ảnh chụp: menu xổ, nút bấm không chạy.
+- thiet_ke/: 128 màn thiết kế, bản mở xem được (bấm đúp là mở trong trình duyệt). Đây là nguồn chuẩn về giao diện và chữ trên giao diện. Bản này giống ảnh chụp: menu xổ, nút bấm không chạy.
 
 ## Cách làm việc với người dùng
 - Luôn trả lời bằng tiếng Việt. Thuật ngữ chuyên ngành phải mở ngoặc giải thích ngắn, dễ hiểu. Người dùng làm đồ án một mình, kinh nghiệm lập trình còn ít, dùng Windows và Visual Studio Code.
 - Làm đúng đặc tả và thiết kế, không tự thêm chức năng, chữ hay luật nào không có trong đặc tả. Chỗ nào đặc tả và thiết kế nói khác nhau (ngoài các chỗ đặc tả đã ghi rõ làm theo đặc tả), hoặc đặc tả không ghi, thì dừng lại hỏi người dùng trước khi làm.
 - Trước khi code một phần: đọc file đặc tả của phần đó, xem các bảng liên quan trong file SQL, mở các màn thiết kế mà phần đó ghi.
 - Việc lớn (nhiều file, nhiều bước) thì nêu kế hoạch ngắn trước: sẽ tạo hoặc sửa những file nào, để làm gì. Chờ người dùng đồng ý rồi mới làm.
+- Khi gửi kế hoạch, chia các câu hỏi thành 3 nhóm, mỗi nhóm một tiêu đề, nhóm trống thì ghi "Không có":
+  1. [NGHIỆP VỤ]: câu làm đổi luật nghiệp vụ (tiền, đơn hàng, quyền, trạng thái khóa học, tài khoản, điều kiện được hoặc không được làm gì). Không có gợi ý mặc định; người dùng tự quyết.
+  2. [NGƯỜI DÙNG THẤY]: câu làm đổi điều người dùng nhìn thấy hoặc gặp phải mà đặc tả hoặc thiết kế chưa ghi (chữ, màu, vị trí, chuyển trang, trường hợp đặc biệt như tải lại trang, hết phiên).
+  3. [KỸ THUẬT]: câu chỉ ảnh hưởng bên trong code (mã lỗi, dữ liệu máy chủ trả về, tên và chỗ đặt file, tách hàm dùng chung), người dùng không thấy khác gì.
+  Mỗi câu ghi thêm một dòng "Người dùng có thấy khác không: Có/Không" và gợi ý của bạn (trừ nhóm NGHIỆP VỤ). Câu nào không chắc thuộc nhóm nào thì xếp vào nhóm cao hơn (NGHIỆP VỤ cao nhất).
 - Một phần thường gồm cả backend (đường xử lý ở máy chủ) và frontend (trang). Làm backend trước, kiểm tra chạy đúng, rồi làm trang.
 - Không xóa file hay thư mục khi chưa được đồng ý. Muốn xóa thì liệt kê trước, giải thích vì sao, chờ duyệt.
 - Không cài thêm thư viện ngoài danh sách ở mục C2 khi chưa hỏi.
 - Thấy chỗ chưa ổn (trong code, đặc tả hay thiết kế) thì chủ động đề xuất, nhưng không tự làm ngoài phạm vi được nhờ. Không sửa lan sang phần không liên quan tới việc đang làm.
 - Không chắc thì nói là không chắc. Không bịa tên file, đường dẫn hay chức năng không có trong đặc tả.
 - Làm xong một phần: viết code kiểm thử theo docs/kiem_thu của phần đó và chạy cho tới khi qua hết (mục C2); chạy npm run lint ở bên đã sửa; rồi tóm tắt ngắn đã làm gì, ở file nào, và hướng dẫn người dùng chạy thử từng bước (mở trang nào, bấm gì, thấy gì là đúng), kể cả các trường hợp có "Cách kiểm: bấm tay".
+- Danh sách bấm tay còn chờ nằm ở docs/kiem_thu/cho_bam_tay.md; làm xong mỗi phần thì cập nhật file này như ghi ở đầu file.
 - Chỉ lưu code bằng Git (commit) hoặc đẩy lên GitHub khi người dùng bảo. Lời nhắn commit viết bằng tiếng Việt, ngắn, nói rõ đã làm gì. Không bao giờ đưa file backend/.env, mật khẩu hay khóa bí mật lên GitHub.
 - Trên giao diện và trong tài liệu chỉ dùng gạch ngắn "-", không dùng gạch dài.
 
@@ -149,7 +155,7 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
 - /dang-ky, /dang-nhap, /xac-nhan-dang-nhap, /quen-mat-khau, /dat-lai-mat-khau.
 - /gio-hang, /thong-tin-don-hang, /thanh-toan/ket-qua (trang kết quả sau khi cổng thanh toán đưa về), /don-hang/:id (chi tiết đơn của học viên).
 - /ho-so (trang hồ sơ dài, menu trái bấm thì cuộn tới mục). Các mục: #thong-tin-ca-nhan, #doi-mat-khau; học viên thêm #khoa-hoc-cua-toi, #tien-do-hoc, #lich-su-don-hang; người cung cấp thêm #quan-ly-khoa-hoc, #vi, #rut-tien; admin thêm #thong-tin-hop-dong.
-- /nguoi-cung-cap/tao-khoa-hoc (tạo khóa), /nguoi-cung-cap/khoa-hoc/:id (quản lý khóa).
+- /nguoi-cung-cap/tao-khoa-hoc (tạo khóa), /nguoi-cung-cap/khoa-hoc/:id (quản lý khóa), /thong-bao (tất cả thông báo của người cung cấp).
 - /chinh-sach: mỗi điều có neo #dieu-<số thứ tự của điều>, ví dụ #dieu-1 là Điều 1.
 - Khu quản trị: /quan-tri/khoa-hoc (trang mở đầu khi admin đăng nhập), /quan-tri/khoa-hoc/:id, /quan-tri/bao-cao-khoa-hoc, /quan-tri/bao-cao-danh-gia, /quan-tri/nguoi-dung, /quan-tri/danh-muc, /quan-tri/don-hang, /quan-tri/rut-tien, /quan-tri/chinh-sach.
 
@@ -179,7 +185,7 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
   - Cột "Hỗ trợ": chỉ có dòng "avahotro@gmail.com", bấm vào thì mở ứng dụng thư (liên kết mailto:avahotro@gmail.com).
   - Khối "Liên hệ hỗ trợ": "Gmail: avahotro@gmail.com", "Điện thoại: 028 7300 8899", "Giờ làm việc: 8:00 - 17:00, thứ Hai đến thứ Sáu".
   - Dòng cuối: "© [Năm] AVA. Bảo lưu mọi quyền." (điền năm hiện tại) và "Thanh toán an toàn qua VNPay" (tên cổng lấy từ cong_thanh_toan.ten).
-- Trang có chân trang: mọi trang dùng đầu trang công khai (trừ trang học và trang làm bài trắc nghiệm), gồm trang chủ, danh sách khóa học, chi tiết khóa học, giỏ hàng, thông tin đơn hàng, kết quả thanh toán, chi tiết đơn hàng, hồ sơ, tạo khóa học, quản lý khóa học (kể cả thêm và sửa bài), Chính sách, trang lỗi 403 và 404. Nhiều màn thiết kế của các trang này không vẽ chân trang, nhưng trang thật vẫn có.
+- Trang có chân trang: mọi trang dùng đầu trang công khai (trừ trang học và trang làm bài trắc nghiệm), gồm trang chủ, danh sách khóa học, chi tiết khóa học, giỏ hàng, thông tin đơn hàng, kết quả thanh toán, chi tiết đơn hàng, hồ sơ, trang Thông báo, tạo khóa học, quản lý khóa học (kể cả thêm và sửa bài), Chính sách, trang lỗi 403 và 404. Nhiều màn thiết kế của các trang này không vẽ chân trang, nhưng trang thật vẫn có.
 - Trang không có chân trang: các trang tài khoản không dùng đầu trang công khai (đăng nhập, xác nhận đăng nhập, đăng ký, quên mật khẩu, đặt lại mật khẩu), trang học, trang làm bài trắc nghiệm và mọi trang dùng đầu trang "Quản trị" (toàn bộ khu quản trị và trang hồ sơ của admin).
 - Khu quản trị có đầu trang gọn chữ "Quản trị" và menu dọc 8 mục: Khóa học, Báo cáo khóa học, Báo cáo đánh giá, Người dùng, Danh mục, Đơn hàng, Yêu cầu rút tiền, Chính sách. Ba mục có số tròn: "Báo cáo khóa học" = số dòng đang chưa xử lý (cách gom dòng ở Phần 20), "Báo cáo đánh giá" = số đánh giá đang có phiếu chưa xử lý, "Yêu cầu rút tiền" = số yêu cầu "Chờ duyệt". Số bằng 0 thì không hiện. Mục "Chính sách" không có số tròn.
 - Thông báo sau khi làm xong một việc hoặc sau khi chuyển trang (ví dụ "Đã thêm vào giỏ hàng") hiện thành ô nhỏ ở góc dưới bên phải, tự tắt sau khoảng 5 giây. Lỗi dưới ô nhập thì hiện chữ đỏ ngay dưới ô.
@@ -227,7 +233,7 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
 - Số lần khóa đã bị ẩn (dùng cho luật hai lần) đếm số dòng có hanh_dong là 'Quản trị viên ẩn khóa' hoặc 'Hệ thống ẩn do khóa tài khoản'. Người cung cấp tự ẩn không tính.
 
 ## C16. Phân trang
-- Danh sách khóa học 9 khóa mỗi trang. Mọi bảng ở khu quản trị 20 dòng mỗi trang. Bảng "Doanh thu gần đây" ở ví 5 dòng mỗi trang. Lịch sử đơn hàng và lịch sử yêu cầu rút tiền 10 dòng mỗi trang. Đánh giá ở trang chi tiết hiện 3 cái đầu, mỗi lần bấm "Xem thêm đánh giá" tải thêm 10. Chuông thông báo hiện 5 thông báo mới nhất.
+- Danh sách khóa học 9 khóa mỗi trang. Mọi bảng ở khu quản trị 20 dòng mỗi trang. Bảng "Doanh thu gần đây" ở ví 5 dòng mỗi trang. Lịch sử đơn hàng và lịch sử yêu cầu rút tiền 10 dòng mỗi trang. Đánh giá ở trang chi tiết hiện 3 cái đầu, mỗi lần bấm "Xem thêm đánh giá" tải thêm 10. Chuông thông báo hiện 5 thông báo mới nhất; trang Thông báo 10 thông báo mỗi trang.
 
 ## C17. Hạn chế đã biết (không cần xử lý)
 - Không dùng chống sao chép nội dung số (DRM): học viên đã mua vẫn có thể quay màn hình hoặc tải video qua trình duyệt.

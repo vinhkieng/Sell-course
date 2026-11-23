@@ -170,6 +170,37 @@
   cursor: default;
 }
 
+/* Dòng báo trong thẻ (DongBao trong KhungTaiKhoan.jsx) */
+.tk-dong-bao {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.tk-dong-bao svg {
+  flex: none;
+}
+
+.tk-dong-bao.loi {
+  background: var(--mau-loi-nen);
+  color: var(--mau-loi-dam);
+}
+
+.tk-dong-bao.nhac {
+  background: var(--mau-vang-nen);
+  color: var(--mau-vang-dam);
+}
+
+.tk-dong-bao.xanh {
+  background: var(--mau-xanh-nen);
+  color: var(--mau-xanh-dam);
+}
+
 .tk-chuyen {
   text-align: center;
   color: var(--mau-chu-phu);

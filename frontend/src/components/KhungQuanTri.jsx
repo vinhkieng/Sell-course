@@ -21,7 +21,7 @@ const MUC = [
 ]
 
 function KhungQuanTri() {
-  const { nguoiDung } = useAuth()
+  const { nguoiDung, dangXuat } = useAuth()
   const { pathname } = useLocation()
   const [so, setSo] = useState({})
 
@@ -45,8 +45,7 @@ function KhungQuanTri() {
               <div className="kqt-menu">
                 <Link to="/quan-tri/khoa-hoc">Trang quản trị</Link>
                 <Link to="/ho-so">Hồ sơ</Link>
-                {/* Phần 3 nối việc đăng xuất */}
-                <button type="button" className="kqt-dang-xuat">Đăng xuất</button>
+                <button type="button" className="kqt-dang-xuat" onClick={dangXuat}>Đăng xuất</button>
               </div>
             </div>
           </div>

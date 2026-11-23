@@ -36,3 +36,16 @@ export const schemaDangKy = z
     // Vẫn so khi ô khác đang sai, để trả lỗi của mọi ô trong một lần
     when: () => true,
   });
+
+// Đăng nhập (Phần 3 mục 3.4 bước 1, 3.7)
+export const schemaDangNhap = z.object({
+  ten_dang_nhap: oBatBuoc('Vui lòng nhập tên đăng nhập').trim().min(1, 'Vui lòng nhập tên đăng nhập'),
+  mat_khau: oBatBuoc('Vui lòng nhập mật khẩu')
+    .min(1, 'Vui lòng nhập mật khẩu')
+    .regex(/^\d{6}$/, 'Mật khẩu phải gồm đúng 6 chữ số'),
+});
+
+// Xác nhận địa chỉ mạng: mã 6 chữ số (trang không cho bấm khi chưa đủ 6 chữ số)
+export const schemaXacNhanDangNhap = z.object({
+  ma: z.string({ error: 'Mã xác nhận không đúng.' }).regex(/^\d{6}$/, 'Mã xác nhận không đúng.'),
+});

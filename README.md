@@ -11,7 +11,7 @@ Do_An/
   database/           file SQL tạo database ava (23 bảng)
   docs/dac_ta/        đặc tả: Phần chung và 24 phần chức năng
   docs/kiem_thu/      danh sách trường hợp kiểm thử của 24 phần
-  thiet_ke/           127 màn thiết kế, bấm đúp là mở trong Chrome
+  thiet_ke/           128 màn thiết kế, bấm đúp là mở trong Chrome
   backend/            máy chủ (Node.js, Express, MySQL), chạy ở cổng 8000
   frontend/           giao diện (React, Vite), chạy ở cổng 5173
   .github/workflows/  GitHub Actions: tự kiểm tra mỗi lần đẩy code lên GitHub

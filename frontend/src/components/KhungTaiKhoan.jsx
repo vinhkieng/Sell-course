@@ -26,4 +26,24 @@ function KhungTaiKhoan({ cauLon, cauNho, children }) {
   )
 }
 
+// Dòng báo trong thẻ: 'loi' (đỏ, lỗi máy chủ), 'nhac' (vàng, ví dụ "Vui lòng đăng nhập để mua khóa học"),
+// 'xanh' (gửi lại mã thành công). Theo thiet_ke/dang_nhap/.
+const HINH_DONG_BAO = {
+  loi: <path d="M12 7.5v5M12 16h.01" />,
+  nhac: <path d="M12 11v5M12 8h.01" />,
+  xanh: <path d="m8 12 3 3 5-6" />,
+}
+
+export function DongBao({ loai, children }) {
+  return (
+    <div className={`tk-dong-bao ${loai}`} role={loai === 'loi' ? 'alert' : 'status'}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        {HINH_DONG_BAO[loai]}
+      </svg>
+      {children}
+    </div>
+  )
+}
+
 export default KhungTaiKhoan

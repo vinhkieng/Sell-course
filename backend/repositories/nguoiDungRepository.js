@@ -30,6 +30,24 @@ export async function timTheoTenDangNhapHoacGmail(tenDangNhap, gmail, conn = poo
   return rows;
 }
 
+// Tài khoản để đăng nhập, tìm theo tên không phân biệt hoa thường (Phần 3 mục 3.4 bước 3)
+export async function timDeDangNhap(tenDangNhap) {
+  const [rows] = await pool.query(
+    `SELECT nd.id, nd.ten_dang_nhap, nd.vai_tro, nd.gmail, nd.mat_khau_da_bam, nd.khoa, nd.ly_do_khoa,
+            hv.id AS id_hoc_vien, hv.dia_chi_ip
+       FROM nguoi_dung nd
+       LEFT JOIN hoc_vien hv ON hv.id_nguoi_dung = nd.id
+      WHERE nd.ten_dang_nhap = ?`,
+    [tenDangNhap],
+  );
+  return rows[0] ?? null;
+}
+
+// Địa chỉ IP đã xác nhận của học viên (Phần 3 mục 3.4)
+export async function capNhatDiaChiIp(idHocVien, ip, conn = pool) {
+  await conn.query('UPDATE hoc_vien SET dia_chi_ip = ? WHERE id = ?', [ip, idHocVien]);
+}
+
 export async function maGioiThieuDaCo(ma, conn = pool) {
   const [rows] = await conn.query('SELECT 1 FROM nguoi_dung WHERE ma_gioi_thieu = ? LIMIT 1', [ma]);
   return rows.length > 0;

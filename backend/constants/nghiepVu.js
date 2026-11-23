@@ -38,6 +38,11 @@ export const CHAN_THEO_IP_PHUT = 15; // thì chặn địa chỉ đó 15 phút
 export const GUI_MA_XAC_NHAN_TOI_DA = 5; // tối đa 5 lần gửi mã xác nhận đăng nhập
 export const KHUNG_GUI_MA_XAC_NHAN_GIO = 1; // trong 1 giờ
 
+// Mã xác nhận địa chỉ mạng (Phần 3 mục 3.4)
+export const HIEU_LUC_MA_XAC_NHAN_PHUT = 10;
+export const NHAP_MA_SAI_TOI_DA = 5;
+export const GIAY_CHO_GUI_LAI_MA = 60;
+
 // File (Phần chung C12, C13)
 export const THOI_LUONG_VIDEO_TOI_THIEU_GIAY = 1;
 export const THOI_LUONG_VIDEO_TOI_DA_GIAY = 21600; // 6 giờ

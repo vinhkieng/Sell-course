@@ -41,7 +41,7 @@ const lopMucNav = ({ isActive }) => (isActive ? 'dt-dang-mo' : undefined)
 const boChon = () => document.activeElement?.blur()
 
 function DauTrang({ danhMuc }) {
-  const { nguoiDung } = useAuth()
+  const { nguoiDung, dangXuat } = useAuth()
   const navigate = useNavigate()
   const [moMenuDiDong, setMoMenuDiDong] = useState(false)
   const [moMenuTaiKhoan, setMoMenuTaiKhoan] = useState(false)
@@ -164,8 +164,7 @@ function DauTrang({ danhMuc }) {
               {MENU_TAI_KHOAN[vaiTro].muc.map(([chu, duong]) => (
                 <Link key={duong} to={duong}>{chu}</Link>
               ))}
-              {/* Phần 3 nối việc đăng xuất */}
-              <button type="button" className="dt-dang-xuat">Đăng xuất</button>
+              <button type="button" className="dt-dang-xuat" onClick={dangXuat}>Đăng xuất</button>
             </div>
           )}
         </div>

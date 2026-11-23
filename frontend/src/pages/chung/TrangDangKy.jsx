@@ -8,6 +8,7 @@ import { dangKy } from '../../api/taiKhoan.js'
 import { kiemTraDangKy } from '../../utils/kiemTraDangKy.js'
 import { VAI_TRO } from '../../constants/vaiTro.js'
 import KhungTaiKhoan from '../../components/KhungTaiKhoan.jsx'
+import ONhap from '../../components/ONhap.jsx'
 import './TrangDangKy.css'
 
 const CHON_VAI_TRO = [
@@ -17,17 +18,6 @@ const CHON_VAI_TRO = [
 
 // Chỉ giữ chữ số, tối đa 6 (Phần 2 mục 2.3)
 const chiChuSo = (chu) => chu.replace(/\D/g, '').slice(0, 6)
-
-// Một ô nhập: lỗi thì chữ đỏ thay chỗ chữ gợi ý
-function ONhap({ nhan, loi, goiY, ...thuocTinh }) {
-  return (
-    <label className={`tk-o${loi ? ' co-loi' : ''}`}>
-      {nhan}
-      <input className="tk-o-nhap" {...thuocTinh} />
-      {(loi || goiY) && <span className={`tk-goi-y${loi ? ' loi' : ''}`}>{loi || goiY}</span>}
-    </label>
-  )
-}
 
 function TrangDangKy() {
   const { nguoiDung, dangTai } = useAuth()

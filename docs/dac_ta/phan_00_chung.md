@@ -101,7 +101,7 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
 - /dang-ky, /dang-nhap, /xac-nhan-dang-nhap, /quen-mat-khau, /dat-lai-mat-khau.
 - /gio-hang, /thong-tin-don-hang, /thanh-toan/ket-qua (trang kết quả sau khi cổng thanh toán đưa về), /don-hang/:id (chi tiết đơn của học viên).
 - /ho-so (trang hồ sơ dài, menu trái bấm thì cuộn tới mục). Các mục: #thong-tin-ca-nhan, #doi-mat-khau; học viên thêm #khoa-hoc-cua-toi, #tien-do-hoc, #lich-su-don-hang; người cung cấp thêm #quan-ly-khoa-hoc, #vi, #rut-tien; admin thêm #thong-tin-hop-dong.
-- /nguoi-cung-cap/tao-khoa-hoc (tạo khóa), /nguoi-cung-cap/khoa-hoc/:id (quản lý khóa).
+- /nguoi-cung-cap/tao-khoa-hoc (tạo khóa), /nguoi-cung-cap/khoa-hoc/:id (quản lý khóa), /thong-bao (tất cả thông báo của người cung cấp).
 - /chinh-sach: mỗi điều có neo #dieu-<số thứ tự của điều>, ví dụ #dieu-1 là Điều 1.
 - Khu quản trị: /quan-tri/khoa-hoc (trang mở đầu khi admin đăng nhập), /quan-tri/khoa-hoc/:id, /quan-tri/bao-cao-khoa-hoc, /quan-tri/bao-cao-danh-gia, /quan-tri/nguoi-dung, /quan-tri/danh-muc, /quan-tri/don-hang, /quan-tri/rut-tien, /quan-tri/chinh-sach.
 
@@ -131,7 +131,7 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
   - Cột "Hỗ trợ": chỉ có dòng "avahotro@gmail.com", bấm vào thì mở ứng dụng thư (liên kết mailto:avahotro@gmail.com).
   - Khối "Liên hệ hỗ trợ": "Gmail: avahotro@gmail.com", "Điện thoại: 028 7300 8899", "Giờ làm việc: 8:00 - 17:00, thứ Hai đến thứ Sáu".
   - Dòng cuối: "© [Năm] AVA. Bảo lưu mọi quyền." (điền năm hiện tại) và "Thanh toán an toàn qua VNPay" (tên cổng lấy từ cong_thanh_toan.ten).
-- Trang có chân trang: mọi trang dùng đầu trang công khai (trừ trang học và trang làm bài trắc nghiệm), gồm trang chủ, danh sách khóa học, chi tiết khóa học, giỏ hàng, thông tin đơn hàng, kết quả thanh toán, chi tiết đơn hàng, hồ sơ, tạo khóa học, quản lý khóa học (kể cả thêm và sửa bài), Chính sách, trang lỗi 403 và 404. Nhiều màn thiết kế của các trang này không vẽ chân trang, nhưng trang thật vẫn có.
+- Trang có chân trang: mọi trang dùng đầu trang công khai (trừ trang học và trang làm bài trắc nghiệm), gồm trang chủ, danh sách khóa học, chi tiết khóa học, giỏ hàng, thông tin đơn hàng, kết quả thanh toán, chi tiết đơn hàng, hồ sơ, trang Thông báo, tạo khóa học, quản lý khóa học (kể cả thêm và sửa bài), Chính sách, trang lỗi 403 và 404. Nhiều màn thiết kế của các trang này không vẽ chân trang, nhưng trang thật vẫn có.
 - Trang không có chân trang: các trang tài khoản không dùng đầu trang công khai (đăng nhập, xác nhận đăng nhập, đăng ký, quên mật khẩu, đặt lại mật khẩu), trang học, trang làm bài trắc nghiệm và mọi trang dùng đầu trang "Quản trị" (toàn bộ khu quản trị và trang hồ sơ của admin).
 - Khu quản trị có đầu trang gọn chữ "Quản trị" và menu dọc 8 mục: Khóa học, Báo cáo khóa học, Báo cáo đánh giá, Người dùng, Danh mục, Đơn hàng, Yêu cầu rút tiền, Chính sách. Ba mục có số tròn: "Báo cáo khóa học" = số dòng đang chưa xử lý (cách gom dòng ở Phần 20), "Báo cáo đánh giá" = số đánh giá đang có phiếu chưa xử lý, "Yêu cầu rút tiền" = số yêu cầu "Chờ duyệt". Số bằng 0 thì không hiện. Mục "Chính sách" không có số tròn.
 - Thông báo sau khi làm xong một việc hoặc sau khi chuyển trang (ví dụ "Đã thêm vào giỏ hàng") hiện thành ô nhỏ ở góc dưới bên phải, tự tắt sau khoảng 5 giây. Lỗi dưới ô nhập thì hiện chữ đỏ ngay dưới ô.
@@ -179,7 +179,7 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
 - Số lần khóa đã bị ẩn (dùng cho luật hai lần) đếm số dòng có hanh_dong là 'Quản trị viên ẩn khóa' hoặc 'Hệ thống ẩn do khóa tài khoản'. Người cung cấp tự ẩn không tính.
 
 ## C16. Phân trang
-- Danh sách khóa học 9 khóa mỗi trang. Mọi bảng ở khu quản trị 20 dòng mỗi trang. Bảng "Doanh thu gần đây" ở ví 5 dòng mỗi trang. Lịch sử đơn hàng và lịch sử yêu cầu rút tiền 10 dòng mỗi trang. Đánh giá ở trang chi tiết hiện 3 cái đầu, mỗi lần bấm "Xem thêm đánh giá" tải thêm 10. Chuông thông báo hiện 5 thông báo mới nhất.
+- Danh sách khóa học 9 khóa mỗi trang. Mọi bảng ở khu quản trị 20 dòng mỗi trang. Bảng "Doanh thu gần đây" ở ví 5 dòng mỗi trang. Lịch sử đơn hàng và lịch sử yêu cầu rút tiền 10 dòng mỗi trang. Đánh giá ở trang chi tiết hiện 3 cái đầu, mỗi lần bấm "Xem thêm đánh giá" tải thêm 10. Chuông thông báo hiện 5 thông báo mới nhất; trang Thông báo 10 thông báo mỗi trang.
 
 ## C17. Hạn chế đã biết (không cần xử lý)
 - Không dùng chống sao chép nội dung số (DRM): học viên đã mua vẫn có thể quay màn hình hoặc tải video qua trình duyệt.
@@ -304,6 +304,7 @@ Thư mục thiet_ke/ đặt trong thư mục Do_An. Mỗi file HTML là bản m�
 | Hồ sơ người cung cấp - Có thông báo mới | ProfileProviderBell.dc.html | thiet_ke/thong_bao/co_thong_bao_moi.html |
 | Hồ sơ người cung cấp - Mở bảng thông báo | ProfileProviderBellOpen.dc.html | thiet_ke/thong_bao/mo_bang_thong_bao.html |
 | Hồ sơ người cung cấp - Chưa có thông báo | ProfileProviderBellEmpty.dc.html | thiet_ke/thong_bao/chua_co_thong_bao.html |
+| Thông báo - Tất cả thông báo | NotificationsAll.dc.html | thiet_ke/thong_bao/tat_ca_thong_bao.html |
 | Quản trị - Khóa học (danh sách) | AdminCourses.dc.html | thiet_ke/quan_tri_khoa_hoc/danh_sach_khoa_hoc.html |
 | Quản trị - Khóa đang bán | AdminCourseReviewApproved.dc.html | thiet_ke/quan_tri_khoa_hoc/khoa_dang_ban.html |
 | Quản trị - Khóa đang bán (hộp Gỡ vĩnh viễn) | AdminCourseReview.dc.html | thiet_ke/quan_tri_khoa_hoc/khoa_dang_ban_hop_go_vinh_vien.html |
@@ -328,4 +329,4 @@ Thư mục thiet_ke/ đặt trong thư mục Do_An. Mỗi file HTML là bản m�
 | Quản trị - Chính sách (thêm điều, báo lỗi) | AdminPoliciesAddError.dc.html | thiet_ke/quan_tri_chinh_sach/chinh_sach_them_dieu_bao_loi.html |
 | Quản trị - Chính sách (hộp Xóa) | AdminPoliciesDelete.dc.html | thiet_ke/quan_tri_chinh_sach/chinh_sach_hop_xoa.html |
 
-Tổng cộng 127 màn.
+Tổng cộng 128 màn.

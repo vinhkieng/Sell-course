@@ -12,10 +12,12 @@
   --mau-nhan: #e9a23b; /* cam: gạch chân mục đang mở, số tròn */
   --mau-nhan-nhat: #f4c26b;
   --mau-vang-nen: #fbe7c2;
+  --mau-vang-dam: #4a2f05; /* chữ trên nền vàng */
   --mau-chu: #1f3a3d; /* chữ chính */
   --mau-chu-phu: #3c5558;
   --mau-chu-noi-dung: #2b4649; /* chữ nội dung trang Chính sách */
   --mau-chu-mo: #6b8580;
+  --mau-chu-nhat: #9db1ac; /* liên kết đang mờ, ví dụ "Gửi lại mã sau N giây" */
   --mau-loi: #b3382c; /* chữ báo lỗi, số trên chuông, "Đăng xuất" */
   --mau-loi-nen: #f8d9d4;
   --mau-loi-dam: #8a2a1f;

@@ -3,12 +3,13 @@
 // cả hai đều không có thì về /dang-nhap. Giữ nguyên ?quay_lai và ?tu=mua để dùng sau khi xác nhận xong.
 import { useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
-import { useAuth } from '../../hooks/useAuth.js'
-import { useDemNguoc } from '../../hooks/useDemNguoc.js'
-import { xacNhanDangNhap, guiLaiMaDangNhap } from '../../api/taiKhoan.js'
-import { trangSauDangNhap } from '../../utils/trangSauDangNhap.js'
-import { docLuotCho, luuLuotCho, xoaLuotCho, LUOT_XAC_NHAN_DANG_NHAP as KHOA } from '../../utils/luotChoMa.js'
-import KhungTaiKhoan, { DongBao } from '../../components/KhungTaiKhoan.jsx'
+import { useAuth } from '../../../hooks/useAuth.js'
+import { useDemNguoc } from '../../../hooks/useDemNguoc.js'
+import { xacNhanDangNhap, guiLaiMaDangNhap } from '../../../api/taiKhoan.js'
+import { trangSauDangNhap } from '../../../utils/trangSauDangNhap.js'
+import { docLuotCho, luuLuotCho, xoaLuotCho, LUOT_XAC_NHAN_DANG_NHAP as KHOA } from '../../../utils/luotChoMa.js'
+import KhungTaiKhoan, { DongBao } from '../../../components/KhungTaiKhoan.jsx'
+import ONhap from '../../../components/ONhap.jsx'
 import './TrangXacNhanDangNhap.css'
 
 function TrangXacNhanDangNhap() {
@@ -76,21 +77,20 @@ function TrangXacNhanDangNhap() {
           </p>
         </div>
 
-        <label className={`tk-o${loi ? ' co-loi' : ''}`}>
-          <span>
-            Mã xác nhận<i className="txn-bat-buoc">*</i>
-          </span>
-          <input
-            className="tk-o-nhap"
-            type="text"
-            inputMode="numeric"
-            autoComplete="one-time-code"
-            placeholder="Nhập mã gồm 6 chữ số"
-            value={ma}
-            onChange={(e) => setMa(e.target.value.replace(/\D/g, '').slice(0, 6))}
-          />
-          {loi && <span className="tk-goi-y loi">{loi}</span>}
-        </label>
+        <ONhap
+          nhan={
+            <span>
+              Mã xác nhận<i className="txn-bat-buoc">*</i>
+            </span>
+          }
+          loi={loi}
+          type="text"
+          inputMode="numeric"
+          autoComplete="one-time-code"
+          placeholder="Nhập mã gồm 6 chữ số"
+          value={ma}
+          onChange={(e) => setMa(e.target.value.replace(/\D/g, '').slice(0, 6))}
+        />
 
         {daGuiLai && <DongBao loai="xanh">{daGuiLai}</DongBao>}
         {/* Nút mờ khi chưa đủ 6 chữ số (Phần 3 mục 3.3) */}

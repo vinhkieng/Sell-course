@@ -1,11 +1,9 @@
 // Khung khu quản trị: đầu trang "Quản trị" và menu dọc 8 mục, không có chân trang (Phần chung C9).
 // Theo thiet_ke/quan_tri_khoa_hoc/danh_sach_khoa_hoc.html.
 import { useEffect, useState } from 'react'
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth.js'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { laySoChoXuLy } from '../api/khung.js'
-import Logo from './Logo.jsx'
-import AnhDaiDien from './AnhDaiDien.jsx'
+import DauTrangQuanTri from './DauTrangQuanTri.jsx'
 import './KhungQuanTri.css'
 
 // [chữ, đường dẫn, hình, tên số tròn (trường trong GET /api/quan-tri/so-cho-xu-ly), kiểu số tròn]
@@ -21,7 +19,6 @@ const MUC = [
 ]
 
 function KhungQuanTri() {
-  const { nguoiDung, dangXuat } = useAuth()
   const { pathname } = useLocation()
   const [so, setSo] = useState({})
 
@@ -32,25 +29,7 @@ function KhungQuanTri() {
 
   return (
     <div className="khung-quan-tri">
-      <header className="kqt-dau">
-        <div className="kqt-dau-ruot">
-          <Logo />
-          <span className="nhan kqt-nhan">Quản trị</span>
-          <div className="kqt-tai-khoan">
-            <button type="button" className="kqt-nut-tai-khoan" aria-label="Tài khoản admin">
-              <AnhDaiDien nguoiDung={nguoiDung} co={40} />
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
-            </button>
-            <div className="kqt-xo">
-              <div className="kqt-menu">
-                <Link to="/quan-tri/khoa-hoc">Trang quản trị</Link>
-                <Link to="/ho-so">Hồ sơ</Link>
-                <button type="button" className="kqt-dang-xuat" onClick={dangXuat}>Đăng xuất</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <DauTrangQuanTri />
 
       <div className="kqt-than">
         <aside className="hop kqt-menu-doc">

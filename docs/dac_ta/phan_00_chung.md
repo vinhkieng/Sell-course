@@ -197,7 +197,7 @@ Mọi đường xử lý ở máy chủ đều kiểm tra đăng nhập và vai 
 ## C18. Ký hiệu trên giao diện
 - Mọi chữ người dùng thấy (trang, nút, liên kết, câu báo, chữ mờ trong ô, thư gửi qua Gmail) chỉ dùng chữ và dấu câu gõ được từ bàn phím, không dùng ký hiệu trang trí.
 - Không dùng mũi tên ←, →, ‹, ›, ↑, ↓. Liên kết và nút ghi chữ thường, ví dụ "Quay lại đăng nhập", "Quay lại khóa học", "Quay lại", "Bài trước", "Học bài tiếp theo", "Xem tất cả khóa học", "Xem tất cả thông báo", "Trước", "Sau", "Trang trước", "Trang tiếp theo"; nút thu cột ở trang học ghi "Ẩn". Nút đổi thứ tự ghi "Lên", "Xuống"; nút về đầu trang ghi "Lên đầu trang".
-- Không dùng dấu chấm giữa "·" để ngăn thông tin, thay bằng dấu phẩy, ví dụ "Trần Thị Bích, 16 bài, 120 học viên", "24 bài, 299.000đ", "Trắc nghiệm, 5 câu, 10 phút", "8,00/10, Trắc nghiệm, 5 câu, 10 phút". Liên kết đứng sau một thông tin (ví dụ "Nhập lại Gmail" đứng sau Gmail đã nhập) thì cách ra bằng khoảng trống, không có dấu ngăn.
+- Không dùng dấu chấm giữa "·" để ngăn thông tin, thay bằng dấu phẩy, ví dụ "Trần Thị Bích, 16 bài, 120 học viên", "24 bài, 299.000đ", "Trắc nghiệm, 5 câu, 10 phút", "8,00/10, trắc nghiệm, 5 câu, 10 phút". Liên kết đứng sau một thông tin (ví dụ "Nhập lại Gmail" đứng sau Gmail đã nhập) thì cách ra bằng khoảng trống, không có dấu ngăn.
 - Không dùng ký tự ba chấm liền "…". Chữ mờ trong ô không có dấu ba chấm, ví dụ "Tìm khóa học". Chữ quá dài bị cắt thì để CSS tự thêm dấu ba chấm.
 - Ngoặc kép dùng ngoặc thẳng ", không dùng ngoặc cong “ ” ‘ ’.
 - Không dùng biểu tượng cảm xúc (emoji), không dùng gạch dài.

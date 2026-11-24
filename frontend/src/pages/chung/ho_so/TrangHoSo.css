@@ -1,0 +1,198 @@
+/* Các mục của trang hồ sơ (TrangHoSo và các file HoSo*.jsx cạnh nó), theo thiet_ke/ho_so/ */
+.ho-so-muc {
+  scroll-margin-top: 16px;
+}
+
+.ho-so-muc h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 24px;
+}
+
+.ho-so-muc h2.hs-tieu-de-sat {
+  margin-bottom: 8px;
+}
+
+/* Ô nhập ở hồ sơ thấp hơn ở trang tài khoản (thiết kế hồ sơ: cao 48px, bo 12px) */
+.ho-so-muc .tk-o-nhap {
+  height: 48px;
+  border-radius: 12px;
+  padding: 0 14px;
+  font-size: inherit;
+}
+
+.ho-so-muc .tk-o-nhap:disabled {
+  background: var(--mau-nen);
+  color: var(--mau-chu);
+}
+
+.hs-luoi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.hs-luoi-dau {
+  align-items: start;
+}
+
+.hs-khong-bat-buoc {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--mau-chu-mo);
+  margin-left: 6px;
+}
+
+/* Ảnh đại diện và nút "Đổi ảnh" */
+.hs-anh {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.hs-anh-nut {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.hs-goi-y-anh {
+  font-size: 13px;
+  color: var(--mau-chu-phu);
+}
+
+.hs-loi-anh {
+  font-size: 13px;
+  color: var(--mau-loi);
+  font-weight: 500;
+}
+
+/* Ô ngày sinh có biểu tượng lịch bên phải */
+.hs-ngay {
+  position: relative;
+}
+
+.hs-ngay .tk-o-nhap {
+  padding-right: 44px;
+}
+
+.hs-nut-lich {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: none;
+  color: var(--mau-chu-phu);
+  border-radius: 8px;
+}
+
+.hs-nut-lich:hover {
+  background: var(--mau-nen);
+}
+
+/* Ô chọn ngày của trình duyệt: ẩn, chỉ mở bằng nút lịch */
+.hs-chon-ngay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hs-ghi-chu {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--mau-chu-mo);
+  line-height: 1.5;
+}
+
+/* Nút (.pri và .sec trong thiết kế) */
+.hs-hang-nut {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hs-nut-chinh {
+  height: 48px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--mau-chinh);
+  color: var(--mau-trang);
+  font-weight: 800;
+}
+
+.hs-nut-chinh:hover {
+  filter: brightness(1.08);
+}
+
+.hs-nut-chinh:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.hs-nut-phu {
+  border: 2px solid var(--mau-chu);
+  border-radius: 999px;
+  padding: 9px 20px;
+  font-weight: 600;
+  background: none;
+}
+
+.hs-nut-phu.hs-nut-nho {
+  padding: 8px 20px;
+  font-size: 15px;
+}
+
+/* Thông tin hợp đồng (admin) */
+.hs-hop-dong-dong {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--mau-chinh-nhat);
+  line-height: 1.5;
+}
+
+.hs-hop-dong-dong span {
+  color: var(--mau-chu-phu);
+  font-weight: 500;
+}
+
+.hs-hop-dong-dong b {
+  font-weight: 600;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.hs-hop-dong-ghi-chu {
+  margin: 0;
+  border-top: 1px solid var(--mau-chinh-nhat);
+  padding-top: 14px;
+  font-size: 13px;
+  color: var(--mau-chu-mo);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .ho-so-muc {
+    padding: 20px;
+  }
+
+  .hs-hop-dong-dong {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

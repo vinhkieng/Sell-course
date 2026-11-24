@@ -50,12 +50,13 @@ Làm sau Phần 3. Phần này dựng khung trang hồ sơ cho cả ba vai trò 
 ## 5.7 Câu thông báo
 - "Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách"
 - "Số điện thoại gồm 10 chữ số, bắt đầu bằng số 0"
-- "Gmail không đúng định dạng. Ví dụ: ten@gmail.com", "Gmail này đã được sử dụng"
+- "Vui lòng nhập Gmail", "Gmail phải có đuôi @gmail.com", "Gmail không đúng định dạng. Ví dụ: ten@gmail.com", "Gmail này đã được sử dụng"
 - "Ngày sinh không hợp lệ"
+- "Nghề nghiệp tối đa 100 ký tự"
 - Học viên đã có đơn xóa trống: "Bạn đã có đơn hàng nên cần giữ họ tên và số điện thoại."
 - "Ảnh phải là jpg hoặc png, tối đa 2MB"
 - "Đã cập nhật thông tin"
-- "Vui lòng nhập mật khẩu", "Mật khẩu phải gồm đúng 6 chữ số", "Mật khẩu nhập lại không khớp", "Mật khẩu hiện tại không đúng", "Mật khẩu mới trùng với mật khẩu cũ, vui lòng nhập mật khẩu khác", "Đã đổi mật khẩu"
+- "Vui lòng nhập mật khẩu" (ô mật khẩu hiện tại, mật khẩu mới để trống), "Vui lòng nhập lại mật khẩu" (ô xác nhận mật khẩu mới để trống), "Mật khẩu phải gồm đúng 6 chữ số", "Mật khẩu nhập lại không khớp", "Mật khẩu hiện tại không đúng", "Mật khẩu mới trùng với mật khẩu cũ, vui lòng nhập mật khẩu khác", "Đã đổi mật khẩu"
 - "Đã đăng khóa học nên không đổi được họ tên và số điện thoại."
 
 ## 5.8 Kiểm tra khi làm xong

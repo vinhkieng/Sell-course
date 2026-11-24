@@ -1,0 +1,48 @@
+/* Một ô nhập: nhãn, ô, rồi chữ gợi ý hoặc chữ lỗi bên dưới. Cỡ theo các trang tài khoản (thiet_ke/dang_ky/);
+   trang khác cần cỡ khác thì chỉnh qua lớp bao ngoài (ví dụ trang hồ sơ). */
+.tk-o {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tk-o-nhap {
+  height: 52px;
+  width: 100%;
+  border: 1px solid var(--mau-vien-o);
+  border-radius: 14px;
+  background: var(--mau-trang);
+  padding: 0 16px;
+  font: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--mau-chu);
+}
+
+.tk-o-nhap:focus {
+  outline: 2px solid var(--mau-chinh);
+  border-color: var(--mau-chinh);
+}
+
+.tk-o.co-loi .tk-o-nhap {
+  border-color: var(--mau-loi);
+  background: var(--mau-loi-nen-o);
+}
+
+.tk-o.co-loi .tk-o-nhap:focus {
+  outline-color: var(--mau-loi);
+}
+
+.tk-goi-y {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--mau-chu-mo);
+  line-height: 1.45;
+}
+
+.tk-goi-y.loi {
+  color: var(--mau-loi);
+  font-weight: 500;
+}

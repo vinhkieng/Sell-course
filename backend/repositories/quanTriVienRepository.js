@@ -2,6 +2,16 @@
 // Số CCCD không bao giờ được ghi vào nhật ký (Phần chung C2).
 import pool from '../database/db.js';
 
+// Thông tin hợp đồng của một admin, chỉ trả cho chính admin đó (Phần 5 mục 5.3). Ngày là chuỗi yyyy-mm-dd.
+export async function docHopDong(idQuanTriVien) {
+  const [[dong]] = await pool.query(
+    `SELECT so_cccd, ngay_cap_cccd, noi_cap_cccd, so_hop_dong, ngay_bat_dau_lam
+       FROM quan_tri_vien WHERE id = ?`,
+    [idQuanTriVien],
+  );
+  return dong;
+}
+
 export async function soCccdDaCo(soCccd, conn = pool) {
   const [rows] = await conn.query('SELECT 1 FROM quan_tri_vien WHERE so_cccd = ? LIMIT 1', [soCccd]);
   return rows.length > 0;

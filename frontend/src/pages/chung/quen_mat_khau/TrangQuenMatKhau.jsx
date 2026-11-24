@@ -1,12 +1,12 @@
 // Trang quên mật khẩu /quen-mat-khau (Phần 4 mục 4.3), theo thiet_ke/quen_mat_khau/quen_mat_khau.html.
 import { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../hooks/useAuth.js'
-import { useThongBao } from '../../hooks/useThongBao.js'
-import { quenMatKhau } from '../../api/taiKhoan.js'
-import { luuLuotCho, LUOT_DAT_LAI_MAT_KHAU } from '../../utils/luotChoMa.js'
-import KhungTaiKhoan from '../../components/KhungTaiKhoan.jsx'
-import ONhap from '../../components/ONhap.jsx'
+import { useAuth } from '../../../hooks/useAuth.js'
+import { useThongBao } from '../../../hooks/useThongBao.js'
+import { quenMatKhau } from '../../../api/taiKhoan.js'
+import { luuLuotCho, LUOT_DAT_LAI_MAT_KHAU } from '../../../utils/luotChoMa.js'
+import KhungTaiKhoan from '../../../components/KhungTaiKhoan.jsx'
+import ONhap from '../../../components/ONhap.jsx'
 import './TrangQuenMatKhau.css'
 
 const GMAIL_SAI = 'Gmail không đúng định dạng. Ví dụ: ten@gmail.com'

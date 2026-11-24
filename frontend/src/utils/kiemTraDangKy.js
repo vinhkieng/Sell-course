@@ -2,6 +2,16 @@
 // Trả { ten_o: câu lỗi }; rỗng là hợp lệ.
 import { VAI_TRO } from '../constants/vaiTro.js'
 
+// Gmail theo luật đăng ký (Phần 2), hồ sơ dùng lại (Phần 5). Trả câu lỗi hoặc null.
+// Đổi chữ thường trước khi kiểm, như máy chủ.
+export function kiemTraGmail(gmail) {
+  const thu = gmail.trim().toLowerCase()
+  if (!thu) return 'Vui lòng nhập Gmail'
+  if (!thu.endsWith('@gmail.com')) return 'Gmail phải có đuôi @gmail.com'
+  if (!/^[a-z0-9]+(\.[a-z0-9]+)*@gmail\.com$/.test(thu)) return 'Gmail không đúng định dạng. Ví dụ: ten@gmail.com'
+  return null
+}
+
 export function kiemTraDangKy({ ten_dang_nhap, gmail, mat_khau, xac_nhan_mat_khau, vai_tro, dong_y }) {
   const loi = {}
 
@@ -12,13 +22,8 @@ export function kiemTraDangKy({ ten_dang_nhap, gmail, mat_khau, xac_nhan_mat_kha
       'Tên đăng nhập chỉ gồm chữ không dấu và số, không có khoảng trắng, dấu hay ký tự đặc biệt (4 đến 30 ký tự)'
   }
 
-  // Đổi chữ thường trước khi kiểm, như máy chủ
-  const thu = gmail.trim().toLowerCase()
-  if (!thu) loi.gmail = 'Vui lòng nhập Gmail'
-  else if (!thu.endsWith('@gmail.com')) loi.gmail = 'Gmail phải có đuôi @gmail.com'
-  else if (!/^[a-z0-9]+(\.[a-z0-9]+)*@gmail\.com$/.test(thu)) {
-    loi.gmail = 'Gmail không đúng định dạng. Ví dụ: ten@gmail.com'
-  }
+  const loiGmail = kiemTraGmail(gmail)
+  if (loiGmail) loi.gmail = loiGmail
 
   if (!mat_khau) loi.mat_khau = 'Vui lòng nhập mật khẩu'
   else if (!/^\d{6}$/.test(mat_khau)) loi.mat_khau = 'Mật khẩu phải gồm đúng 6 chữ số'

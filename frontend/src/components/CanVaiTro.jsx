@@ -4,7 +4,7 @@
 // khungLoi: bọc trang 403 trong khung công khai, dùng cho khu vực không nằm trong khung công khai (khu quản trị).
 import { Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth.js'
-import TrangLoi from '../pages/chung/TrangLoi.jsx'
+import TrangLoi from '../pages/chung/chinh_sach_loi/TrangLoi.jsx'
 import KhungCongKhai from './KhungCongKhai.jsx'
 
 function CanVaiTro({ vaiTro, choKhach = false, khungLoi = false, children }) {

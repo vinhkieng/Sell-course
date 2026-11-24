@@ -8,18 +8,14 @@ Cách cập nhật (Claude Code làm mỗi khi xong một phần):
 - Chỉ xóa một trường hợp khỏi file sau khi người dùng báo đã kiểm đạt.
 - Nhóm nào hết trường hợp thì xóa luôn tiêu đề nhóm đó.
 
-Đã soát sau: Phần 4 (Phần 4 không có trường hợp phải chờ; không trường hợp nào được mở khóa). P01-19 đã kiểm đạt cho các trang tới hết Phần 4 (hai trang /quen-mat-khau, /dat-lai-mat-khau không có chân trang).
-
-## Chờ Phần 5 (trang hồ sơ)
-| Mã | Tên ngắn | Việc cần làm khi tới lúc |
-| --- | --- | --- |
-| P03-28 | Đăng xuất ở menu trái trang hồ sơ (nửa sau) | Học viên đăng nhập, mở /ho-so, bấm "Đăng xuất" ở menu trái: về trang chủ, đầu trang kiểu khách. Trang hồ sơ dùng hàm dangXuat có sẵn trong AuthProvider. |
+Đã soát sau: Phần 5. Phần 4: không có trường hợp phải chờ, không trường hợp nào được mở khóa; P01-19 đã kiểm đạt cho các trang tới hết Phần 4. Phần 5: P03-28 đã kiểm đạt; thêm P05-17 vào nhóm chờ Phần 7; P01-19 đã kiểm đạt cho trang /ho-so (học viên, người cung cấp có chân trang, admin không có).
 
 ## Chờ Phần 7 (có khóa học đang bán)
 | Mã | Tên ngắn | Việc cần làm khi tới lúc |
 | --- | --- | --- |
 | P01-16 | Menu "Danh mục" (phần bấm danh mục) | Tạo khóa đang bán ở 2 danh mục, có 1 danh mục chỉ có khóa bị ẩn: menu chỉ hiện 2 danh mục theo thứ tự tên; bấm một danh mục mở /khoa-hoc?danh_muc=<id>. Phần ô tìm kiếm và "Xem tất cả khóa học" đã kiểm được từ Phần 1. |
 | P01-18 | Cột "Danh mục" ở chân trang | Có 6 danh mục có khóa đang bán với số khóa khác nhau: cột "Danh mục" hiện đúng 5 danh mục nhiều khóa nhất, bằng nhau thì theo tên. Các mục khác của chân trang đã kiểm được từ Phần 1. |
+| P05-17 | Người cung cấp đã đăng khóa thấy ô mờ | Người cung cấp tạo và đăng một khóa (Phần 7), mở /ho-so: ô Họ và tên, Số điện thoại mờ kèm dòng "Đã đăng khóa học nên không đổi được họ tên và số điện thoại." Phía máy chủ đã có kiểm thử tự động P05-07. |
 
 ## Chờ Phần 11 hoặc 12 (phần đầu tiên có thông báo sau khi chuyển trang)
 | Mã | Tên ngắn | Việc cần làm khi tới lúc |
@@ -37,13 +33,13 @@ Cách cập nhật (Claude Code làm mỗi khi xong một phần):
 | P01-19 | Trang có và không có chân trang | Mở các trang mới của phần vừa làm: đúng danh sách có hoặc không có chân trang ở Phần chung C9. Giữ dòng này tới khi làm xong mọi phần có trang. |
 
 ## Đã kiểm được, chờ người dùng báo đạt
-Các trường hợp này trước đây chờ Phần 3 (đăng nhập) và đã có trong hướng dẫn bấm tay của Phần 3.
+Các trường hợp này trước đây chờ phần sau và đã có trong hướng dẫn bấm tay của phần mở khóa chúng (ghi ở cột Ghi chú nếu không phải Phần 3).
 
 | Mã | Tên ngắn | Ghi chú |
 | --- | --- | --- |
 | P01-06 | Bị khóa hoặc đăng nhập nơi khác thì về trang đăng nhập | Trường hợp đăng nhập nơi khác kiểm cùng P03-25. |
 | P01-14 | Đầu trang theo bốn kiểu người xem | |
-| P01-15 | Ảnh đại diện khi chưa có ảnh | Họ tên điền trong phpMyAdmin cho tới khi có Phần 5. |
+| P01-15 | Ảnh đại diện khi chưa có ảnh | Từ Phần 5 điền họ tên ở trang hồ sơ, không cần phpMyAdmin. |
 | P01-17 | Logo về trang chủ (admin ở khu quản trị) | Phần khách ở /chinh-sach đã kiểm từ Phần 1. |
 | P01-21 | Trang 403 hiện tại chỗ | |
 | P01-22 | Khung khu quản trị | |

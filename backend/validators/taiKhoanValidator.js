@@ -9,6 +9,20 @@ const oBatBuoc = (cau) => z.string({ error: cau });
 const MAU_GMAIL = /^[a-z0-9]+(\.[a-z0-9]+)*@gmail\.com$/;
 const GMAIL_SAI = 'Gmail không đúng định dạng. Ví dụ: ten@gmail.com';
 
+// Gmail theo luật đăng ký (Phần 2), hồ sơ dùng lại (Phần 5). Đổi chữ thường trước khi kiểm,
+// để "Abc@GMAIL.com" được nhận và lưu "abc@gmail.com".
+export const oGmail = oBatBuoc('Vui lòng nhập Gmail')
+  .trim()
+  .toLowerCase()
+  .min(1, 'Vui lòng nhập Gmail')
+  .refine((v) => v.endsWith('@gmail.com'), 'Gmail phải có đuôi @gmail.com')
+  .regex(MAU_GMAIL, GMAIL_SAI);
+
+// Mật khẩu đúng 6 chữ số, để trống thì "Vui lòng nhập mật khẩu" (Phần 2, 3, 5)
+export const oMatKhau = oBatBuoc('Vui lòng nhập mật khẩu')
+  .min(1, 'Vui lòng nhập mật khẩu')
+  .regex(/^\d{6}$/, 'Mật khẩu phải gồm đúng 6 chữ số');
+
 // Đăng ký (Phần 2 mục 2.4, 2.7)
 export const schemaDangKy = z
   .object({
@@ -19,16 +33,8 @@ export const schemaDangKy = z
         /^[A-Za-z0-9]{4,30}$/,
         'Tên đăng nhập chỉ gồm chữ không dấu và số, không có khoảng trắng, dấu hay ký tự đặc biệt (4 đến 30 ký tự)',
       ),
-    // Đổi chữ thường trước khi kiểm, để "Abc@GMAIL.com" được nhận và lưu "abc@gmail.com"
-    gmail: oBatBuoc('Vui lòng nhập Gmail')
-      .trim()
-      .toLowerCase()
-      .min(1, 'Vui lòng nhập Gmail')
-      .refine((v) => v.endsWith('@gmail.com'), 'Gmail phải có đuôi @gmail.com')
-      .regex(MAU_GMAIL, GMAIL_SAI),
-    mat_khau: oBatBuoc('Vui lòng nhập mật khẩu')
-      .min(1, 'Vui lòng nhập mật khẩu')
-      .regex(/^\d{6}$/, 'Mật khẩu phải gồm đúng 6 chữ số'),
+    gmail: oGmail,
+    mat_khau: oMatKhau,
     xac_nhan_mat_khau: oBatBuoc('Vui lòng nhập lại mật khẩu').min(1, 'Vui lòng nhập lại mật khẩu'),
     vai_tro: z.literal([VAI_TRO.HOC_VIEN, VAI_TRO.NGUOI_CUNG_CAP], { error: 'Vui lòng chọn vai trò' }),
     dong_y: z.literal(true, { error: 'Vui lòng đồng ý với Chính sách và điều khoản' }),
@@ -43,9 +49,7 @@ export const schemaDangKy = z
 // Đăng nhập (Phần 3 mục 3.4 bước 1, 3.7)
 export const schemaDangNhap = z.object({
   ten_dang_nhap: oBatBuoc('Vui lòng nhập tên đăng nhập').trim().min(1, 'Vui lòng nhập tên đăng nhập'),
-  mat_khau: oBatBuoc('Vui lòng nhập mật khẩu')
-    .min(1, 'Vui lòng nhập mật khẩu')
-    .regex(/^\d{6}$/, 'Mật khẩu phải gồm đúng 6 chữ số'),
+  mat_khau: oMatKhau,
 });
 
 // Xác nhận địa chỉ mạng: mã 6 chữ số (trang không cho bấm khi chưa đủ 6 chữ số)

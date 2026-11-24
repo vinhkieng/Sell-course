@@ -25,15 +25,15 @@
 - Mục tiêu: báo đúng câu ở từng ô.
 - Dữ liệu: ho_ten "A", ho_ten "An123", so_dien_thoai "1912345678", so_dien_thoai "091234567"; ngay_sinh "2026-02-30", ngay_sinh ngày mai, ngay_sinh "1899-12-31"; nghe_nghiep 101 ký tự.
 - Các bước: gọi PUT /api/ho-so với từng giá trị.
-- Kết quả mong đợi: 400 với "Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách"; "Số điện thoại gồm 10 chữ số, bắt đầu bằng số 0"; "Ngày sinh không hợp lệ"; nghề nghiệp quá 100 ký tự bị từ chối. Biên đúng: ngày sinh "1900-01-01" được nhận.
+- Kết quả mong đợi: 400 với "Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách"; "Số điện thoại gồm 10 chữ số, bắt đầu bằng số 0"; "Ngày sinh không hợp lệ"; nghề nghiệp quá 100 ký tự báo "Nghề nghiệp tối đa 100 ký tự". Biên đúng: ngày sinh "1900-01-01" được nhận.
 - Cách kiểm: Tự động
 - Nguồn: Phần 5 mục 5.4, 5.7
 
 ## P05-04 Gmail sai hoặc trùng
 - Mục tiêu: luật Gmail như lúc đăng ký.
-- Dữ liệu: gmail "hv..01@gmail.com"; gmail của hv02 viết hoa.
+- Dữ liệu: gmail rỗng; gmail "hv01@yahoo.com"; gmail "hv..01@gmail.com"; gmail của hv02 viết hoa.
 - Các bước: hv01 gọi PUT /api/ho-so.
-- Kết quả mong đợi: 400 "Gmail không đúng định dạng. Ví dụ: ten@gmail.com"; trùng thì báo "Gmail này đã được sử dụng".
+- Kết quả mong đợi: rỗng báo 400 "Vui lòng nhập Gmail"; sai đuôi báo 400 "Gmail phải có đuôi @gmail.com"; sai phần trước @ báo 400 "Gmail không đúng định dạng. Ví dụ: ten@gmail.com"; trùng thì báo "Gmail này đã được sử dụng".
 - Cách kiểm: Tự động
 - Nguồn: Phần 5 mục 5.4, 5.7
 
@@ -97,7 +97,7 @@
 - Mục tiêu: báo đúng câu từng trường hợp.
 - Dữ liệu: ô trống; mới "12345"; mới và xác nhận khác nhau; hiện tại sai; mới trùng hiện tại.
 - Các bước: gọi POST /api/ho-so/doi-mat-khau với từng bộ; gửi mật khẩu hiện tại sai 6 lần liên tiếp.
-- Kết quả mong đợi: "Vui lòng nhập mật khẩu"; "Mật khẩu phải gồm đúng 6 chữ số"; "Mật khẩu nhập lại không khớp"; "Mật khẩu hiện tại không đúng"; "Mật khẩu mới trùng với mật khẩu cũ, vui lòng nhập mật khẩu khác"; sai mật khẩu hiện tại nhiều lần không bị chặn (không có 429).
+- Kết quả mong đợi: ô mật khẩu hiện tại và mật khẩu mới để trống báo "Vui lòng nhập mật khẩu", ô xác nhận để trống báo "Vui lòng nhập lại mật khẩu"; "Mật khẩu phải gồm đúng 6 chữ số"; "Mật khẩu nhập lại không khớp"; "Mật khẩu hiện tại không đúng"; "Mật khẩu mới trùng với mật khẩu cũ, vui lòng nhập mật khẩu khác"; sai mật khẩu hiện tại nhiều lần không bị chặn (không có 429).
 - Cách kiểm: Tự động
 - Nguồn: Phần 5 mục 5.4, 5.7
 

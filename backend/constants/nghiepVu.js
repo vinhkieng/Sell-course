@@ -43,6 +43,9 @@ export const HIEU_LUC_MA_XAC_NHAN_PHUT = 10;
 export const NHAP_MA_SAI_TOI_DA = 5;
 export const GIAY_CHO_GUI_LAI_MA = 60;
 
+// Ảnh đại diện (Phần 5 mục 5.4)
+export const ANH_DAI_DIEN_TOI_DA_MB = 2;
+
 // File (Phần chung C12, C13)
 export const THOI_LUONG_VIDEO_TOI_THIEU_GIAY = 1;
 export const THOI_LUONG_VIDEO_TOI_DA_GIAY = 21600; // 6 giờ

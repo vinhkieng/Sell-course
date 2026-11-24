@@ -2,10 +2,10 @@
 // Neo #dieu-N do components/CuonTrang.jsx cuộn tới khi các điều đã hiện.
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { layChinhSach } from '../../api/khung.js'
-import { dinhDangNgay } from '../../utils/dinhDang.js'
-import { useThongBao } from '../../hooks/useThongBao.js'
-import NoiDungChinhSach from '../../components/NoiDungChinhSach.jsx'
+import { layChinhSach } from '../../../api/khung.js'
+import { dinhDangNgay } from '../../../utils/dinhDang.js'
+import { useThongBao } from '../../../hooks/useThongBao.js'
+import NoiDungChinhSach from '../../../components/NoiDungChinhSach.jsx'
 import './TrangChinhSach.css'
 
 function TrangChinhSach() {

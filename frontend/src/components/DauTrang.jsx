@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth.js'
-import { VAI_TRO } from '../constants/vaiTro.js'
+import { VAI_TRO, TEN_VAI_TRO } from '../constants/vaiTro.js'
 import { tenHienThi } from '../utils/dinhDang.js'
 import Logo from './Logo.jsx'
 import AnhDaiDien from './AnhDaiDien.jsx'
@@ -11,7 +11,6 @@ import './DauTrang.css'
 
 const MENU_TAI_KHOAN = {
   [VAI_TRO.HOC_VIEN]: {
-    nhan: 'Học viên',
     muc: [
       ['Hồ sơ cá nhân', '/ho-so'],
       ['Khóa học của tôi', '/ho-so#khoa-hoc-cua-toi'],
@@ -19,7 +18,6 @@ const MENU_TAI_KHOAN = {
     ],
   },
   [VAI_TRO.NGUOI_CUNG_CAP]: {
-    nhan: 'Người cung cấp khóa học',
     muc: [
       ['Hồ sơ cá nhân', '/ho-so'],
       ['Quản lý khóa học', '/ho-so#quan-ly-khoa-hoc'],
@@ -27,7 +25,6 @@ const MENU_TAI_KHOAN = {
     ],
   },
   [VAI_TRO.ADMIN]: {
-    nhan: 'Quản trị viên',
     muc: [
       ['Trang quản trị', '/quan-tri/khoa-hoc'],
       ['Hồ sơ', '/ho-so'],
@@ -157,7 +154,7 @@ function DauTrang({ danhMuc }) {
                 <div>
                   <b>{tenHienThi(nguoiDung)}</b>
                   <span className={`nhan dt-nhan-vai-tro${vaiTro === VAI_TRO.ADMIN ? ' admin' : ''}`}>
-                    {MENU_TAI_KHOAN[vaiTro].nhan}
+                    {TEN_VAI_TRO[vaiTro]}
                   </span>
                 </div>
               </div>

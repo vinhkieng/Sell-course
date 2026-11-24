@@ -2,13 +2,13 @@
 // Khác thiết kế theo đặc tả 2.3: ô đồng ý mặc định không tích, vai trò mặc định chưa chọn.
 import { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../hooks/useAuth.js'
-import { useThongBao } from '../../hooks/useThongBao.js'
-import { dangKy } from '../../api/taiKhoan.js'
-import { kiemTraDangKy } from '../../utils/kiemTraDangKy.js'
-import { VAI_TRO } from '../../constants/vaiTro.js'
-import KhungTaiKhoan from '../../components/KhungTaiKhoan.jsx'
-import ONhap from '../../components/ONhap.jsx'
+import { useAuth } from '../../../hooks/useAuth.js'
+import { useThongBao } from '../../../hooks/useThongBao.js'
+import { dangKy } from '../../../api/taiKhoan.js'
+import { kiemTraDangKy } from '../../../utils/kiemTraDangKy.js'
+import { VAI_TRO } from '../../../constants/vaiTro.js'
+import KhungTaiKhoan from '../../../components/KhungTaiKhoan.jsx'
+import ONhap from '../../../components/ONhap.jsx'
 import './TrangDangKy.css'
 
 const CHON_VAI_TRO = [

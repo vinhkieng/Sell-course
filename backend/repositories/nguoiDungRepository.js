@@ -55,6 +55,42 @@ export async function capNhatMatKhau(id, matKhauDaBam, conn = pool) {
   await conn.query('UPDATE nguoi_dung SET mat_khau_da_bam = ? WHERE id = ?', [matKhauDaBam, id]);
 }
 
+// ===== Hồ sơ (Phần 5) =====
+
+// Nghề nghiệp, ngày sinh (chuỗi yyyy-mm-dd) của học viên
+export async function docHocVien(idHocVien) {
+  const [[dong]] = await pool.query('SELECT nghe_nghiep, ngay_sinh FROM hoc_vien WHERE id = ?', [idHocVien]);
+  return dong;
+}
+
+// Giá trị rỗng truyền vào là null (để trống)
+export async function capNhatThongTin(id, { hoTen, gmail, soDienThoai }, conn = pool) {
+  await conn.query('UPDATE nguoi_dung SET ho_ten = ?, gmail = ?, so_dien_thoai = ? WHERE id = ?', [
+    hoTen,
+    gmail,
+    soDienThoai,
+    id,
+  ]);
+}
+
+export async function capNhatHocVien(idHocVien, { ngheNghiep, ngaySinh }, conn = pool) {
+  await conn.query('UPDATE hoc_vien SET nghe_nghiep = ?, ngay_sinh = ? WHERE id = ?', [
+    ngheNghiep,
+    ngaySinh,
+    idHocVien,
+  ]);
+}
+
+// duongDan: đường dẫn tương đối tính từ luu_tru, ví dụ anh_dai_dien/<uuid>.png (Phần chung C12)
+export async function capNhatAnhDaiDien(id, duongDan) {
+  await pool.query('UPDATE nguoi_dung SET anh_dai_dien = ? WHERE id = ?', [duongDan, id]);
+}
+
+export async function layMatKhauDaBam(id) {
+  const [[dong]] = await pool.query('SELECT mat_khau_da_bam FROM nguoi_dung WHERE id = ?', [id]);
+  return dong.mat_khau_da_bam;
+}
+
 // Địa chỉ IP đã xác nhận của học viên (Phần 3 mục 3.4)
 export async function capNhatDiaChiIp(idHocVien, ip, conn = pool) {
   await conn.query('UPDATE hoc_vien SET dia_chi_ip = ? WHERE id = ?', [ip, idHocVien]);

@@ -1,8 +1,11 @@
 // Quy tắc dữ liệu gửi lên của trang hồ sơ (Phần 5 mục 5.4, 5.7). Câu lỗi đúng nguyên văn đặc tả.
 import { z } from 'zod';
 import { oGmail, oMatKhau } from './taiKhoanValidator.js';
+import { CHU_VIET } from './chuViet.js';
 
 const HO_TEN_SAI = 'Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách';
+// Chỉ chữ a-z, chữ tiếng Việt có dấu và dấu cách (Phần 5 mục 5.4)
+const HO_TEN_DUNG = new RegExp(`^[${CHU_VIET} ]{2,100}$`);
 const SDT_SAI = 'Số điện thoại gồm 10 chữ số, bắt đầu bằng số 0';
 export const NGAY_SINH_SAI = 'Ngày sinh không hợp lệ';
 
@@ -20,7 +23,7 @@ export const schemaCapNhatHoSo = z.object({
   // Chuẩn hóa dấu tiếng Việt (NFC) rồi bỏ khoảng trắng thừa ở đầu, cuối và giữa
   ho_ten: oChu(HO_TEN_SAI)
     .transform((v) => v.normalize('NFC').replace(/\s+/g, ' ').trim())
-    .refine((v) => v === '' || /^[\p{L} ]{2,100}$/u.test(v), HO_TEN_SAI),
+    .refine((v) => v === '' || HO_TEN_DUNG.test(v), HO_TEN_SAI),
   gmail: oGmail,
   so_dien_thoai: oChu(SDT_SAI)
     .trim()

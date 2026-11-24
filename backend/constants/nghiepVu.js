@@ -46,6 +46,10 @@ export const GIAY_CHO_GUI_LAI_MA = 60;
 // Ảnh đại diện (Phần 5 mục 5.4)
 export const ANH_DAI_DIEN_TOI_DA_MB = 2;
 
+// Tên danh mục (Phần 6 mục 6.4, ràng buộc ck_danh_muc_ten trong file SQL)
+export const TEN_DANH_MUC_TOI_THIEU = 2;
+export const TEN_DANH_MUC_TOI_DA = 50;
+
 // File (Phần chung C12, C13)
 export const THOI_LUONG_VIDEO_TOI_THIEU_GIAY = 1;
 export const THOI_LUONG_VIDEO_TOI_DA_GIAY = 21600; // 6 giờ

@@ -1,0 +1,48 @@
+/* Hộp thoại dùng chung (.ov và .dg trong thiet_ke/quan_tri_danh_muc/danh_muc.html) */
+.hop-thoai-phu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: var(--mau-phu-toi);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(24px, 20vh, 200px) 16px 24px;
+  overflow-y: auto;
+}
+
+.hop-thoai {
+  width: 100%;
+  max-width: 460px;
+  background: var(--mau-trang);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: var(--bong-hop-thoai);
+}
+
+.hop-thoai h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.hop-thoai p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--mau-chu-phu);
+  font-size: 16px;
+}
+
+.hop-thoai-nut {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+@media (max-width: 600px) {
+  .hop-thoai {
+    padding: 24px;
+  }
+}

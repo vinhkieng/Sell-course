@@ -24,7 +24,9 @@
   --mau-vien: #d9e4e0;
   --mau-vien-o: #c9d8d3;
   --mau-nen: #eef3f1; /* nền trang */
+  --mau-nen-nhat: #f6faf8; /* đầu bảng, dòng bảng khi rê chuột, nút mờ */
   --mau-trang: #ffffff;
+  --mau-phu-toi: rgba(31, 58, 61, 0.55); /* lớp tối phía sau hộp thoại */
 
   /* Chân trang */
   --mau-chan-nen: #1f3a3d;
@@ -34,6 +36,7 @@
   --mau-chan-vien-tron: #4a6e70;
 
   --bong-menu: 0 12px 32px rgba(31, 58, 61, 0.14);
+  --bong-hop-thoai: 0 24px 60px rgba(31, 58, 61, 0.35);
 
   --font-chinh: 'Be Vietnam Pro', system-ui, sans-serif;
   --co-chu: 15px;

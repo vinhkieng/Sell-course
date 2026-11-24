@@ -48,6 +48,14 @@ test('Báo đúng câu từng ô', () => {
   expect(kiemTraThongTin({ ...hopLe, ngay_sinh: 'sai' }, 3, HOM_NAY)).toEqual({})
 })
 
+test('Họ tên chỉ nhận chữ a-z và chữ tiếng Việt có dấu', () => {
+  for (const hoTen of ['王小明', 'Nguyễn Ж', 'José Muñoz']) {
+    expect(kiemTraThongTin({ ...hopLe, ho_ten: hoTen }, 2, HOM_NAY).ho_ten).toBe('Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách')
+  }
+  // Gõ kiểu tổ hợp (NFD) vẫn được nhận
+  expect(kiemTraThongTin({ ...hopLe, ho_ten: 'Đặng Thị Ánh Tuyết'.normalize('NFD') }, 2, HOM_NAY)).toEqual({})
+})
+
 test('Đổi mật khẩu', () => {
   expect(kiemTraDoiMatKhau({ mat_khau_hien_tai: '', mat_khau_moi: '', xac_nhan: '' })).toEqual({
     mat_khau_hien_tai: 'Vui lòng nhập mật khẩu',

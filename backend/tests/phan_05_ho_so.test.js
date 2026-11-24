@@ -132,6 +132,10 @@ test('P05-03 Họ tên, số điện thoại, ngày sinh, nghề nghiệp sai', 
   const cacBo = [
     [{ ho_ten: 'A' }, 'ho_ten', HO_TEN_SAI],
     [{ ho_ten: 'An123' }, 'ho_ten', HO_TEN_SAI],
+    // Chữ nước ngoài không nhận (Phần 5 mục 5.4)
+    [{ ho_ten: '王小明' }, 'ho_ten', HO_TEN_SAI],
+    [{ ho_ten: 'Nguyễn Ж' }, 'ho_ten', HO_TEN_SAI],
+    [{ ho_ten: 'José Muñoz' }, 'ho_ten', HO_TEN_SAI],
     [{ so_dien_thoai: '1912345678' }, 'so_dien_thoai', SDT_SAI],
     [{ so_dien_thoai: '091234567' }, 'so_dien_thoai', SDT_SAI],
     [{ ngay_sinh: '2026-02-30' }, 'ngay_sinh', 'Ngày sinh không hợp lệ'],
@@ -147,6 +151,11 @@ test('P05-03 Họ tên, số điện thoại, ngày sinh, nghề nghiệp sai', 
   const bien = await capNhat(hs01.cookie, await hoSoKem(hs01.cookie, { ngay_sinh: '1900-01-01' }));
   assert.equal(bien.status, 200);
   assert.equal(bien.body.ngay_sinh, '1900-01-01');
+  // Chữ tiếng Việt có dấu được nhận, kể cả khi gõ kiểu tổ hợp (NFD) thì được đổi về NFC
+  const tenViet = 'Đặng Thị Ánh Tuyết';
+  const hopLe = await capNhat(hs01.cookie, await hoSoKem(hs01.cookie, { ho_ten: tenViet.normalize('NFD') }));
+  assert.equal(hopLe.status, 200);
+  assert.equal(hopLe.body.ho_ten, tenViet);
 });
 
 test('P05-04 Gmail sai hoặc trùng', async () => {

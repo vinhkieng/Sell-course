@@ -1,0 +1,175 @@
+/* Trang Danh mục của khu quản trị (thiet_ke/quan_tri_danh_muc/danh_muc.html, danh_muc_gop.html) */
+.qtdm-dau {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.qtdm-nut-dau {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hop.qtdm-hop {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Bảng (.tw và .tb trong thiết kế) */
+.qtdm-khung-bang {
+  overflow-x: auto;
+  border: 1px solid var(--mau-chinh-nhat);
+  border-radius: 16px;
+}
+
+.qtdm-bang {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.qtdm-bang th {
+  text-align: left;
+  color: var(--mau-chu-phu);
+  font-weight: 600;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--mau-chinh-nhat);
+  white-space: nowrap;
+  background: var(--mau-nen-nhat);
+}
+
+.qtdm-bang td {
+  height: 58px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--mau-chinh-nhat);
+}
+
+.qtdm-bang tbody tr:hover {
+  background: var(--mau-nen-nhat);
+}
+
+.qtdm-chon {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--mau-chinh);
+  margin: 0 12px 0 0;
+  vertical-align: middle;
+}
+
+.qtdm-hanh-dong {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Nút nhỏ trong cột Hành động (.ab, .openb, .lockb, .dis trong thiết kế) */
+.qtdm-nut-nho {
+  display: inline-block;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1.5px solid;
+  font-weight: 600;
+  font-size: 14px;
+  background: none;
+  line-height: normal;
+}
+
+.qtdm-nut-nho.mo {
+  border-color: var(--mau-chinh);
+  color: var(--mau-chinh);
+}
+
+.qtdm-nut-nho.mo:hover {
+  background: var(--mau-chinh);
+  color: var(--mau-trang);
+}
+
+.qtdm-nut-nho.do {
+  border-color: var(--mau-loi);
+  color: var(--mau-loi);
+}
+
+.qtdm-nut-nho.do:hover {
+  background: var(--mau-loi);
+  color: var(--mau-trang);
+}
+
+.qtdm-nut-nho.mo-mo {
+  border-color: var(--mau-vien-o);
+  color: var(--mau-chu-nhat);
+  background: var(--mau-nen-nhat);
+  cursor: not-allowed;
+}
+
+/* Chữ hiện khi rê chuột vào nút "Xóa" bị mờ (.tip trong thiết kế) */
+.qtdm-goi-y {
+  position: relative;
+  display: inline-block;
+}
+
+.qtdm-goi-y:hover::after,
+.qtdm-goi-y:focus::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--mau-chu);
+  color: var(--mau-trang);
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 8px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  z-index: 20;
+}
+
+/* Ô tên trong hộp thoại: nhãn 15px như thiết kế (ô nhập dùng ONhap) */
+.qtdm-o-ten .tk-o {
+  font-size: 15px;
+}
+
+.qtdm-bat-buoc {
+  color: var(--mau-loi);
+  font-style: normal;
+  margin-left: 2px;
+}
+
+@media (max-width: 600px) {
+  .hop.qtdm-hop {
+    padding: 16px;
+  }
+
+  /* Điện thoại: bảng vừa khung, nút trong cột Hành động tự xuống dòng, không phải kéo ngang */
+  .qtdm-bang {
+    min-width: 0;
+  }
+
+  .qtdm-bang th,
+  .qtdm-bang td {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .qtdm-bang td {
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .qtdm-goi-y:hover::after,
+  .qtdm-goi-y:focus::after {
+    left: auto;
+    right: 0;
+    transform: none;
+    white-space: normal;
+    width: max-content;
+    max-width: 200px;
+  }
+}

@@ -23,9 +23,9 @@
 
 ## P05-03 Họ tên, số điện thoại, ngày sinh, nghề nghiệp sai
 - Mục tiêu: báo đúng câu ở từng ô.
-- Dữ liệu: ho_ten "A", ho_ten "An123", so_dien_thoai "1912345678", so_dien_thoai "091234567"; ngay_sinh "2026-02-30", ngay_sinh ngày mai, ngay_sinh "1899-12-31"; nghe_nghiep 101 ký tự.
+- Dữ liệu: ho_ten "A", ho_ten "An123", ho_ten "王小明", ho_ten "Nguyễn Ж", ho_ten "José Muñoz", so_dien_thoai "1912345678", so_dien_thoai "091234567"; ngay_sinh "2026-02-30", ngay_sinh ngày mai, ngay_sinh "1899-12-31"; nghe_nghiep 101 ký tự.
 - Các bước: gọi PUT /api/ho-so với từng giá trị.
-- Kết quả mong đợi: 400 với "Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách"; "Số điện thoại gồm 10 chữ số, bắt đầu bằng số 0"; "Ngày sinh không hợp lệ"; nghề nghiệp quá 100 ký tự báo "Nghề nghiệp tối đa 100 ký tự". Biên đúng: ngày sinh "1900-01-01" được nhận.
+- Kết quả mong đợi: 400 với "Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách"; "Số điện thoại gồm 10 chữ số, bắt đầu bằng số 0"; "Ngày sinh không hợp lệ"; nghề nghiệp quá 100 ký tự báo "Nghề nghiệp tối đa 100 ký tự". Ba họ tên có chữ nước ngoài cũng báo "Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách". Biên đúng: ngày sinh "1900-01-01" được nhận; họ tên "Đặng Thị Ánh Tuyết" được nhận.
 - Cách kiểm: Tự động
 - Nguồn: Phần 5 mục 5.4, 5.7
 

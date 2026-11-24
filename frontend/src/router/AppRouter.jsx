@@ -13,14 +13,14 @@ import TrangXacNhanDangNhap from '../pages/chung/dang_nhap/TrangXacNhanDangNhap.
 import TrangQuenMatKhau from '../pages/chung/quen_mat_khau/TrangQuenMatKhau.jsx'
 import TrangDatLaiMatKhau from '../pages/chung/quen_mat_khau/TrangDatLaiMatKhau.jsx'
 import TrangHoSo from '../pages/chung/ho_so/TrangHoSo.jsx'
+import TrangQuanTriDanhMuc from '../pages/admin/quan_tri_danh_muc/TrangQuanTriDanhMuc.jsx'
 
-// tạm: 8 trang khu quản trị mới có tiêu đề như thiết kế; Phần 6, 19-24 thay bằng trang thật
+// tạm: các trang khu quản trị chưa làm mới có tiêu đề như thiết kế; Phần 19-24 thay bằng trang thật
 const TRANG_QUAN_TRI = [
   ['khoa-hoc', 'Khóa học'],
   ['bao-cao-khoa-hoc', 'Báo cáo khóa học'],
   ['bao-cao-danh-gia', 'Báo cáo đánh giá'],
   ['nguoi-dung', 'Người dùng'],
-  ['danh-muc', 'Danh mục'],
   ['don-hang', 'Đơn hàng'],
   ['rut-tien', 'Yêu cầu rút tiền'],
   ['chinh-sach', 'Chính sách và điều khoản'],
@@ -71,6 +71,7 @@ function AppRouter() {
         }
       >
         <Route index element={<Navigate to="khoa-hoc" replace />} />
+        <Route path="danh-muc" element={<TrangQuanTriDanhMuc />} />
         {TRANG_QUAN_TRI.map(([duong, tieuDe]) => (
           <Route key={duong} path={duong} element={<h1 className="kqt-tieu-de">{tieuDe}</h1>} />
         ))}

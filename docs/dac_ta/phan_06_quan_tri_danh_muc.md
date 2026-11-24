@@ -16,7 +16,7 @@ Làm sau Phần 5. Làm sớm vì người cung cấp cần danh mục khi tạo
 - Bấm "Gộp": mỗi dòng hiện ô tích; tích ít nhất hai danh mục thì nút "Gộp" sáng; bấm thì mở hộp "Gộp danh mục" có ô "Tên danh mục mới".
 
 ## 6.4 Quy tắc tên danh mục (dùng chung với Phần 7)
-- 2 đến 50 ký tự; chỉ gồm chữ có dấu hoặc không dấu, chữ số, khoảng trắng và các ký tự + # . / - (ví dụ "C++", "UI/UX", "3D").
+- 2 đến 50 ký tự; chỉ gồm chữ có dấu hoặc không dấu, chữ số, khoảng trắng và các ký tự + # . / - (ví dụ "C++", "UI/UX", "3D"). "Chữ" ở đây chỉ gồm chữ cái a-z (hoa hoặc thường) và chữ tiếng Việt có dấu (kể cả đ, Đ); không nhận chữ nước ngoài khác (ví dụ "中文", "Ж", "ñ"). Chữ số là 0-9.
 - Tự bỏ khoảng trắng ở đầu, cuối và khoảng trắng thừa ở giữa; tự viết hoa chữ đầu của mọi từ (từ cách nhau bằng dấu cách), các chữ khác giữ nguyên ("luyện thi IELTS" thành "Luyện Thi IELTS").
 - Không trùng danh mục đã có khi so không phân biệt chữ hoa chữ thường và không phân biệt dấu ("Nấu ăn" và "nau an" là trùng). Cột danh_muc.ten dùng bảng mã so sánh utf8mb4_0900_ai_ci nên câu SELECT … WHERE ten = ? và ràng buộc không trùng của MySQL đã tự so như vậy.
 - Sửa tên mà giữ nguyên tên cũ (chỉ đổi hoa thường hoặc dấu của chính nó) thì không bị coi là trùng.
@@ -24,7 +24,7 @@ Làm sau Phần 5. Làm sớm vì người cung cấp cần danh mục khi tạo
 ## 6.5 Quy tắc xóa và gộp
 - Chỉ xóa được danh mục có số khóa bằng 0 (máy chủ kiểm tra lại).
 - Gộp: tên mới theo luật tên ở 6.4. Tên mới có thể là tên mới hoàn toàn hoặc tên của một trong các danh mục đang tích, nhưng không được trùng một danh mục không được tích.
-- Làm tất cả trong một giao dịch: nếu tên mới trùng một danh mục đang tích thì giữ lại danh mục đó (đổi theo cách viết mới) và dồn các danh mục kia vào; nếu là tên mới hoàn toàn thì tạo danh mục mới và dồn tất cả vào. Mọi khóa của các danh mục bị gộp đều được chuyển sang, kể cả khóa đã xóa và khóa bị gỡ vĩnh viễn. Mỗi khóa được chuyển ghi một dòng lịch sử 'Quản trị viên gộp danh mục' (id_nguoi_dung là admin, gia_tri_cu là tên danh mục cũ, gia_tri_moi là tên danh mục mới). Các danh mục cũ bị xóa.
+- Làm tất cả trong một giao dịch: nếu tên mới trùng một danh mục đang tích thì giữ lại danh mục đó (đổi theo cách viết mới) và dồn các danh mục kia vào; nếu là tên mới hoàn toàn thì tạo danh mục mới và dồn tất cả vào. Mọi khóa của các danh mục bị gộp đều được chuyển sang, kể cả khóa đã xóa và khóa bị gỡ vĩnh viễn. Chỉ khóa thật sự chuyển sang danh mục khác mới ghi lịch sử: khóa vốn đã nằm trong danh mục được giữ lại không ghi dòng nào, kể cả khi danh mục đó đổi cách viết (giống đổi tên ở 6.6). Mỗi khóa được chuyển ghi một dòng lịch sử 'Quản trị viên gộp danh mục' (id_nguoi_dung là admin, gia_tri_cu là tên danh mục cũ, gia_tri_moi là tên danh mục mới). Các danh mục cũ bị xóa.
 - Ví dụ: "Nấu Ăn" có khóa Bánh Mì (đã xóa) và Món Chay (bị gỡ vĩnh viễn); "Nấu Ăn Gia Đình" có Cơm Nhà và Lẩu (đang bán). Gộp thành "Nấu Ăn" thì giữ Nấu Ăn, chuyển Cơm Nhà và Lẩu sang, xóa Nấu Ăn Gia Đình. Gộp thành "Ẩm Thực" thì chuyển cả bốn khóa sang danh mục mới và xóa cả hai danh mục cũ.
 
 ## 6.6 Đường xử lý ở máy chủ (chỉ admin)
@@ -44,6 +44,7 @@ Làm sau Phần 5. Làm sớm vì người cung cấp cần danh mục khi tạo
 - "Tên danh mục đã tồn tại"
 - "Tên danh mục từ 2 đến 50 ký tự, gồm chữ có dấu hoặc không dấu, chữ số, khoảng trắng và các ký tự + # . / -"
 - "Danh mục đang có N khóa học"
+- "Danh mục không còn tồn tại." (danh mục vừa bị xóa hoặc gộp ở nơi khác)
 - Thành công: "Đã thêm danh mục", "Đã đổi tên danh mục", "Đã xóa danh mục", "Đã gộp danh mục".
 
 ## 6.9 Kiểm tra khi làm xong

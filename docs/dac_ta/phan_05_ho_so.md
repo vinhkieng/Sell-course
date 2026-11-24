@@ -26,7 +26,7 @@ Làm sau Phần 3. Phần này dựng khung trang hồ sơ cho cả ba vai trò 
 - Thông tin hợp đồng (chỉ admin, chỉ xem): Số CCCD, Ngày cấp, Nơi cấp, Số hợp đồng, Ngày bắt đầu làm, dòng "Thông tin hợp đồng chỉ để xem. Cần thay đổi thì liên hệ bộ phận quản lý nhân sự." Số CCCD chỉ trả về cho chính admin đó và không ghi vào nhật ký máy chủ.
 
 ## 5.4 Quy tắc
-- Họ và tên: 2 đến 100 ký tự, chỉ chữ (có dấu hoặc không dấu) và dấu cách; tự bỏ khoảng trắng thừa ở đầu, cuối và giữa.
+- Họ và tên: 2 đến 100 ký tự, chỉ chữ (có dấu hoặc không dấu) và dấu cách; "chữ" chỉ gồm chữ cái a-z (hoa hoặc thường) và chữ tiếng Việt có dấu (kể cả đ, Đ), không nhận chữ nước ngoài khác (ví dụ "中文", "Ж", "ñ"); tự bỏ khoảng trắng thừa ở đầu, cuối và giữa.
 - Số điện thoại: 10 chữ số, bắt đầu bằng 0.
 - Gmail: luật như lúc đăng ký (Phần 2), không trùng tài khoản khác, không cần nhập mật khẩu, không gửi email xác minh. Lưu chữ thường.
 - Học viên đã có ít nhất một đơn hàng (bất kỳ trạng thái) thì không được xóa trống họ tên và số điện thoại. Học viên chưa có đơn thì được để trống hai ô này. Người cung cấp và admin được để trống (người cung cấp cần đủ hai ô mới tạo được khóa, Phần 7).

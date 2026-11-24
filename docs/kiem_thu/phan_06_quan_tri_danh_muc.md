@@ -23,7 +23,7 @@
 
 ## P06-03 Tên sai luật
 - Mục tiêu: chỉ nhận 2 đến 50 ký tự, chữ, số, khoảng trắng và + # . / -.
-- Dữ liệu: "A"; chuỗi 51 ký tự; "Lập trình @Web"; "Thiết kế_UI". Biên đúng: "C++", "UI/UX", "3D", "C#".
+- Dữ liệu: "A"; chuỗi 51 ký tự; "Lập trình @Web"; "Thiết kế_UI"; "中文 Cơ Bản"; "Tiếng Ж"; "Mañana". Biên đúng: "C++", "UI/UX", "3D", "C#", "Đồ Họa".
 - Các bước: thêm từng tên.
 - Kết quả mong đợi: các tên sai báo "Tên danh mục từ 2 đến 50 ký tự, gồm chữ có dấu hoặc không dấu, chữ số, khoảng trắng và các ký tự + # . / -"; các tên biên đúng được thêm.
 - Cách kiểm: Tự động
@@ -57,7 +57,7 @@
 - Mục tiêu: giữ danh mục đó, dồn danh mục kia vào, ghi lịch sử từng khóa.
 - Dữ liệu: đúng ví dụ 6.5: "Nấu Ăn" có Bánh Mì (đã xóa) và Món Chay (bị gỡ vĩnh viễn); "Nấu Ăn Gia Đình" có Cơm Nhà và Lẩu (đang bán).
 - Các bước: gọi POST /api/quan-tri/danh-muc/gop với hai id và ten_moi "nấu ăn".
-- Kết quả mong đợi: còn danh mục "Nấu Ăn" (cùng id cũ), cả 4 khóa thuộc danh mục này; "Nấu Ăn Gia Đình" bị xóa; Cơm Nhà và Lẩu mỗi khóa có một dòng lich_su_khoa_hoc 'Quản trị viên gộp danh mục' với id_nguoi_dung là admin, gia_tri_cu "Nấu Ăn Gia Đình", gia_tri_moi "Nấu Ăn".
+- Kết quả mong đợi: còn danh mục "Nấu Ăn" (cùng id cũ), cả 4 khóa thuộc danh mục này; "Nấu Ăn Gia Đình" bị xóa; Cơm Nhà và Lẩu mỗi khóa có một dòng lich_su_khoa_hoc 'Quản trị viên gộp danh mục' với id_nguoi_dung là admin, gia_tri_cu "Nấu Ăn Gia Đình", gia_tri_moi "Nấu Ăn"; Bánh Mì và Món Chay (vốn đã thuộc "Nấu Ăn") không có dòng lịch sử gộp nào.
 - Cách kiểm: Tự động
 - Nguồn: Phần 6 mục 6.5, 6.9
 

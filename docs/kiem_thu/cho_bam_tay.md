@@ -8,13 +8,14 @@ Cách cập nhật (Claude Code làm mỗi khi xong một phần):
 - Chỉ xóa một trường hợp khỏi file sau khi người dùng báo đã kiểm đạt.
 - Nhóm nào hết trường hợp thì xóa luôn tiêu đề nhóm đó.
 
-Đã soát sau: Phần 5. Phần 4: không có trường hợp phải chờ, không trường hợp nào được mở khóa; P01-19 đã kiểm đạt cho các trang tới hết Phần 4. Phần 5: P03-28 đã kiểm đạt; thêm P05-17 vào nhóm chờ Phần 7; P01-19 đã kiểm đạt cho trang /ho-so (học viên, người cung cấp có chân trang, admin không có).
+Đã soát sau: Phần 6. Phần 6: thêm phần cần khóa học của P06-12 vào nhóm chờ Phần 7 (phần còn lại kiểm được ngay); không mở khóa trường hợp nào (P01-16, P01-18 vẫn cần khóa đang bán của Phần 7); P01-19 cần kiểm thêm trang /quan-tri/danh-muc (không có chân trang). Phần 4: không có trường hợp phải chờ, không trường hợp nào được mở khóa; P01-19 đã kiểm đạt cho các trang tới hết Phần 4. Phần 5: P03-28 đã kiểm đạt; thêm P05-17 vào nhóm chờ Phần 7; P01-19 đã kiểm đạt cho trang /ho-so (học viên, người cung cấp có chân trang, admin không có).
 
 ## Chờ Phần 7 (có khóa học đang bán)
 | Mã | Tên ngắn | Việc cần làm khi tới lúc |
 | --- | --- | --- |
 | P01-16 | Menu "Danh mục" (phần bấm danh mục) | Tạo khóa đang bán ở 2 danh mục, có 1 danh mục chỉ có khóa bị ẩn: menu chỉ hiện 2 danh mục theo thứ tự tên; bấm một danh mục mở /khoa-hoc?danh_muc=<id>. Phần ô tìm kiếm và "Xem tất cả khóa học" đã kiểm được từ Phần 1. |
 | P01-18 | Cột "Danh mục" ở chân trang | Có 6 danh mục có khóa đang bán với số khóa khác nhau: cột "Danh mục" hiện đúng 5 danh mục nhiều khóa nhất, bằng nhau thì theo tên. Các mục khác của chân trang đã kiểm được từ Phần 1. |
+| P06-12 | Trang quản trị danh mục (phần cần khóa học) | Có danh mục chứa khóa (Phần 7): cột "Số khóa" đúng; nút "Xóa" của danh mục đó mờ, rê chuột hiện "Danh mục đang có N khóa học"; gộp danh mục có khóa thì khóa chuyển sang danh mục mới (lịch sử xem ở Phần 19). Phần còn lại của P06-12 đã kiểm được từ Phần 6. |
 | P05-17 | Người cung cấp đã đăng khóa thấy ô mờ | Người cung cấp tạo và đăng một khóa (Phần 7), mở /ho-so: ô Họ và tên, Số điện thoại mờ kèm dòng "Đã đăng khóa học nên không đổi được họ tên và số điện thoại." Phía máy chủ đã có kiểm thử tự động P05-07. |
 
 ## Chờ Phần 11 hoặc 12 (phần đầu tiên có thông báo sau khi chuyển trang)

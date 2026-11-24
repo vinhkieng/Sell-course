@@ -1,0 +1,58 @@
+/* Phân trang dưới bảng (.pg trong thiet_ke/quan_tri_danh_muc/danh_muc.html) */
+.phan-trang {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.phan-trang-mo-ta {
+  color: var(--mau-chu-phu);
+  font-size: 14px;
+}
+
+.phan-trang-nut {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.phan-trang-nut button,
+.phan-trang-luoc {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--mau-vien-o);
+  background: var(--mau-trang);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+.phan-trang-nut button:hover {
+  border-color: var(--mau-chinh);
+}
+
+.phan-trang-nut button.dang-xem {
+  background: var(--mau-chinh);
+  border-color: var(--mau-chinh);
+  color: var(--mau-trang);
+  cursor: default;
+}
+
+.phan-trang-nut button:disabled {
+  color: var(--mau-chu-nhat);
+  background: var(--mau-nen-nhat);
+  border-color: var(--mau-vien-o);
+  cursor: default;
+}
+
+.phan-trang-luoc {
+  border-color: transparent;
+  background: none;
+}

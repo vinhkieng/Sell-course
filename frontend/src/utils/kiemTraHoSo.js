@@ -2,8 +2,11 @@
 // Luật "học viên đã có đơn" và "người cung cấp đã đăng khóa" chỉ máy chủ kiểm.
 import { VAI_TRO } from '../constants/vaiTro.js'
 import { kiemTraGmail } from './kiemTraDangKy.js'
+import { CHU_VIET } from './chuViet.js'
 
 const NGAY_SINH_SAI = 'Ngày sinh không hợp lệ'
+// Chỉ chữ a-z, chữ tiếng Việt có dấu và dấu cách (Phần 5 mục 5.4)
+const HO_TEN_DUNG = new RegExp(`^[${CHU_VIET} ]{2,100}$`)
 
 // Bỏ khoảng trắng thừa ở đầu, cuối và giữa (như máy chủ)
 export const chuanHoaHoTen = (hoTen) => hoTen.normalize('NFC').replace(/\s+/g, ' ').trim()
@@ -36,7 +39,7 @@ export function homQua(bayGio = new Date()) {
 export function kiemTraThongTin(form, vaiTro, bayGio = new Date()) {
   const loi = {}
   const hoTen = chuanHoaHoTen(form.ho_ten)
-  if (hoTen && !/^[\p{L} ]{2,100}$/u.test(hoTen)) loi.ho_ten = 'Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách'
+  if (hoTen && !HO_TEN_DUNG.test(hoTen)) loi.ho_ten = 'Họ tên từ 2 đến 100 ký tự, chỉ gồm chữ và dấu cách'
 
   const loiGmail = kiemTraGmail(form.gmail)
   if (loiGmail) loi.gmail = loiGmail

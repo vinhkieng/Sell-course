@@ -104,6 +104,54 @@ img {
   filter: brightness(1.08);
 }
 
+/* Nút tròn cao 48px của khu quản trị và hộp thoại: .pri (nền xanh) và .sec (viền đậm) trong thiết kế */
+.nut-dam,
+.nut-vien {
+  height: 48px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.nut-dam {
+  padding: 0 28px;
+  border: 0;
+  background: var(--mau-chinh);
+  color: var(--mau-trang);
+  font-weight: 800;
+}
+
+.nut-dam:hover {
+  filter: brightness(1.08);
+}
+
+.nut-dam.nguy-hiem {
+  background: var(--mau-loi);
+}
+
+.nut-vien {
+  padding: 0 24px;
+  border: 2px solid var(--mau-chu);
+  background: var(--mau-trang);
+  font-weight: 600;
+}
+
+/* Nút viền đang bật (ví dụ "Gộp" khi đang ở chế độ gộp) */
+.nut-vien.dang-bat {
+  background: var(--mau-chinh);
+  border-color: var(--mau-chinh);
+  color: var(--mau-trang);
+}
+
+.nut-dam:disabled,
+.nut-vien:disabled {
+  opacity: 0.5;
+  cursor: default;
+  filter: none;
+}
+
 /* Logo AVA (components/Logo.jsx) */
 .logo {
   font-weight: 800;

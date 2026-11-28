@@ -62,6 +62,8 @@ const schema = z.object({
   // Chỉ dùng khi chạy kiểm thử, không ghi trong .env.example: đổi chỗ để file chinh_sach.json
   // để kiểm thử không ghi đè file thật (Phần 1 mục 1.4, Phần 24).
   DUONG_DAN_CHINH_SACH: chuoiTuyChon,
+  // Chỉ dùng khi chạy kiểm thử: thư mục lưu file riêng (ngoài dự án) để kiểm thử không đụng file thật (Phần 7)
+  THU_MUC_LUU_TRU: chuoiTuyChon,
 });
 
 const ketQua = schema.safeParse(process.env);
@@ -75,7 +77,7 @@ if (!ketQua.success) {
 }
 
 const env = ketQua.data;
-const thuMucLuuTru = path.join(THU_MUC_BACKEND, 'luu_tru');
+const thuMucLuuTru = env.THU_MUC_LUU_TRU || path.join(THU_MUC_BACKEND, 'luu_tru');
 
 const config = {
   moiTruong: env.NODE_ENV,

@@ -26,6 +26,15 @@
   --mau-nen: #eef3f1; /* nền trang */
   --mau-nen-nhat: #f6faf8; /* đầu bảng, dòng bảng khi rê chuột, nút mờ */
   --mau-trang: #ffffff;
+
+  /* Trang tạo khóa học (thiet_ke/tao_khoa_hoc/) */
+  --mau-chon-nen: #eef6f3; /* ô "Loại bài" đang chọn */
+  --mau-tim-nen: #e6e1f5; /* nhãn "Tài liệu" */
+  --mau-tim-dam: #3b2f6b;
+  --mau-loi-vien: #f0b4ab; /* viền dòng bài đang báo lỗi */
+  --mau-chu-goi-y-o: #7a908b; /* chữ mờ trong ô */
+  --mau-vien-tha: #b9cfc9; /* viền nét đứt khung chọn file */
+  --mau-nen-cau: #fbfdfc; /* khung một câu trắc nghiệm */
   --mau-phu-toi: rgba(31, 58, 61, 0.55); /* lớp tối phía sau hộp thoại */
 
   /* Chân trang */

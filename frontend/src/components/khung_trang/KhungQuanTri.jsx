@@ -2,7 +2,7 @@
 // Theo thiet_ke/quan_tri_khoa_hoc/danh_sach_khoa_hoc.html.
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import { laySoChoXuLy } from '../api/khung.js'
+import { laySoChoXuLy } from '../../api/khung.js'
 import DauTrangQuanTri from './DauTrangQuanTri.jsx'
 import './KhungQuanTri.css'
 

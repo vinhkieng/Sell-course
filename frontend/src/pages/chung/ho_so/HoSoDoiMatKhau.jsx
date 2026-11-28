@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useThongBao } from '../../../hooks/useThongBao.js'
 import { doiMatKhau } from '../../../api/hoSo.js'
 import { kiemTraDoiMatKhau } from '../../../utils/kiemTraHoSo.js'
-import ONhap from '../../../components/ONhap.jsx'
+import ONhap from '../../../components/bieu_mau/ONhap.jsx'
 
 const RONG = { mat_khau_hien_tai: '', mat_khau_moi: '', xac_nhan: '' }
 const chiChuSo = (chu) => chu.replace(/\D/g, '').slice(0, 6)

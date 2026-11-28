@@ -2,7 +2,7 @@
 // Dùng làm route cha (nội dung là <Outlet />) hoặc bọc trực tiếp (children), ví dụ trang 403 của khu quản trị.
 import { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import { layMenuDanhMuc, layCongThanhToan } from '../api/khung.js'
+import { layMenuDanhMuc, layCongThanhToan } from '../../api/khung.js'
 import DauTrang from './DauTrang.jsx'
 import ChanTrang from './ChanTrang.jsx'
 import './KhungCongKhai.css'

@@ -1,8 +1,8 @@
 // Hộp có một ô tên danh mục, dùng cho "Thêm danh mục", "Sửa tên danh mục" và "Gộp danh mục"
 // (thiet_ke/quan_tri_danh_muc/). onGui(ten) do trang truyền vào: lỗi dưới ô thì ném lại để hộp hiện chữ đỏ.
 import { useId, useState } from 'react'
-import HopThoai from '../../../components/HopThoai.jsx'
-import ONhap from '../../../components/ONhap.jsx'
+import HopThoai from '../../../components/hop_thoai/HopThoai.jsx'
+import ONhap from '../../../components/bieu_mau/ONhap.jsx'
 import { kiemTraTenDanhMuc } from '../../../utils/kiemTraDanhMuc.js'
 
 function HopTenDanhMuc({ tieuDe, nhan, tenNut, giaTriDau = '', onGui, onDong }) {

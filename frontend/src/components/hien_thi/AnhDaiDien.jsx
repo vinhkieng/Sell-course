@@ -1,5 +1,5 @@
 // Ảnh đại diện tròn: có ảnh thì hiện ảnh, chưa có thì hiện chữ cái đầu in hoa (Phần chung C9)
-import { layChuCaiDau } from '../utils/dinhDang.js'
+import { layChuCaiDau } from '../../utils/dinhDang.js'
 
 function AnhDaiDien({ nguoiDung, co = 44 }) {
   // Cỡ chữ theo thiết kế: ảnh 88px (hồ sơ) chữ 34px, 44 và 48px chữ 18px, 40px chữ 16px

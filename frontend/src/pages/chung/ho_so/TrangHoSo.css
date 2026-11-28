@@ -196,3 +196,17 @@
     gap: 4px;
   }
 }
+
+/* Tiêu đề mục kèm nút bên phải (mục "Quản lý khóa học") */
+.hs-dau-muc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.ho-so-muc .hs-dau-muc h2 {
+  margin: 0;
+}

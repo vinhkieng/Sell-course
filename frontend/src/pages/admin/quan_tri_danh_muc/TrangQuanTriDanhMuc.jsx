@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useThongBao } from '../../../hooks/useThongBao.js'
 import { layTrangDanhMuc, themDanhMuc, doiTenDanhMuc, xoaDanhMuc, gopDanhMuc } from '../../../api/danhMuc.js'
-import HopThoai from '../../../components/HopThoai.jsx'
-import PhanTrang from '../../../components/PhanTrang.jsx'
+import HopThoai from '../../../components/hop_thoai/HopThoai.jsx'
+import PhanTrang from '../../../components/hien_thi/PhanTrang.jsx'
 import HopTenDanhMuc from './HopTenDanhMuc.jsx'
 import './TrangQuanTriDanhMuc.css'
 

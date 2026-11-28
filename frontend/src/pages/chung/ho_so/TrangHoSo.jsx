@@ -5,15 +5,16 @@ import { useAuth } from '../../../hooks/useAuth.js'
 import { useThongBao } from '../../../hooks/useThongBao.js'
 import { layHoSo } from '../../../api/hoSo.js'
 import { VAI_TRO } from '../../../constants/vaiTro.js'
-import KhungCongKhai from '../../../components/KhungCongKhai.jsx'
-import DauTrangQuanTri from '../../../components/DauTrangQuanTri.jsx'
-import KhungHoSo from '../../../components/KhungHoSo.jsx'
+import KhungCongKhai from '../../../components/khung_trang/KhungCongKhai.jsx'
+import DauTrangQuanTri from '../../../components/khung_trang/DauTrangQuanTri.jsx'
+import KhungHoSo from '../../../components/khung_trang/KhungHoSo.jsx'
 import HoSoThongTinCaNhan from './HoSoThongTinCaNhan.jsx'
 import HoSoDoiMatKhau from './HoSoDoiMatKhau.jsx'
 import HoSoHopDong from './HoSoHopDong.jsx'
+import HoSoQuanLyKhoaHoc from './HoSoQuanLyKhoaHoc.jsx'
 import './TrangHoSo.css'
 
-// tạm: các mục của phần sau mới có khung và tiêu đề; Phần 8, 13, 14, 17 thay bằng mục thật
+// tạm: các mục của phần sau mới có khung và tiêu đề; Phần 13, 14, 17 thay bằng mục thật
 const MUC_PHAN_SAU = {
   [VAI_TRO.HOC_VIEN]: [
     ['khoa-hoc-cua-toi', 'Khóa học của tôi'],
@@ -21,7 +22,6 @@ const MUC_PHAN_SAU = {
     ['lich-su-don-hang', 'Lịch sử đơn hàng'],
   ],
   [VAI_TRO.NGUOI_CUNG_CAP]: [
-    ['quan-ly-khoa-hoc', 'Quản lý khóa học'],
     ['vi', 'Ví'],
     ['rut-tien', 'Rút tiền'],
   ],
@@ -45,6 +45,7 @@ function TrangHoSo() {
           <HoSoThongTinCaNhan hoSo={hoSo} setHoSo={setHoSo} />
           {laAdmin && <HoSoHopDong hoSo={hoSo} />}
           <HoSoDoiMatKhau />
+          {nguoiDung.vai_tro === VAI_TRO.NGUOI_CUNG_CAP && <HoSoQuanLyKhoaHoc hoSo={hoSo} />}
           {MUC_PHAN_SAU[nguoiDung.vai_tro].map(([neo, tieuDe]) => (
             <section key={neo} id={neo} className="hop ho-so-muc">
               <h2>{tieuDe}</h2>

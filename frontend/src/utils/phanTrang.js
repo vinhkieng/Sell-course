@@ -1,4 +1,4 @@
-// Tính các số trang hiện ở thanh phân trang (components/PhanTrang.jsx).
+// Tính các số trang hiện ở thanh phân trang (components/hien_thi/PhanTrang.jsx).
 // Từ 7 trang trở xuống hiện hết; nhiều hơn thì hiện trang đầu, trang cuối và các trang quanh trang đang xem.
 // Trả mảng số trang, null là chỗ bị lược (hiện "...").
 export function cacSoTrang(trang, soTrang) {

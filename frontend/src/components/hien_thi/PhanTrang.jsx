@@ -1,6 +1,6 @@
 // Dòng "Hiển thị a-b trên N <đơn vị> (20 dòng mỗi trang)" và các nút "Trước", số trang, "Sau" dưới bảng.
 // Theo thiet_ke/quan_tri_*/. Chỗ bị lược ghi "..." (ba dấu chấm gõ từ bàn phím, Phần chung C18).
-import { cacSoTrang, moTaPhanTrang } from '../utils/phanTrang.js'
+import { cacSoTrang, moTaPhanTrang } from '../../utils/phanTrang.js'
 import './PhanTrang.css'
 
 function PhanTrang({ trang, tong, soDongMoiTrang, donVi, onDoiTrang }) {

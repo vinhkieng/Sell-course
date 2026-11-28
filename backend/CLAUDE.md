@@ -39,7 +39,7 @@ Luồng một yêu cầu: route, middleware, controller, service, repository, My
 - Ghi nhật ký qua lib/logger.js. Không bao giờ ghi mật khẩu, mã phiên, mã 6 số, khóa VNPay, mật khẩu ứng dụng Gmail, số CCCD (C2). Riêng config.js và scripts/ được in thẳng bằng console.
 - Không đọc ghi file kiểu đồng bộ (readFileSync, writeFileSync) trong lúc xử lý yêu cầu.
 - Câu SQL luôn có tham số dấu ?, không ghép chuỗi (C6). Nhóm thao tác phải trọn gói thì dùng withTransaction và khóa dòng bằng SELECT ... FOR UPDATE (C6).
-- Mọi phép so thời gian (30 phút, 24 giờ, 7 ngày, 10 phút, 60 giây) làm trong câu SQL bằng NOW(), không trộn giờ của Node với giờ của MySQL (C10). Ngoại lệ duy nhất: ngày cập nhật chính sách (Phần 24).
+- Mọi phép so thời gian (30 phút, 24 giờ, 7 ngày, 10 phút, 60 giây) làm trong câu SQL bằng NOW(), không trộn giờ của Node với giờ của MySQL (C10). Hai ngoại lệ: ngày cập nhật chính sách (Phần 24) và dọn file tạm quá 24 giờ (so theo giờ của file, Phần 7) (C10).
 - Trạng thái và giá trị ENUM luôn lấy từ constants/trangThai.js, không gõ tay chuỗi.
 
 ## 4. Phản hồi và lỗi (Phần chung C6)
@@ -56,7 +56,7 @@ Luồng một yêu cầu: route, middleware, controller, service, repository, My
 - Thao tác ghi dữ liệu (POST, PUT, PATCH, DELETE) chỉ nhận khi tiêu đề Origin đúng bằng CLIENT_ORIGIN (C6), checkOrigin đã làm sẵn.
 
 ## 6. Kiểm thử (Phần chung C2)
-- npm test (scripts/kiemThu.js) làm lần lượt: đặt NODE_ENV=test, DB_NAME=ava_test, DUONG_DAN_CHINH_SACH trỏ tới một file tạm; xóa và tạo lại database ava_test từ file SQL; tạo admin kiểm thử (tests/duLieuKiemThu.js); chạy mọi file *.test.js trong tests, lần lượt từng file. Database ava không bị đụng tới.
+- npm test (scripts/kiemThu.js) làm lần lượt: đặt NODE_ENV=test, DB_NAME=ava_test, DUONG_DAN_CHINH_SACH trỏ tới một file tạm, THU_MUC_LUU_TRU trỏ tới một thư mục tạm (chạy xong thì xóa); xóa và tạo lại database ava_test từ file SQL; tạo admin kiểm thử (tests/duLieuKiemThu.js); chạy mọi file *.test.js trong tests, lần lượt từng file. Database ava không bị đụng tới.
 - Mỗi phần một file: tests/phan_XX_<tên>.test.js (cùng tên với docs/kiem_thu/phan_XX_<tên>.md), mỗi trường hợp tự động trong danh sách là một test, ghi mã trường hợp ở đầu tên test, ví dụ test('P02-01 Đăng ký học viên hợp lệ', ...).
 - Dùng supertest gửi yêu cầu vào app.js. Yêu cầu ghi dữ liệu phải set('Origin', ORIGIN_HOP_LE). Cuối mỗi file gọi pool.end() trong after(), như tests/khung_kiem_tra_ket_noi.test.js.
 - Kiểm thử không gửi email thật, không gọi VNPay thật: dùng hộp thư giả và VNPay giả khi NODE_ENV=test (C2).
@@ -65,4 +65,4 @@ Luồng một yêu cầu: route, middleware, controller, service, repository, My
 ## 7. Cấu hình (.env)
 - Tên biến xem .env.example. Giá trị công khai điền sẵn, giá trị bí mật để trống (C2). Không bao giờ in giá trị bí mật ra màn hình hay ghi vào nhật ký.
 - Chưa điền cấu hình Gmail hoặc VNPay mà dùng tới chức năng cần nó thì báo lỗi rõ thiếu dòng nào trong .env (C2).
-- DUONG_DAN_CHINH_SACH chỉ dùng khi kiểm thử, không ghi trong .env.example (Phần 1 mục 1.4).
+- DUONG_DAN_CHINH_SACH và THU_MUC_LUU_TRU chỉ dùng khi kiểm thử, không ghi trong .env.example (Phần 1 mục 1.4, Phần 7).

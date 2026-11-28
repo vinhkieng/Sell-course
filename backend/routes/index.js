@@ -9,6 +9,7 @@ import quanTriRoutes from './quanTriRoutes.js';
 import chinhSachRoutes from './chinhSachRoutes.js';
 import hoSoRoutes from './hoSoRoutes.js';
 import anhRoutes from './anhRoutes.js';
+import nguoiCungCapRoutes from './nguoiCungCapRoutes.js';
 
 const router = Router();
 
@@ -19,6 +20,7 @@ router.use('/quan-tri', quanTriRoutes);
 router.use('/chinh-sach', chinhSachRoutes);
 router.use('/ho-so', hoSoRoutes);
 router.use('/anh', anhRoutes);
+router.use('/nguoi-cung-cap', nguoiCungCapRoutes);
 
 // Kiểm tra máy chủ chạy và kết nối được MySQL (Phần chung C6). Trả thẳng dữ liệu, không bọc { data }.
 router.get('/kiem-tra-ket-noi', async (req, res) => {

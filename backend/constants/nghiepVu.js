@@ -50,6 +50,24 @@ export const ANH_DAI_DIEN_TOI_DA_MB = 2;
 export const TEN_DANH_MUC_TOI_THIEU = 2;
 export const TEN_DANH_MUC_TOI_DA = 50;
 
+// Tạo khóa học (Phần 7 mục 7.4, 7.5)
+export const VIDEO_TOI_DA_BYTE = 314572800; // 300MB
+export const TAI_LIEU_TOI_DA_BYTE = 20971520; // 20MB
+export const ANH_BIA_TOI_DA_MB = 2;
+export const HAN_MUC_NGUOI_CUNG_CAP_BYTE = 5368709120; // 5GB = 5 x 1024 x 1024 x 1024 byte
+export const SO_BAI_TOI_THIEU = 3;
+export const SO_BAI_TOI_DA = 50;
+export const SO_CAU_TOI_THIEU = 5;
+export const SO_CAU_TOI_DA = 50;
+export const THOI_GIAN_LAM_BAI_TOI_THIEU_PHUT = 1;
+export const THOI_GIAN_LAM_BAI_TOI_DA_PHUT = 180;
+export const TEN_KHOA_HOC_TOI_DA = 200;
+export const TEN_BAI_HOC_TOI_DA = 200;
+export const NOI_DUNG_DAI_TOI_DA = 10000; // Mô tả, Bạn sẽ học được gì, Yêu cầu trước khi học, Dành cho ai
+export const CAU_HOI_TOI_DA = 1000;
+export const LUA_CHON_TOI_DA = 255;
+export const DU_LIEU_DANG_KHOA_TOI_DA = '20mb'; // JSON gửi lên đường đăng khóa
+
 // File (Phần chung C12, C13)
 export const THOI_LUONG_VIDEO_TOI_THIEU_GIAY = 1;
 export const THOI_LUONG_VIDEO_TOI_DA_GIAY = 21600; // 6 giờ

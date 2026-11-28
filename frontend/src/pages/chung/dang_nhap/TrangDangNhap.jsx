@@ -7,8 +7,8 @@ import { useAuth } from '../../../hooks/useAuth.js'
 import { dangNhap } from '../../../api/taiKhoan.js'
 import { trangSauDangNhap } from '../../../utils/trangSauDangNhap.js'
 import { luuLuotCho, LUOT_XAC_NHAN_DANG_NHAP } from '../../../utils/luotChoMa.js'
-import KhungTaiKhoan, { DongBao } from '../../../components/KhungTaiKhoan.jsx'
-import ONhap from '../../../components/ONhap.jsx'
+import KhungTaiKhoan, { DongBao } from '../../../components/khung_trang/KhungTaiKhoan.jsx'
+import ONhap from '../../../components/bieu_mau/ONhap.jsx'
 import './TrangDangNhap.css'
 
 // Kiểm trước hai ô (Phần 3 mục 3.4 bước 1, 3.7)

@@ -7,8 +7,8 @@ import { useThongBao } from '../../../hooks/useThongBao.js'
 import { dangKy } from '../../../api/taiKhoan.js'
 import { kiemTraDangKy } from '../../../utils/kiemTraDangKy.js'
 import { VAI_TRO } from '../../../constants/vaiTro.js'
-import KhungTaiKhoan from '../../../components/KhungTaiKhoan.jsx'
-import ONhap from '../../../components/ONhap.jsx'
+import KhungTaiKhoan from '../../../components/khung_trang/KhungTaiKhoan.jsx'
+import ONhap from '../../../components/bieu_mau/ONhap.jsx'
 import './TrangDangKy.css'
 
 const CHON_VAI_TRO = [

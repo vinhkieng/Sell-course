@@ -1,11 +1,11 @@
 // Trang Chính sách và điều khoản (Phần 1 mục 1.3), theo thiet_ke/chinh_sach_loi/chinh_sach_dieu_khoan.html.
-// Neo #dieu-N do components/CuonTrang.jsx cuộn tới khi các điều đã hiện.
+// Neo #dieu-N do components/he_thong/CuonTrang.jsx cuộn tới khi các điều đã hiện.
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { layChinhSach } from '../../../api/khung.js'
 import { dinhDangNgay } from '../../../utils/dinhDang.js'
 import { useThongBao } from '../../../hooks/useThongBao.js'
-import NoiDungChinhSach from '../../../components/NoiDungChinhSach.jsx'
+import NoiDungChinhSach from '../../../components/hien_thi/NoiDungChinhSach.jsx'
 import './TrangChinhSach.css'
 
 function TrangChinhSach() {

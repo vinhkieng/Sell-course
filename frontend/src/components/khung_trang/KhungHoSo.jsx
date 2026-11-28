@@ -2,10 +2,10 @@
 // Bấm một mục thì CuonTrang cuộn tới neo (Phần chung C7). Mục được tô là mục ứng với neo đang mở,
 // không có neo thì "Thông tin cá nhân". Theo thiet_ke/ho_so/.
 import { Link, useLocation } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth.js'
-import { VAI_TRO, TEN_VAI_TRO } from '../constants/vaiTro.js'
-import { tenHienThi } from '../utils/dinhDang.js'
-import AnhDaiDien from './AnhDaiDien.jsx'
+import { useAuth } from '../../hooks/useAuth.js'
+import { VAI_TRO, TEN_VAI_TRO } from '../../constants/vaiTro.js'
+import { tenHienThi } from '../../utils/dinhDang.js'
+import AnhDaiDien from '../hien_thi/AnhDaiDien.jsx'
 import './KhungHoSo.css'
 
 const THONG_TIN = ['thong-tin-ca-nhan', 'Thông tin cá nhân']

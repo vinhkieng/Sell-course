@@ -1,7 +1,7 @@
 // Dựng nội dung một điều chính sách thành phần tử React theo luật gõ ở Phần 24 mục 24.4.
 // Không dùng dangerouslySetInnerHTML: admin gõ thẻ HTML thì chỉ hiện thành chữ.
 // Phần 24 dùng lại cho khung "Xem trước".
-import { dungNoiDungChinhSach } from '../utils/dungNoiDungChinhSach.js'
+import { dungNoiDungChinhSach } from '../../utils/dungNoiDungChinhSach.js'
 import './NoiDungChinhSach.css'
 
 // Gạch con và đoạn thụt vào nằm trong một khoản hoặc gạch đầu dòng

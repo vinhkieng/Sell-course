@@ -2,11 +2,11 @@
 // Màn nhỏ (dưới 1024px): menu, ô tìm kiếm, "Đăng nhập", "Đăng ký" gom vào nút ba gạch.
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth.js'
-import { VAI_TRO, TEN_VAI_TRO } from '../constants/vaiTro.js'
-import { tenHienThi } from '../utils/dinhDang.js'
+import { useAuth } from '../../hooks/useAuth.js'
+import { VAI_TRO, TEN_VAI_TRO } from '../../constants/vaiTro.js'
+import { tenHienThi } from '../../utils/dinhDang.js'
 import Logo from './Logo.jsx'
-import AnhDaiDien from './AnhDaiDien.jsx'
+import AnhDaiDien from '../hien_thi/AnhDaiDien.jsx'
 import './DauTrang.css'
 
 const MENU_TAI_KHOAN = {

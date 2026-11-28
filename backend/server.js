@@ -6,6 +6,7 @@ import config from './config.js';
 import app from './app.js';
 import { kiemTraKetNoiCsdl } from './repositories/heThongRepository.js';
 import { taoThuMucLuuTru, chepChinhSachMacDinh } from './lib/khoiDong.js';
+import { donFileTamQuaHan } from './services/fileTamService.js';
 import logger from './lib/logger.js';
 
 await taoThuMucLuuTru();
@@ -32,3 +33,16 @@ app.listen(config.port, (loi) => {
   }
   logger.info(`Backend đang chạy tại http://localhost:${config.port}`);
 });
+
+// Mỗi giờ xóa file tạm (và file mô tả) quá 24 giờ trong luu_tru/tam (Phần chung C13). Chạy luôn một lần
+// lúc khởi động để dọn file còn sót khi máy chủ tắt lâu.
+async function donFileTam() {
+  try {
+    const soFile = await donFileTamQuaHan();
+    if (soFile > 0) logger.info(`Đã xóa ${soFile} file tạm quá 24 giờ`);
+  } catch (loi) {
+    logger.error('Dọn file tạm thất bại', loi.message);
+  }
+}
+donFileTam();
+setInterval(donFileTam, 60 * 60 * 1000);

@@ -152,7 +152,7 @@ img {
   filter: none;
 }
 
-/* Logo AVA (components/Logo.jsx) */
+/* Logo AVA (components/khung_trang/Logo.jsx) */
 .logo {
   font-weight: 800;
   font-size: 24px;
@@ -165,7 +165,7 @@ img {
   fill: var(--mau-nhan);
 }
 
-/* Ảnh đại diện (components/AnhDaiDien.jsx) */
+/* Ảnh đại diện (components/hien_thi/AnhDaiDien.jsx) */
 .anh-dai-dien {
   flex: none;
   border-radius: 50%;
@@ -179,7 +179,7 @@ img {
   object-fit: cover;
 }
 
-/* Thông báo của bộ bắt lỗi (components/ErrorBoundary.jsx) */
+/* Thông báo của bộ bắt lỗi (components/he_thong/ErrorBoundary.jsx) */
 .trang-bao-loi {
   padding-top: 48px;
   padding-bottom: 48px;

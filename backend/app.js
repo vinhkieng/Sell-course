@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import config from './config.js';
+import { DU_LIEU_DANG_KHOA_TOI_DA } from './constants/nghiepVu.js';
 import routes from './routes/index.js';
 import { checkOrigin } from './middleware/checkOrigin.js';
 import { docPhien } from './middleware/auth.js';
@@ -21,6 +22,8 @@ app.set('trust proxy', ['loopback', ...config.mayTrungGianThem]);
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'same-site' } }));
 app.use(cors({ origin: config.clientOrigin, credentials: true }));
 // Giới hạn chung 1MB. Đường đăng và sửa khóa học (Phần 7, 8) tự đặt giới hạn 20MB cho riêng đường đó.
+// Bộ đọc riêng gắn trước bộ đọc chung: đã đọc xong thì bộ đọc chung bỏ qua (Phần 7 mục 7.5).
+app.use('/api/nguoi-cung-cap/khoa-hoc', express.json({ limit: DU_LIEU_DANG_KHOA_TOI_DA }));
 app.use(express.json({ limit: '1mb' }));
 // COOKIE_SECRET dùng để ký các cookie có chữ ký (ava_cho_xac_nhan ở Phần 3, ava_gioi_thieu ở Phần 11)
 app.use(cookieParser(config.cookieSecret));

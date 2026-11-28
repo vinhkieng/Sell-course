@@ -22,10 +22,13 @@ export function chuanHoaTenDanhMuc(ten) {
     .join(' ');
 }
 
+// Tên đã chuẩn hóa có đúng luật 6.4 không (Phần 7 dùng khi chọn "Khác")
+export const laTenDanhMucDung = (ten) => TEN_DUNG.test(ten);
+
 export const oTenDanhMuc = z
   .string({ error: TEN_DANH_MUC_SAI })
   .transform(chuanHoaTenDanhMuc)
-  .refine((ten) => TEN_DUNG.test(ten), TEN_DANH_MUC_SAI);
+  .refine(laTenDanhMucDung, TEN_DANH_MUC_SAI);
 
 export const schemaTenDanhMuc = z.object({ ten: oTenDanhMuc });
 

@@ -2,9 +2,9 @@
 // Không có đường /khong-co-quyen: sai vai trò thì hiện trang 403 ngay tại đường dẫn đang mở (Phần chung C5).
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { VAI_TRO } from '../constants/vaiTro.js'
-import KhungCongKhai from '../components/KhungCongKhai.jsx'
-import KhungQuanTri from '../components/KhungQuanTri.jsx'
-import CanVaiTro from '../components/CanVaiTro.jsx'
+import KhungCongKhai from '../components/khung_trang/KhungCongKhai.jsx'
+import KhungQuanTri from '../components/khung_trang/KhungQuanTri.jsx'
+import CanVaiTro from '../components/he_thong/CanVaiTro.jsx'
 import TrangLoi from '../pages/chung/chinh_sach_loi/TrangLoi.jsx'
 import TrangChinhSach from '../pages/chung/chinh_sach_loi/TrangChinhSach.jsx'
 import TrangDangKy from '../pages/chung/dang_ky/TrangDangKy.jsx'
@@ -14,6 +14,7 @@ import TrangQuenMatKhau from '../pages/chung/quen_mat_khau/TrangQuenMatKhau.jsx'
 import TrangDatLaiMatKhau from '../pages/chung/quen_mat_khau/TrangDatLaiMatKhau.jsx'
 import TrangHoSo from '../pages/chung/ho_so/TrangHoSo.jsx'
 import TrangQuanTriDanhMuc from '../pages/admin/quan_tri_danh_muc/TrangQuanTriDanhMuc.jsx'
+import TrangTaoKhoaHoc from '../pages/provider/tao_khoa_hoc/TrangTaoKhoaHoc.jsx'
 
 // tạm: các trang khu quản trị chưa làm mới có tiêu đề như thiết kế; Phần 19-24 thay bằng trang thật
 const TRANG_QUAN_TRI = [
@@ -39,6 +40,14 @@ function AppRouter() {
           element={
             <CanVaiTro vaiTro={[VAI_TRO.HOC_VIEN]} choKhach>
               <TrangLoi ma={404} />
+            </CanVaiTro>
+          }
+        />
+        <Route
+          path="nguoi-cung-cap/tao-khoa-hoc"
+          element={
+            <CanVaiTro vaiTro={[VAI_TRO.NGUOI_CUNG_CAP]}>
+              <TrangTaoKhoaHoc />
             </CanVaiTro>
           }
         />

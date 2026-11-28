@@ -41,6 +41,17 @@
   margin-top: 28px;
 }
 
+/* Hộp của trang tạo khóa (thiet_ke/tao_khoa_hoc/buoc_2_hop_dang.html) */
+.hop-thoai.gon h2 {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.hop-thoai.gon .hop-thoai-nut {
+  justify-content: flex-start;
+  margin-top: 0;
+}
+
 @media (max-width: 600px) {
   .hop-thoai {
     padding: 24px;

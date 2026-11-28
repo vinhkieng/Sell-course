@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     datXuLyBiDayRa((loi) => {
       setNguoiDung(null)
-      navigate('/dang-nhap', { state: { cauBao: loi.message } })
+      navigate('/dang-nhap', { state: { cauBao: loi.message, boQuaHoiRoiTrang: true } })
     })
     taiLai()
   }, [navigate, taiLai])
@@ -39,7 +39,8 @@ export function AuthProvider({ children }) {
     } catch {
       // vẫn đưa về khách
     }
-    navigate('/')
+    // boQuaHoiRoiTrang: đăng xuất luôn, không hỏi "Rời trang?" ở trang đang tạo khóa (Phần 7)
+    navigate('/', { state: { boQuaHoiRoiTrang: true } })
     setNguoiDung(null)
   }, [navigate])
 

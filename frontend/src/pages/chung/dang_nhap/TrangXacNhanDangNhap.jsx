@@ -8,8 +8,8 @@ import { useDemNguoc } from '../../../hooks/useDemNguoc.js'
 import { xacNhanDangNhap, guiLaiMaDangNhap } from '../../../api/taiKhoan.js'
 import { trangSauDangNhap } from '../../../utils/trangSauDangNhap.js'
 import { docLuotCho, luuLuotCho, xoaLuotCho, LUOT_XAC_NHAN_DANG_NHAP as KHOA } from '../../../utils/luotChoMa.js'
-import KhungTaiKhoan, { DongBao } from '../../../components/KhungTaiKhoan.jsx'
-import ONhap from '../../../components/ONhap.jsx'
+import KhungTaiKhoan, { DongBao } from '../../../components/khung_trang/KhungTaiKhoan.jsx'
+import ONhap from '../../../components/bieu_mau/ONhap.jsx'
 import './TrangXacNhanDangNhap.css'
 
 function TrangXacNhanDangNhap() {

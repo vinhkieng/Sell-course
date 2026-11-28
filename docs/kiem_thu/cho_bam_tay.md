@@ -8,20 +8,17 @@ Cách cập nhật (Claude Code làm mỗi khi xong một phần):
 - Chỉ xóa một trường hợp khỏi file sau khi người dùng báo đã kiểm đạt.
 - Nhóm nào hết trường hợp thì xóa luôn tiêu đề nhóm đó.
 
-Đã soát sau: Phần 6. Phần 6: thêm phần cần khóa học của P06-12 vào nhóm chờ Phần 7 (phần còn lại kiểm được ngay); không mở khóa trường hợp nào (P01-16, P01-18 vẫn cần khóa đang bán của Phần 7); P01-19 cần kiểm thêm trang /quan-tri/danh-muc (không có chân trang). Phần 4: không có trường hợp phải chờ, không trường hợp nào được mở khóa; P01-19 đã kiểm đạt cho các trang tới hết Phần 4. Phần 5: P03-28 đã kiểm đạt; thêm P05-17 vào nhóm chờ Phần 7; P01-19 đã kiểm đạt cho trang /ho-so (học viên, người cung cấp có chân trang, admin không có).
+Đã soát sau: Phần 7 đợt 3. Người dùng đã báo đạt bấm tay đợt 3: P07-25, P07-27 (phần trắc nghiệm) và đăng thử khóa có bài trắc nghiệm (P07-28). Phần 7 đợt 3: phần trắc nghiệm của P07-25, P07-27 nay kiểm được, chuyển xuống nhóm chờ báo đạt; không thêm trường hợp chờ mới; P01-19 không có trang mới (trang soạn bài trắc nghiệm vẫn là /nguoi-cung-cap/tao-khoa-hoc). Phần 7 đợt 2. Người dùng đã báo đạt bấm tay đợt 2: P07-23 đến P07-29 (phần video và tài liệu), P05-17, P01-23, P06-12 (phần cần khóa học), P01-18, P01-16 (phần menu Danh mục), P01-19 cho trang tạo khóa. Phần 7 đợt 2: mở khóa P05-17, P01-18, phần cần khóa học của P06-12 (trừ dòng lịch sử gộp, chờ Phần 19), phần menu của P01-16 (trừ "danh mục chỉ có khóa bị ẩn", chờ Phần 8); P01-23 (ô "Đã đăng khóa học" hiện sau khi chuyển về hồ sơ); thêm phần trắc nghiệm của P07-25, P07-27 vào nhóm chờ Phần 7 đợt 3; P01-19 cần kiểm thêm trang /nguoi-cung-cap/tao-khoa-hoc (có chân trang, cả lúc thêm và sửa bài). Phần 6: thêm phần cần khóa học của P06-12 vào nhóm chờ Phần 7 (phần còn lại kiểm được ngay); không mở khóa trường hợp nào (P01-16, P01-18 vẫn cần khóa đang bán của Phần 7); P01-19 cần kiểm thêm trang /quan-tri/danh-muc (không có chân trang). Phần 4: không có trường hợp phải chờ, không trường hợp nào được mở khóa; P01-19 đã kiểm đạt cho các trang tới hết Phần 4. Phần 5: P03-28 đã kiểm đạt; thêm P05-17 vào nhóm chờ Phần 7; P01-19 đã kiểm đạt cho trang /ho-so (học viên, người cung cấp có chân trang, admin không có).
 
-## Chờ Phần 7 (có khóa học đang bán)
+## Chờ Phần 8 (ẩn khóa học)
 | Mã | Tên ngắn | Việc cần làm khi tới lúc |
 | --- | --- | --- |
-| P01-16 | Menu "Danh mục" (phần bấm danh mục) | Tạo khóa đang bán ở 2 danh mục, có 1 danh mục chỉ có khóa bị ẩn: menu chỉ hiện 2 danh mục theo thứ tự tên; bấm một danh mục mở /khoa-hoc?danh_muc=<id>. Phần ô tìm kiếm và "Xem tất cả khóa học" đã kiểm được từ Phần 1. |
-| P01-18 | Cột "Danh mục" ở chân trang | Có 6 danh mục có khóa đang bán với số khóa khác nhau: cột "Danh mục" hiện đúng 5 danh mục nhiều khóa nhất, bằng nhau thì theo tên. Các mục khác của chân trang đã kiểm được từ Phần 1. |
-| P06-12 | Trang quản trị danh mục (phần cần khóa học) | Có danh mục chứa khóa (Phần 7): cột "Số khóa" đúng; nút "Xóa" của danh mục đó mờ, rê chuột hiện "Danh mục đang có N khóa học"; gộp danh mục có khóa thì khóa chuyển sang danh mục mới (lịch sử xem ở Phần 19). Phần còn lại của P06-12 đã kiểm được từ Phần 6. |
-| P05-17 | Người cung cấp đã đăng khóa thấy ô mờ | Người cung cấp tạo và đăng một khóa (Phần 7), mở /ho-so: ô Họ và tên, Số điện thoại mờ kèm dòng "Đã đăng khóa học nên không đổi được họ tên và số điện thoại." Phía máy chủ đã có kiểm thử tự động P05-07. |
+| P01-16 | Menu "Danh mục" (phần khóa bị ẩn) | Có một danh mục chỉ có khóa bị ẩn: menu không hiện danh mục đó. Phần còn lại của P01-16 đã kiểm đạt ở Phần 7. |
 
-## Chờ Phần 11 hoặc 12 (phần đầu tiên có thông báo sau khi chuyển trang)
+## Chờ Phần 19 (lịch sử khóa học)
 | Mã | Tên ngắn | Việc cần làm khi tới lúc |
 | --- | --- | --- |
-| P01-23 | Ô thông báo nhỏ | Làm thao tác có thông báo (ví dụ "Đã thêm vào giỏ hàng") rồi chuyển trang: ô nhỏ hiện ở góc dưới phải, tự tắt sau khoảng 5 giây, vẫn hiện ở trang mới. |
+| P06-12 | Dòng lịch sử khi gộp danh mục | Gộp danh mục có khóa: xem lịch sử của khóa ở /quan-tri/khoa-hoc/:id có dòng đổi danh mục. Phần còn lại của P06-12 đã kiểm đạt ở Phần 7. |
 
 ## Chờ Phần 12 (giỏ hàng)
 | Mã | Tên ngắn | Việc cần làm khi tới lúc |

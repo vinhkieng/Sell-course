@@ -1,8 +1,8 @@
 // Đầu trang "Quản trị": dùng ở khu quản trị (KhungQuanTri) và trang hồ sơ của admin (Phần chung C9).
 import { Link } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth.js'
+import { useAuth } from '../../hooks/useAuth.js'
 import Logo from './Logo.jsx'
-import AnhDaiDien from './AnhDaiDien.jsx'
+import AnhDaiDien from '../hien_thi/AnhDaiDien.jsx'
 import './DauTrangQuanTri.css'
 
 function DauTrangQuanTri() {

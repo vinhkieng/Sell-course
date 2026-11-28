@@ -25,6 +25,28 @@ export async function khoaTheoDanhMuc(idsDanhMuc, conn) {
   return rows;
 }
 
+// Khóa mới đăng: "Đang bán" ngay, chưa ẩn, chưa xóa (giá trị mặc định của file SQL, Phần 7 mục 7.6)
+// khoa: { idNguoiCungCap, idDanhMuc, ten, moTa, anhBia, giaBan, hocDuocGi, yeuCau, danhChoAi }
+export async function them(khoa, conn) {
+  const [kq] = await conn.query(
+    `INSERT INTO khoa_hoc
+       (id_nguoi_cung_cap, id_danh_muc, ten_khoa_hoc, mo_ta, anh_bia, gia_ban, hoc_duoc_gi, yeu_cau, danh_cho_ai)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      khoa.idNguoiCungCap,
+      khoa.idDanhMuc,
+      khoa.ten,
+      khoa.moTa,
+      khoa.anhBia,
+      khoa.giaBan,
+      khoa.hocDuocGi,
+      khoa.yeuCau,
+      khoa.danhChoAi,
+    ],
+  );
+  return kq.insertId;
+}
+
 export async function chuyenDanhMuc(tuIdsDanhMuc, denIdDanhMuc, conn) {
   await conn.query('UPDATE khoa_hoc SET id_danh_muc = ? WHERE id_danh_muc IN (?)', [denIdDanhMuc, tuIdsDanhMuc]);
 }

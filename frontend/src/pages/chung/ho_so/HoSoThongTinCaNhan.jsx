@@ -11,8 +11,8 @@ import {
   ngayHienThiSangLuu,
   ngayLuuSangHienThi,
 } from '../../../utils/kiemTraHoSo.js'
-import AnhDaiDien from '../../../components/AnhDaiDien.jsx'
-import ONhap from '../../../components/ONhap.jsx'
+import AnhDaiDien from '../../../components/hien_thi/AnhDaiDien.jsx'
+import ONhap from '../../../components/bieu_mau/ONhap.jsx'
 
 const ANH_SAI = 'Ảnh phải là jpg hoặc png, tối đa 2MB'
 

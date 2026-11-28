@@ -55,6 +55,10 @@ async function main() {
   process.env.DB_NAME = TEN_DB_KIEM_THU;
   // File chinh_sach.json của kiểm thử nằm ở thư mục tạm, không ghi đè file thật (Phần 1 mục 1.4)
   process.env.DUONG_DAN_CHINH_SACH = path.join(os.tmpdir(), 'ava_kiem_thu', 'chinh_sach.json');
+  // File tải lên khi kiểm thử nằm ở thư mục tạm của máy, ngoài dự án; chạy xong thì xóa (Phần 7)
+  const thuMucLuuTruKiemThu = path.join(os.tmpdir(), 'ava_kiem_thu', 'luu_tru');
+  process.env.THU_MUC_LUU_TRU = thuMucLuuTruKiemThu;
+  fs.rmSync(thuMucLuuTruKiemThu, { recursive: true, force: true });
 
   console.log(`Đang tạo lại database ${TEN_DB_KIEM_THU} từ file SQL...`);
   await taoLaiDatabaseKiemThu();
@@ -63,6 +67,8 @@ async function main() {
   const { taoAdmin } = await import('../services/taoAdminService.js');
   const { default: pool } = await import('../database/db.js');
   await taoAdmin(ADMIN_KIEM_THU);
+  const { taoThuMucLuuTru } = await import('../lib/khoiDong.js');
+  await taoThuMucLuuTru();
   await pool.end();
 
   const cacFile = timFileKiemThu(path.join(THU_MUC_BACKEND, 'tests'));
@@ -77,6 +83,7 @@ async function main() {
     { stdio: 'inherit', env: process.env, cwd: THU_MUC_BACKEND },
   );
   process.exitCode = ketQua.status ?? 1;
+  fs.rmSync(thuMucLuuTruKiemThu, { recursive: true, force: true });
 }
 
 try {
